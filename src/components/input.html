@@ -1,58 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8" />
 
-    <head>
-        <!-- Character encoding -->
-        <meta charset="UTF-8">
+    <!-- Viewport settings for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Viewport settings for responsive design -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO meta tags -->
+    <title>Sandbox</title>
 
-        <!-- SEO meta tags -->
-        <title>Sandbox</title>
+    <!-- CSS  -->
+    <link rel="stylesheet" href="../../public/css/styles.css" />
+  </head>
 
-        <!-- CSS  -->
-        <link rel="stylesheet" href="css/base.css">
-        <link rel="stylesheet" href="css/input.css">
-    </head>
+  <body>
+    <header>Sandbox</header>
 
-    <body>
+    <main>
+      <h1>Input</h1>
 
-        <header>Sandbox</header>
-        
-        <main>
-            
-            <h1>Input</h1>
+      <section class="sand-box">
+        <form action="/action_page.php">
+          <label class="blue-primary" for="fname"
+            >First name
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              maxlength="80"
+              aria-describedby="character-count"
+            />
+            <legend id="character-count" class="legend" aria-live="polite">
+              0/80 characters
+            </legend>
+          </label>
+        </form>
+      </section>
+    </main>
 
-            <section class="sand-box">
+    <footer>RRR</footer>
 
-
-                <form action="/action_page.php">
-                    <label class="input-wrapper" for="fname">First name
-                        <input
-                            type="text"
-                            id="fname"
-                            name="fname"
-                            maxlength="80" 
-                            aria-describedby="character-count"
-                        >
-                        <legend id="character-count" class="legend" aria-live="polite">
-                            0/80 characters
-                        </legend>
-                    </label>    
-                </form>
-
-
-            </section> 
-
-        </main>
-
-        <footer>RRR</footer>
-
-        <!-- JavaScript  -->
-        <script src="js/counter-input.js" defer></script>
-
-    </body>
-
+    <!-- JavaScript  -->
+    <script src="js/counter-input.js" defer></script>
+  </body>
 </html>
-

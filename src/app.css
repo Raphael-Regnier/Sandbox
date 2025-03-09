@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+:root {
+  --blue-primary: ff0000;
+  --purple-primary: ff00ff;
+}
+
+.blue-primary {
+  color: var(--blue-primary);
+}
+
+@theme {
+  --color-belly: var(--blue-primary);
+}
