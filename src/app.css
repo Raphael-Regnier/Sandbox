@@ -15,8 +15,8 @@ THEME
 
     /* FONT FAMILY //// */
     --ff-heading: PT-Serif, serif;
-    --ff-body: Inter, sans-serif;
-    --ff-label: Inter, sans-serif;
+    --ff-body: Geist, sans-serif;
+    --ff-label: Geist, sans-serif;
 
 
 
@@ -120,11 +120,11 @@ BASE
         @apply grow my-8;
     }
     header {
-        @apply font-bold text-base text-slate-600;
+        @apply font-bold text-base text-slate-500;
     }
 
     footer {
-        @apply font-bold text-sm text-slate-600;
+        @apply font-bold text-sm text-slate-500;
     }
 
 
@@ -133,10 +133,10 @@ BASE
     /* //////////////////////////////////////////////////////// */
     /* HEADINGS */
     h1 {
-        @apply font-heading fs-h1 font-bold text-heading mb-12;
+        @apply font-heading fs-h1 font-bold text-heading mb-12 tracking-tight;
     }
     h2 {
-        @apply font-heading fs-h2 font-bold text-heading mb-4;
+        @apply font-heading fs-h2 font-bold text-heading mb-4 tracking-tight; 
     }
 
 
@@ -189,7 +189,7 @@ COMPONENTS
     /* //////////////////////////////////////////////////////// */
     /* MOLECULES  FORM */
     .input-text {
-        @apply flex flex-col gap-0.5 max-w-72 text-base font-semibold text-label-form;
+        @apply flex flex-col gap-0.5 max-w-72 text-base font-medium text-label-form;
 
         input {
             @apply bg-field-form px-3 py-1 rounded-md font-normal hover:bg-field-form-hover transition;
