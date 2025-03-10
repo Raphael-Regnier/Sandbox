@@ -24,8 +24,6 @@
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-base: 1rem;
     --text-base--line-height: calc(1.5 / 1);
-    --text-2xl: 1.5rem;
-    --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -51,7 +49,8 @@
     --ff-heading: PT-Serif, serif;
     --ff-body: Inter, sans-serif;
     --font-heading: var(--ff-heading);
-    --f-size-h1: clamp(2rem, 3vw + 1rem, 6rem);
+    --fs-h1: clamp(2rem, 3vw + 1rem, 6rem);
+    --fs-h2: clamp(1.5rem, 2.25vw + 1rem, 4.5rem);
     --font-body: var(--ff-body);
     --default: var(--color-slate-800);
     --heading: var(--color-slate-600);
@@ -1557,10 +1556,6 @@
     --tw-leading: 1;
     line-height: 1;
   }
-  .font-bold {
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
-  }
   .text-balance {
     text-wrap: balance;
   }
@@ -2233,6 +2228,15 @@
     flex-grow: 1;
   }
   header {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-slate-600);
+  }
+  footer {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
     color: var(--color-slate-600);
@@ -2240,16 +2244,15 @@
   h1 {
     margin-bottom: calc(var(--spacing) * 12);
     font-family: var(--font-heading);
+    font-size: var(--fs-h1);
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
     color: var(--color-heading);
-    font-size: var(--f-size-h1);
   }
   h2 {
     margin-bottom: calc(var(--spacing) * 4);
     font-family: var(--font-heading);
-    font-size: var(--text-2xl);
-    line-height: var(--tw-leading, var(--text-2xl--line-height));
+    font-size: var(--fs-h2);
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
     color: var(--color-heading);
@@ -2402,10 +2405,6 @@
   initial-value: 0;
 }
 @property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
@@ -2586,6 +2585,10 @@
   inherits: false;
 }
 @property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }

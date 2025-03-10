@@ -26,7 +26,8 @@ THEME
 
     /* HEADING //// */
     --font-heading: var(--ff-heading);
-    --f-size-h1: clamp(2rem, 3vw + 1rem, 6rem);
+    --fs-h1: clamp(2rem, 3vw + 1rem, 6rem);
+    --fs-h2: clamp(1.5rem, 2.25vw + 1rem, 4.5rem);
 
 
     /* BODY //// */
@@ -82,7 +83,13 @@ THEME
 UTILITIES
 //////////////////////////////////////////////////////// */
 
-/* @utility */
+@utility fs-h1 {
+    font-size: var(--fs-h1);
+}
+
+@utility fs-h2 {
+    font-size: var(--fs-h2);
+}
 
 
 
@@ -113,7 +120,11 @@ BASE
         @apply grow my-8;
     }
     header {
-        @apply font-bold text-slate-600;
+        @apply font-bold text-base text-slate-600;
+    }
+
+    footer {
+        @apply font-bold text-sm text-slate-600;
     }
 
 
@@ -122,11 +133,10 @@ BASE
     /* //////////////////////////////////////////////////////// */
     /* HEADINGS */
     h1 {
-        @apply font-heading font-bold text-heading mb-12;
-        font-size: var(--f-size-h1);
+        @apply font-heading fs-h1 font-bold text-heading mb-12;
     }
     h2 {
-        @apply font-heading text-2xl font-bold text-heading mb-4;
+        @apply font-heading fs-h2 font-bold text-heading mb-4;
     }
 
 
