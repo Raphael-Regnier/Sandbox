@@ -9,65 +9,81 @@ THEME
 //////////////////////////////////////////////////////// */
 
 @theme {
-	/* Tier 1&2 don't use namespaces so that variables can't be referenced in utility classes. */
-	/* //////////////////////////////////////////////////////// */
-	/* TIER ONE TYPOGRAPHY */
+    /* Tier 1&2 don't use namespaces so that variables can't be referenced in utility classes. */
+    /* //////////////////////////////////////////////////////// */
+    /* TIER ONE TYPOGRAPHY */
 
-	/* FONT FAMILY //// */
-	--ff-heading: PT-Serif, serif;
-	--ff-body: Inter, sans-serif;
-	--ff-label: Inter, sans-serif;
-
-
-
-
-	/* //////////////////////////////////////////////////////// */
-	/* TIER TWO TYPOGRAPHY */
-
-	/* HEADING //// */
-	--font-heading: var(--ff-heading);
-	--font-mass-heading: var(--font-bold);
-
-	/* BODY //// */
-	--font-body: var(--ff-body);
-	--font-mass-body: var(--font-normal);
-
-	/* LABEL //// */
-	--font-label: var(--ff-label);
-	--font-mass-label: var(--font-medium);
-
-	/* FONT FAMILY //// */
-
-
-	
-
-	/* //////////////////////////////////////////////////////// */
-	/* TIER TWO COLORS */
-
-	/* GLOBAL //// */
-	--default: var(--color-slate-800);
-	--heading: var(--color-slate-600);
-
-	/* FORM //// */
-	--form: var(--color-slate-700);
-	--form-light-01: var(--color-neutral-300);
-	--form-light-02: var(--color-slate-400);
+    /* FONT FAMILY //// */
+    --ff-heading: PT-Serif, serif;
+    --ff-body: Inter, sans-serif;
+    --ff-label: Inter, sans-serif;
 
 
 
 
-	/* //////////////////////////////////////////////////////// */
-	/* TIER THREE COLORS */
+    /* //////////////////////////////////////////////////////// */
+    /* TIER TWO TYPOGRAPHY */
 
-	/* GLOBAL //// */
-	--color-txt-default: var(--default);
-	--color-heading: var(--heading);
+    /* HEADING //// */
+    --font-heading: var(--ff-heading);
+    --f-size-h1: clamp(2rem, 3vw + 1rem, 6rem);
 
-	/* FORM //// */
-	--color-label-form: var(--form);
-	--color-field-form: var(--form-light-01);
-	--color-field-form-hover: var(--form-light-02);
+
+    /* BODY //// */
+    --font-body: var(--ff-body);
+
+
+    /* LABEL //// */
+    --font-label: var(--ff-label);
+
+
+
+
+    /* //////////////////////////////////////////////////////// */
+    /* TIER TWO COLORS */
+
+    /* GLOBAL //// */
+    --default: var(--color-slate-800);
+    --heading: var(--color-slate-600);
+
+
+    /* FORM //// */
+    --form: var(--color-slate-700);
+    --form-light-01: var(--color-slate-300);
+    --form-light-02: var(--color-slate-400);
+
+
+
+    /* //////////////////////////////////////////////////////// */
+    /* TIER THREE COLORS */
+
+    /* GLOBAL //// */
+    --color-txt-default: var(--default);
+    --color-heading: var(--heading);
+
+
+    /* FORM //// */
+    --color-label-form: var(--form);
+    --color-field-form: var(--form-light-01);
+    --color-field-form-hover: var(--form-light-02);
 }
+
+
+
+
+
+
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////
+UTILITIES
+//////////////////////////////////////////////////////// */
+
+/* @utility */
+
 
 
 
@@ -85,54 +101,62 @@ BASE
 //////////////////////////////////////////////////////// */
 
 @layer base {
-	/* //////////////////////////////////////////////////////// */
-	/* GLOBAL */
-	* {
-		@apply box-border;
-	}
-	body {
-		@apply flex flex-col min-h-screen p-8 bg-slate-100 text-base;
-	}
-	main {
-		@apply grow my-8;
-	}
-	header {
-		@apply font-bold text-slate-600;
-	}
+    /* //////////////////////////////////////////////////////// */
+    /* GLOBAL */
+    * {
+        @apply box-border;
+    }
+    body {
+        @apply flex flex-col min-h-screen p-8 bg-slate-100 font-body text-base;
+    }
+    main {
+        @apply grow my-8;
+    }
+    header {
+        @apply font-bold text-slate-600;
+    }
 
 
 
 
-	/* //////////////////////////////////////////////////////// */
-	/* HEADINGS */
-	h1 {
-		@apply font-heading text-3xl font-mass-heading text-heading mb-12;
-	}
-	h2 {
-		@apply font-heading text-2xl font-mass-heading text-heading mb-4;
-	}
+    /* //////////////////////////////////////////////////////// */
+    /* HEADINGS */
+    h1 {
+        @apply font-heading font-bold text-heading mb-12;
+        font-size: var(--f-size-h1);
+    }
+    h2 {
+        @apply font-heading text-2xl font-bold text-heading mb-4;
+    }
 
 
 
 
-	/* //////////////////////////////////////////////////////// */
-	/* TEXT */
-	p {
-		@apply text-base text-txt-default;
-	}
-	legend {
-		@apply text-sm font-mass-label text-slate-500;
-	}
+    /* //////////////////////////////////////////////////////// */
+    /* TEXT */
+    p {
+        @apply text-base text-txt-default;
+    }
+    legend {
+        @apply text-sm font-medium text-slate-500;
+    }
 
 
 
 
-	/* //////////////////////////////////////////////////////// */
-	/* NAVIGATION */
-	a {
-		@apply text-base no-underline;
-	}
+    /* //////////////////////////////////////////////////////// */
+    /* NAVIGATION */
+    a {
+        @apply text-base no-underline;
+    }
 }
+
+
+
+
+
+
+
 
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
@@ -143,24 +167,24 @@ COMPONENTS
 //////////////////////////////////////////////////////// */
 
 @layer components {
-	/* //////////////////////////////////////////////////////// */
-	/* ORGANISMS  SECTIONS */
-	.sandbox {
-		@apply px-12;
-	}
+    /* //////////////////////////////////////////////////////// */
+    /* ORGANISMS  SECTIONS */
+    .sandbox {
+        @apply px-12;
+    }
 
 
 
 
-	/* //////////////////////////////////////////////////////// */
-	/* MOLECULES  FORM */
-	.input-text {
-		@apply flex flex-col gap-0.5 max-w-72 text-base font-semibold text-label-form;
+    /* //////////////////////////////////////////////////////// */
+    /* MOLECULES  FORM */
+    .input-text {
+        @apply flex flex-col gap-0.5 max-w-72 text-base font-semibold text-label-form;
 
-		input {
-			@apply bg-field-form px-3 py-1 rounded-md font-normal hover:bg-field-form-hover transition;
-		}
-	}
+        input {
+            @apply bg-field-form px-3 py-1 rounded-md font-normal hover:bg-field-form-hover transition;
+        }
+    }
 }
 
 
@@ -170,11 +194,3 @@ COMPONENTS
 
 
 
-/* //////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////// */
-/* ////////////////////////////////////////////////////////
-UTILITIES
-//////////////////////////////////////////////////////// */
-/* @utility flezx-center */
