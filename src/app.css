@@ -9,88 +9,80 @@ THEME
 //////////////////////////////////////////////////////// */
 
 @theme {
-    /* Tier 1&2 don't use namespaces so that variables can't be referenced in utility classes. */
-    /* //////////////////////////////////////////////////////// */
-    /* TIER ONE TYPOGRAPHY */
+    /* ////////////////////////////////////////////////////////
+    TYPOGRAPHY
+    //////////////////////////////////////////////////////// */
 
-    /* FONT FAMILY //// */
-    --ff-heading: PT-Serif, serif;
-    --ff-body: Geist, sans-serif;
-    --ff-label: Geist, sans-serif;
+    /* HEADING //////////////// */
 
+    /* Family */
+    --font-heading: "Inter", sans-serif;
 
-
-
-    /* //////////////////////////////////////////////////////// */
-    /* TIER TWO TYPOGRAPHY */
-
-    /* HEADING //// */
-    --font-heading: var(--ff-heading);
-    --fs-h1: clamp(2rem, 3vw + 1rem, 6rem);
-    --fs-h2: clamp(1.5rem, 2.25vw + 1rem, 4.5rem);
-
-
-    /* BODY //// */
-    --font-body: var(--ff-body);
-
-
-    /* LABEL //// */
-    --font-label: var(--ff-label);
+    /* Type system */
+    --f-size-h0: 18rem;
+    --f-size-h1: 6rem;
+    --f-size-h2: 4.5rem;
+    --f-size-h3: 2rem;
 
 
 
 
-    /* //////////////////////////////////////////////////////// */
-    /* TIER TWO COLORS */
+    /* BODY //////////////// */
 
-    /* GLOBAL //// */
-    --default: var(--color-slate-800);
-    --heading: var(--color-slate-600);
-
-
-    /* FORM //// */
-    --form: var(--color-slate-700);
-    --form-light-01: var(--color-slate-300);
-    --form-light-02: var(--color-slate-400);
+    /* Family */
+    --font-body: "Inter", sans-serif;
+    
+    /* Type system */
+    --f-size-body: 16px;
+    --f-size-xs: 0.75rem;
 
 
 
-    /* //////////////////////////////////////////////////////// */
-    /* TIER THREE COLORS */
 
-    /* GLOBAL //// */
-    --color-txt-default: var(--default);
-    --color-heading: var(--heading);
+    /* LABEL //////////////// */
+
+    /* Family */
+    --font-label: var(--font-body);
+
+    /* Type system */
+    --f-size-label: var(--f-size-body);
 
 
-    /* FORM //// */
-    --color-label-form: var(--form);
-    --color-field-form: var(--form-light-01);
-    --color-field-form-hover: var(--form-light-02);
+
+
+    /* ////////////////////////////////////////////////////////
+    COLOR
+    //////////////////////////////////////////////////////// */
+    
+    /* GLOBAL //////////////// */
+
+    /* Brand */
+    --color-brand: var(--color-indigo-700);
+
+    /* Content */
+    --color-default: var(--color-slate-800);
+    --color-heading: var(--color-default);
+    --color-subtle: var(--color-default);
+    --color-knockout: var(--color-background);
+    
+    /* Link */
+    --color-link: var(--color-default);
+    --color-link-hover: var(--color-default);
+
+    /* Form */
+    --color-form: var(--color-default);
+    --color-form-hover: var(--color-default);
+    --color-field-form: var(--color-background);
+    --color-field-form-hover: var(--color-background-subtle);
+
+    /* Background */
+    --color-background: var(--color-slate-300);
+    --color-background-subtle: var(--color-slate-400);
+    --color-background-knockout: var(--color-default);
+
+
+    /* FORM //////////////// */
 }
-
-
-
-
-
-
-
-/* //////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////// */
-/* ////////////////////////////////////////////////////////
-UTILITIES
-//////////////////////////////////////////////////////// */
-
-@utility fs-h1 {
-    font-size: var(--fs-h1);
-}
-
-@utility fs-h2 {
-    font-size: var(--fs-h2);
-}
-
 
 
 
@@ -108,57 +100,74 @@ BASE
 //////////////////////////////////////////////////////// */
 
 @layer base {
-    /* //////////////////////////////////////////////////////// */
-    /* GLOBAL */
+    /* ////////////////////////////////////////////////////////
+    GLOBAL 
+    //////////////////////////////////////////////////////// */
     * {
         @apply box-border;
     }
     body {
-        @apply flex flex-col min-h-screen p-8 bg-slate-100 font-body text-base;
-    }
-    main {
-        @apply grow my-8;
-    }
-    header {
-        @apply font-bold text-base text-slate-500;
+        @apply flex flex-col min-h-screen body;
     }
 
-    footer {
-        @apply font-bold text-sm text-slate-500;
-    }
-
-
-
-
-    /* //////////////////////////////////////////////////////// */
-    /* HEADINGS */
-    h1 {
-        @apply font-heading fs-h1 font-bold text-heading mb-12 tracking-tight;
-    }
-    h2 {
-        @apply font-heading fs-h2 font-bold text-heading mb-4 tracking-tight; 
-    }
-
-
-
-
-    /* //////////////////////////////////////////////////////// */
-    /* TEXT */
     p {
-        @apply text-base text-txt-default;
+        @apply mb-6;
     }
-    legend {
-        @apply text-sm font-medium text-slate-500;
-    }
+   
+}
 
 
 
 
-    /* //////////////////////////////////////////////////////// */
-    /* NAVIGATION */
-    a {
-        @apply text-base no-underline;
-    }
+
+
+
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////
+UTILITIES
+//////////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////////////
+TEXT STYLES
+//////////////////////////////////////////////////////// */
+
+@utility h0 {
+    @apply font-heading font-semibold leading-tight tracking-tight text-heading;
+    font-size: var(--f-size-h0);
+}
+
+@utility h1 {
+    @apply font-heading font-semibold leading-tight tracking-tight text-heading;
+    font-size: var(--f-size-h1);
+}
+
+@utility h2 {
+    @apply font-heading font-semibold leading-tight tracking-tight text-heading;
+    font-size: var(--f-size-h2);
+}
+
+@utility h3 {
+    @apply font-heading font-semibold leading-tight tracking-tight text-heading;
+    font-size: var(--f-size-h3);
+}
+
+@utility body {
+    @apply font-body font-medium leading-normal tracking-normal text-default;
+    font-size: var(--f-size-body);
+}
+
+@utility body-xs {
+    @apply font-body font-medium leading-normal tracking-normal text-default;
+    font-size: var(--f-size-xs);
+}
+
+@utility label {
+    @apply font-label font-semibold leading-normal tracking-normal text-default;
+    font-size: var(--f-size-label);
 }
 
 
@@ -176,26 +185,22 @@ BASE
 COMPONENTS
 //////////////////////////////////////////////////////// */
 
-@layer components {
-    /* //////////////////////////////////////////////////////// */
-    /* ORGANISMS  SECTIONS */
-    .sandbox {
-        @apply px-12;
-    }
-
-
-
-
+/* @layer components { */
     /* //////////////////////////////////////////////////////// */
     /* MOLECULES  FORM */
-    .input-text {
+    /* .input-text {
         @apply flex flex-col gap-0.5 max-w-72 text-base font-medium text-label-form;
 
         input {
             @apply bg-field-form px-3 py-1 rounded-md font-normal hover:bg-field-form-hover transition;
         }
-    }
-}
+    } */
+
+
+
+
+ 
+/* } */
 
 
 
