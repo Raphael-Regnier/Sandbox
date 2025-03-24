@@ -76,8 +76,8 @@ THEME
     --color-field-form-hover: var(--color-background-subtle);
 
     /* Background */
-    --color-background: var(--color-slate-400);
-    --color-background-subtle: var(--color-slate-500);
+    --color-background: var(--color-slate-300);
+    --color-background-subtle: var(--color-slate-400);
     --color-background-knockout: var(--color-default);
 
 
@@ -104,7 +104,7 @@ BASE
     GLOBAL 
     //////////////////////////////////////////////////////// */
     * {
-        @apply box-border;
+        @apply box-border focus;
     }
     body {
         @apply flex flex-col min-h-screen body;
@@ -138,22 +138,22 @@ TYPOGRAPHY
 /* HEADINGS //////////////// */
 
 @utility h0 {
-    @apply font-heading font-semibold leading-tight tracking-tight text-heading;
+    @apply font-heading font-semibold leading-none tracking-tight text-heading;
     font-size: var(--f-size-h0);
 }
 
 @utility h1 {
-    @apply font-heading font-semibold leading-tight tracking-tight text-heading;
+    @apply font-heading font-semibold leading-none tracking-tight text-heading;
     font-size: var(--f-size-h1);
 }
 
 @utility h2 {
-    @apply font-heading font-semibold leading-tight tracking-tight text-heading;
+    @apply font-heading font-semibold leading-none tracking-tight text-heading;
     font-size: var(--f-size-h2);
 }
 
 @utility h3 {
-    @apply font-heading font-semibold leading-tight tracking-tight text-heading;
+    @apply font-heading font-semibold leading-none tracking-tight text-heading;
     font-size: var(--f-size-h3);
 }
 
@@ -188,18 +188,31 @@ LAYOUT
 /* SECTION //////////////// */
 
 @utility section {
-    @apply max-w-full mx-4 md:mx-16;
+    @apply mx-4 md:mx-16;
 }
 
 
 /* GRIDS //////////////// */
 
 @utility grid-12 {
-    @apply grid grid-cols-1 grid-rows-2 gap-y-8 md:grid-cols-12 md:grid-rows-1 md:gap-x-8;
+    @apply grid gap-y-8 md:grid-cols-12 md:gap-x-8;
 }
 
 @utility grid-8 {
-    @apply grid grid-cols-1 max-w-full md:grid-cols-8 md:gap-x-8;
+    @apply grid grid-flow-row md:grid-cols-8 md:gap-x-8 ;
+}
+
+
+
+
+/* ////////////////////////////////////////////////////////
+MISCELLANEOUS
+//////////////////////////////////////////////////////// */
+
+/* FOCUS //////////////// */
+
+@utility focus {
+    @apply focus-visible:outline-4 focus-visible:outline-blue-700 focus-visible:rounded;
 }
 
 
