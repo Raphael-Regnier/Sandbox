@@ -76,8 +76,8 @@ THEME
     --color-field-form-hover: var(--color-background-subtle);
 
     /* Background */
-    --color-background: var(--color-slate-300);
-    --color-background-subtle: var(--color-slate-400);
+    --color-background: var(--color-slate-400);
+    --color-background-subtle: var(--color-slate-500);
     --color-background-knockout: var(--color-default);
 
 
@@ -132,8 +132,10 @@ UTILITIES
 //////////////////////////////////////////////////////// */
 
 /* ////////////////////////////////////////////////////////
-TEXT STYLES
+TYPOGRAPHY
 //////////////////////////////////////////////////////// */
+
+/* HEADINGS //////////////// */
 
 @utility h0 {
     @apply font-heading font-semibold leading-tight tracking-tight text-heading;
@@ -155,6 +157,9 @@ TEXT STYLES
     font-size: var(--f-size-h3);
 }
 
+
+/* BODY //////////////// */
+
 @utility body {
     @apply font-body font-medium leading-normal tracking-normal text-default;
     font-size: var(--f-size-body);
@@ -165,9 +170,36 @@ TEXT STYLES
     font-size: var(--f-size-xs);
 }
 
+
+/* LABELS //////////////// */
+
 @utility label {
     @apply font-label font-semibold leading-normal tracking-normal text-default;
     font-size: var(--f-size-label);
+}
+
+
+
+
+/* ////////////////////////////////////////////////////////
+LAYOUT
+//////////////////////////////////////////////////////// */
+
+/* SECTION //////////////// */
+
+@utility section {
+    @apply max-w-full mx-4 md:mx-16;
+}
+
+
+/* GRIDS //////////////// */
+
+@utility grid-12 {
+    @apply grid grid-cols-1 grid-rows-2 gap-y-8 md:grid-cols-12 md:grid-rows-1 md:gap-x-8;
+}
+
+@utility grid-8 {
+    @apply grid grid-cols-1 max-w-full md:grid-cols-8 md:gap-x-8;
 }
 
 
