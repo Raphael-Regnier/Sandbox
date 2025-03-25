@@ -1,6 +1,28 @@
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////
+
+1   2   3   4   5   6   7   8   9   10  11  12  13
+|   |   |   |   |   |   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+---+---+---+---+---+
+|                                               |
++---+---+---+---+---+---+---+---+---+---+---+---+
+
+HAT AND THE GANG
+PLANET MARS
+
+LAST UPDATE  00/MARS/2025
+V 00.01
+
+//////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+
 @import "tailwindcss";
 
-/* //////////////////////////////////////////////////////// */
+
+
+
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
@@ -9,9 +31,9 @@ THEME
 //////////////////////////////////////////////////////// */
 
 @theme {
-    /* ////////////////////////////////////////////////////////
-    TYPOGRAPHY
-    //////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////
+TYPOGRAPHY
+//////////////////////////////////////////////////////// */
 
     /* HEADING //////////////// */
 
@@ -33,7 +55,7 @@ THEME
     --font-body: "Inter", sans-serif;
     
     /* Type system */
-    --f-size-body: 16px;
+    --f-size-body: 1rem;
     --f-size-xs: 0.75rem;
 
 
@@ -50,38 +72,48 @@ THEME
 
 
 
-    /* ////////////////////////////////////////////////////////
-    COLOR
-    //////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////
+COLOR
+//////////////////////////////////////////////////////// */
     
-    /* GLOBAL //////////////// */
-
-    /* Brand */
+    /* BRAND //////////////// */
     --color-brand: var(--color-indigo-700);
 
-    /* Content */
+
+
+
+    /* CONTENT //////////////// */
     --color-default: var(--color-slate-800);
     --color-heading: var(--color-default);
     --color-subtle: var(--color-default);
     --color-knockout: var(--color-background);
     
-    /* Link */
+
+
+
+    /* LINK //////////////// */
     --color-link: var(--color-default);
     --color-link-hover: var(--color-default);
 
-    /* Form */
+
+
+
+    /* FORM //////////////// */
     --color-form: var(--color-default);
     --color-form-hover: var(--color-default);
     --color-field-form: var(--color-background);
     --color-field-form-hover: var(--color-background-subtle);
 
-    /* Background */
+
+
+
+    /* BACKGROUND //////////////// */
     --color-background: var(--color-slate-300);
     --color-background-subtle: var(--color-slate-400);
     --color-background-knockout: var(--color-default);
 
 
-    /* FORM //////////////// */
+    
 }
 
 
@@ -94,20 +126,19 @@ THEME
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////
 BASE
 //////////////////////////////////////////////////////// */
 
 @layer base {
-    /* ////////////////////////////////////////////////////////
-    GLOBAL 
-    //////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////
+GLOBAL 
+//////////////////////////////////////////////////////// */
     * {
         @apply box-border focus;
     }
     body {
-        @apply flex flex-col min-h-screen body;
+        @apply flex flex-col min-h-screen paragraph;
     }
 
     p {
@@ -123,7 +154,6 @@ BASE
 
 
 
-/* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
@@ -160,12 +190,12 @@ TYPOGRAPHY
 
 /* BODY //////////////// */
 
-@utility body {
+@utility paragraph {
     @apply font-body font-medium leading-normal tracking-normal text-default;
     font-size: var(--f-size-body);
 }
 
-@utility body-xs {
+@utility paragraph-xs {
     @apply font-body font-medium leading-normal tracking-normal text-default;
     font-size: var(--f-size-xs);
 }
@@ -188,7 +218,7 @@ LAYOUT
 /* SECTION //////////////// */
 
 @utility section {
-    @apply mx-4 md:mx-16;
+    @apply mx-4 my-32 md:mx-12 md:my-56;
 }
 
 
@@ -199,7 +229,7 @@ LAYOUT
 }
 
 @utility grid-8 {
-    @apply grid grid-flow-row md:grid-cols-8 md:gap-x-8 ;
+    @apply grid md:grid-cols-8 md:gap-x-8 ;
 }
 
 
@@ -225,14 +255,39 @@ MISCELLANEOUS
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////
 COMPONENTS
 //////////////////////////////////////////////////////// */
 
-/* @layer components { */
-    /* //////////////////////////////////////////////////////// */
-    /* MOLECULES  FORM */
+@layer components {
+/* ////////////////////////////////////////////////////////
+MOLECULES
+//////////////////////////////////////////////////////// */
+
+    /* CARD //////////////// */
+    .card {
+        @apply col-span-3;
+
+        a {
+           @apply block; 
+        }
+
+        figure {
+            @apply py-20 bg-[url(//unsplash.it/510)] bg-cover rounded-xl;
+        }
+
+        .group-content {
+            @apply pt-10;
+        }
+
+        span.button {
+            @apply w-fit
+        }
+    }
+
+
+    /* FORM //////////////// */
+
     /* .input-text {
         @apply flex flex-col gap-0.5 max-w-72 text-base font-medium text-label-form;
 
@@ -244,8 +299,29 @@ COMPONENTS
 
 
 
+/* ////////////////////////////////////////////////////////
+ATOMS
+//////////////////////////////////////////////////////// */
+
+    /* BUTTON //////////////// */
+
+    .button {
+        @apply flex justify-center items-center px-6 py-3 rounded-xl whitespace-nowrap
+        flex justify-center items-center px-6 py-3 rounded-xl whitespace-nowrap;
+        
+        &.button-prim {
+            @apply bg-background-knockout  text-knockout hover:bg-transparent hover:text-default focus-visible:bg-transparent focus-visible:text-default;
+        }
+    
+        &.button-sec {
+            @apply border border-2 border-slate-800;
+        }
+    }
+
+
+
  
-/* } */
+}
 
 
 

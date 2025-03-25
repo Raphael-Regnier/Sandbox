@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "npx @tailwindcss/cli -i ./src/app.css -o ./public/css/styles.css --content='./src/components/input.html' --watch",
+    "start": "npx @tailwindcss/cli -i ./src/app.css -o ./public/css/styles.css --content='./src/components/home.html' --watch",
     "refresh": "rm -rf .cache ./public/css/output.css"
   },
   "dependencies": {
