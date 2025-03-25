@@ -43,7 +43,7 @@ TYPOGRAPHY
     /* Type system */
     --f-size-h0: 18rem;
     --f-size-h1: 6rem;
-    --f-size-h2: 4.5rem;
+    --f-size-h2: 3.6rem;
     --f-size-h3: 2rem;
 
 
@@ -85,7 +85,7 @@ COLOR
     /* CONTENT //////////////// */
     --color-default: var(--color-slate-800);
     --color-heading: var(--color-default);
-    --color-subtle: var(--color-default);
+    --color-subtle: var(--color-slate-600);
     --color-knockout: var(--color-background);
     
 
@@ -229,7 +229,11 @@ LAYOUT
 }
 
 @utility grid-8 {
-    @apply grid md:grid-cols-8 md:gap-x-8 ;
+    @apply grid md:grid-cols-8 md:gap-x-8;
+}
+
+@utility grid-6 {
+    @apply grid md:grid-cols-6 md:gap-x-8;
 }
 
 
@@ -242,7 +246,10 @@ MISCELLANEOUS
 /* FOCUS //////////////// */
 
 @utility focus {
-    @apply focus-visible:outline-4 focus-visible:outline-blue-700 focus-visible:rounded;
+    @apply focus-visible:outline-none rounded;
+    &:focus-visible {
+        box-shadow: 0 0 0 4px var(--color-default), 0 0 0 6px var(--color-subtle);
+    }
 }
 
 
@@ -266,14 +273,14 @@ MOLECULES
 
     /* CARD //////////////// */
     .card {
-        @apply col-span-3;
+        @apply col-span-4;
 
         a {
-           @apply block; 
+           @apply block rounded-xl; 
         }
 
         figure {
-            @apply py-20 bg-[url(//unsplash.it/510)] bg-cover rounded-xl;
+            @apply py-48 bg-[url(//unsplash.it/510)] bg-cover rounded-xl;
         }
 
         .group-content {
