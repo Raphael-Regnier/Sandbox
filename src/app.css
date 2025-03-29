@@ -13,7 +13,7 @@ HAT AND THE GANG
 PLANET MARS
 
 LAST UPDATE  00/MARS/2025
-V 00.01
+V 00.00
 
 //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
@@ -35,22 +35,11 @@ THEME
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////
-TOKENS
+1ST TEAR TOKENS
 //////////////////////////////////////////////////////// */
 
 /* ////////////////////////////////////////////////////////
-COLOR
-//////////////////////////////////////////////////////// */
-
-
-
-
-
-
-
-
-/* ////////////////////////////////////////////////////////
-SPACING
+COLOR • 1ST
 //////////////////////////////////////////////////////// */
 
 
@@ -59,15 +48,34 @@ SPACING
 
 
 
+
 /* ////////////////////////////////////////////////////////
-TYPOGRAPHY
+SPACING • 1ST
+//////////////////////////////////////////////////////// */
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+TYPOGRAPHY • 1ST
 //////////////////////////////////////////////////////// */
 
     /* SCALE //////////////// */
+    --f-scale: 1.618; /* golden ratio */
     --f-size-12: calc(var(--f-size-16) * 0.75);
-    --f-size-14: 0.875rem;
+    --f-size-14: calc(var(--f-size-16) * 0.875);
     --f-size-16: 1rem;
-    --f-size--24: 24rem;
+    --f-size-24: calc(var(--f-size-16) * var(--f-scale));
+    --f-size-36: calc(var(--f-size-24) * var(--f-scale));
+    --f-size-54: calc(var(--f-size-36) * var(--f-scale));
+    --f-size-81: calc(var(--f-size-54) * var(--f-scale));
+    --f-size-121: calc(var(--f-size-81) * var(--f-scale));
+    --f-size-182: calc(var(--f-size-121) * var(--f-scale));
+    --f-size-273: calc(var(--f-size-182) * var(--f-scale));
+    --f-size-409: calc(var(--f-size-273) * var(--f-scale));
 
 
 
@@ -88,50 +96,15 @@ TYPOGRAPHY
 
 
 
-
-
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////
-TYPOGRAPHY
+2ND TEAR TOKENS
 //////////////////////////////////////////////////////// */
 
-    /* HEADING //////////////// */
-
-    /* Family */
-    --font-heading: "Inter", sans-serif;
-
-    /* Type sizes */
-    --f-size-h0: 37.5rem;
-    --f-size-h1: 8rem;
-    --f-size-h2: 4.5rem;
-    --f-size-h3: 2.25rem;
-
-
-
-
-    /* BODY //////////////// */
-
-    /* Family */
-    --font-body: "Inter", sans-serif;
-    
-    /* Type size */
-    --f-size-body: var(--f-size-16);
-
-
-
-
-    /* LABEL //////////////// */
-
-    /* Family */
-    --font-label: var(--font-body);
-
-    /* Type size */
-    --f-size-label: var(--f-size-14);
-
-
-
-
 /* ////////////////////////////////////////////////////////
-COLOR
+COLOR • 2ND
 //////////////////////////////////////////////////////// */
     
     /* BRAND //////////////// */
@@ -171,8 +144,65 @@ COLOR
     --color-background-knockout: var(--color-default);
 
 
+
+
+
+
+
+    
+/* ////////////////////////////////////////////////////////
+TYPOGRAPHY • 2ND
+//////////////////////////////////////////////////////// */
+
+    /* HEADING //////////////// */
+
+    /* Family */
+    --font-heading: "Inter", sans-serif;
+
+    /* Type sizes */
+    --f-size-h0: var(--f-size-121);
+    --f-size-h1: var(--f-size-121);
+    --f-size-h2: var(--f-size-81);
+    --f-size-h3: var(--f-size-36);
+
+
+
+
+    /* BODY //////////////// */
+
+    /* Family */
+    --font-body: "Inter", sans-serif;
+    
+    /* Type size */
+    --f-size-body: var(--f-size-16);
+
+
+
+
+    /* LABEL //////////////// */
+
+    /* Family */
+    --font-label: var(--font-body);
+
+    /* Type size */
+    --f-size-label: var(--f-size-14);
+
+
+
+
+
+
+
     
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -212,6 +242,14 @@ GLOBAL
 
 
 
+
+
+
+
+
+
+
+
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
@@ -226,12 +264,12 @@ TYPOGRAPHY
 /* HEADINGS //////////////// */
 
 @utility h0 {
-    @apply font-heading font-normal leading-none tracking-tight text-heading;
+    @apply font-heading font-normal leading-none tracking-tighter text-heading;
     font-size: var(--f-size-h0);
 }
 
 @utility h1 {
-    @apply font-heading font-normal leading-none tracking-tight text-heading;
+    @apply font-heading font-normal leading-none tracking-tighter text-heading;
     font-size: var(--f-size-h1);
 }
 
@@ -309,6 +347,14 @@ MISCELLANEOUS
         box-shadow: 0 0 0 4px var(--color-default), 0 0 0 6px var(--color-subtle);
     }
 }
+
+
+
+
+
+
+
+
 
 
 

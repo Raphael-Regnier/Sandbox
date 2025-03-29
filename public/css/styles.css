@@ -21,6 +21,7 @@
     --text-base--line-height: calc(1.5 / 1);
     --font-weight-normal: 400;
     --font-weight-semibold: 600;
+    --tracking-tighter: -0.05em;
     --tracking-tight: -0.025em;
     --tracking-normal: 0em;
     --leading-normal: 1.5;
@@ -43,17 +44,14 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
-    --f-size-14: 0.875rem;
+    --f-scale: 1.618;
+    --f-size-14: calc(var(--f-size-16) * 0.875);
     --f-size-16: 1rem;
-    --font-heading: "Inter", sans-serif;
-    --f-size-h0: 37.5rem;
-    --f-size-h1: 8rem;
-    --f-size-h2: 4.5rem;
-    --f-size-h3: 2.25rem;
-    --font-body: "Inter", sans-serif;
-    --f-size-body: var(--f-size-16);
-    --font-label: var(--font-body);
-    --f-size-label: var(--f-size-14);
+    --f-size-24: calc(var(--f-size-16) * var(--f-scale));
+    --f-size-36: calc(var(--f-size-24) * var(--f-scale));
+    --f-size-54: calc(var(--f-size-36) * var(--f-scale));
+    --f-size-81: calc(var(--f-size-54) * var(--f-scale));
+    --f-size-121: calc(var(--f-size-81) * var(--f-scale));
     --color-brand: var(--color-indigo-700);
     --color-default: var(--color-slate-800);
     --color-heading: var(--color-default);
@@ -61,6 +59,15 @@
     --color-knockout: var(--color-background);
     --color-background: var(--color-slate-300);
     --color-background-knockout: var(--color-default);
+    --font-heading: "Inter", sans-serif;
+    --f-size-h0: var(--f-size-121);
+    --f-size-h1: var(--f-size-121);
+    --f-size-h2: var(--f-size-81);
+    --f-size-h3: var(--f-size-36);
+    --font-body: "Inter", sans-serif;
+    --f-size-body: var(--f-size-16);
+    --font-label: var(--font-body);
+    --f-size-label: var(--f-size-14);
   }
 }
 @layer base {
@@ -1733,8 +1740,8 @@
     line-height: 1;
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
-    --tw-tracking: var(--tracking-tight);
-    letter-spacing: var(--tracking-tight);
+    --tw-tracking: var(--tracking-tighter);
+    letter-spacing: var(--tracking-tighter);
     color: var(--color-heading);
     font-size: var(--f-size-h0);
   }
@@ -1744,8 +1751,8 @@
     line-height: 1;
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
-    --tw-tracking: var(--tracking-tight);
-    letter-spacing: var(--tracking-tight);
+    --tw-tracking: var(--tracking-tighter);
+    letter-spacing: var(--tracking-tighter);
     color: var(--color-heading);
     font-size: var(--f-size-h1);
   }
@@ -2459,6 +2466,11 @@
       border-radius: 0;
     }
   }
+  .md\:col-span-3 {
+    @media (width >= 48rem) {
+      grid-column: span 3 / span 3;
+    }
+  }
   .md\:col-span-4 {
     @media (width >= 48rem) {
       grid-column: span 4 / span 4;
@@ -2472,6 +2484,11 @@
   .md\:col-span-8 {
     @media (width >= 48rem) {
       grid-column: span 8 / span 8;
+    }
+  }
+  .md\:col-span-9 {
+    @media (width >= 48rem) {
+      grid-column: span 9 / span 9;
     }
   }
   .md\:col-span-10 {
