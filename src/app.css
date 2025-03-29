@@ -31,6 +31,65 @@ THEME
 //////////////////////////////////////////////////////// */
 
 @theme {
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////
+TOKENS
+//////////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////////////
+COLOR
+//////////////////////////////////////////////////////// */
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+SPACING
+//////////////////////////////////////////////////////// */
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+TYPOGRAPHY
+//////////////////////////////////////////////////////// */
+
+    /* SCALE //////////////// */
+    --f-size-12: calc(var(--f-size-16) * 0.75);
+    --f-size-14: 0.875rem;
+    --f-size-16: 1rem;
+    --f-size--24: 24rem;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ////////////////////////////////////////////////////////
 TYPOGRAPHY
 //////////////////////////////////////////////////////// */
@@ -40,11 +99,11 @@ TYPOGRAPHY
     /* Family */
     --font-heading: "Inter", sans-serif;
 
-    /* Type system */
-    --f-size-h0: 18rem;
-    --f-size-h1: 6rem;
-    --f-size-h2: 3.6rem;
-    --f-size-h3: 2rem;
+    /* Type sizes */
+    --f-size-h0: 37.5rem;
+    --f-size-h1: 8rem;
+    --f-size-h2: 4.5rem;
+    --f-size-h3: 2.25rem;
 
 
 
@@ -54,9 +113,8 @@ TYPOGRAPHY
     /* Family */
     --font-body: "Inter", sans-serif;
     
-    /* Type system */
-    --f-size-body: 1rem;
-    --f-size-xs: 0.75rem;
+    /* Type size */
+    --f-size-body: var(--f-size-16);
 
 
 
@@ -66,8 +124,8 @@ TYPOGRAPHY
     /* Family */
     --font-label: var(--font-body);
 
-    /* Type system */
-    --f-size-label: var(--f-size-body);
+    /* Type size */
+    --f-size-label: var(--f-size-14);
 
 
 
@@ -168,22 +226,22 @@ TYPOGRAPHY
 /* HEADINGS //////////////// */
 
 @utility h0 {
-    @apply font-heading font-semibold leading-none tracking-tight text-heading;
+    @apply font-heading font-normal leading-none tracking-tight text-heading;
     font-size: var(--f-size-h0);
 }
 
 @utility h1 {
-    @apply font-heading font-semibold leading-none tracking-tight text-heading;
+    @apply font-heading font-normal leading-none tracking-tight text-heading;
     font-size: var(--f-size-h1);
 }
 
 @utility h2 {
-    @apply font-heading font-semibold leading-none tracking-tight text-heading;
+    @apply font-heading font-normal leading-none tracking-tight text-heading;
     font-size: var(--f-size-h2);
 }
 
 @utility h3 {
-    @apply font-heading font-semibold leading-none tracking-tight text-heading;
+    @apply font-heading font-normal leading-none tracking-tight text-heading;
     font-size: var(--f-size-h3);
 }
 
@@ -191,12 +249,12 @@ TYPOGRAPHY
 /* BODY //////////////// */
 
 @utility paragraph {
-    @apply font-body font-medium leading-normal tracking-normal text-default;
+    @apply font-body font-normal leading-normal tracking-normal text-default;
     font-size: var(--f-size-body);
 }
 
 @utility paragraph-xs {
-    @apply font-body font-medium leading-normal tracking-normal text-default;
+    @apply font-body font-normal leading-normal tracking-normal text-default;
     font-size: var(--f-size-xs);
 }
 
@@ -204,7 +262,7 @@ TYPOGRAPHY
 /* LABELS //////////////// */
 
 @utility label {
-    @apply font-label font-semibold leading-normal tracking-normal text-default;
+    @apply font-label font-semibold leading-normal tracking-normal uppercase text-default;
     font-size: var(--f-size-label);
 }
 
@@ -273,14 +331,14 @@ MOLECULES
 
     /* CARD //////////////// */
     .card {
-        @apply col-span-4;
+        @apply col-span-3;
 
         a {
            @apply block rounded-xl; 
         }
 
         figure {
-            @apply py-48 bg-[url(//unsplash.it/510)] bg-cover rounded-xl;
+            @apply py-24 bg-[url(//unsplash.it/510)] bg-cover rounded-xl;
         }
 
         .group-content {
@@ -296,7 +354,7 @@ MOLECULES
     /* FORM //////////////// */
 
     /* .input-text {
-        @apply flex flex-col gap-0.5 max-w-72 text-base font-medium text-label-form;
+        @apply flex flex-col gap-0.5 max-w-72 text-base font-normal text-label-form;
 
         input {
             @apply bg-field-form px-3 py-1 rounded-md font-normal hover:bg-field-form-hover transition;
@@ -314,7 +372,7 @@ ATOMS
 
     .button {
         @apply flex justify-center items-center px-6 py-3 rounded-xl whitespace-nowrap
-        flex justify-center items-center px-6 py-3 rounded-xl whitespace-nowrap;
+        flex justify-center items-center px-6 py-3 rounded-xl label whitespace-nowrap;
         
         &.button-prim {
             @apply bg-background-knockout  text-knockout hover:bg-transparent hover:text-default focus-visible:bg-transparent focus-visible:text-default;
