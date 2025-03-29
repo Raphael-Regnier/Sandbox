@@ -65,17 +65,17 @@ TYPOGRAPHY • 1ST
 
     /* SCALE //////////////// */
     --f-scale: 1.618; /* golden ratio */
-    --f-size-12: calc(var(--f-size-16) * 0.75);
-    --f-size-14: calc(var(--f-size-16) * 0.875);
-    --f-size-16: 1rem;
-    --f-size-24: calc(var(--f-size-16) * var(--f-scale));
-    --f-size-36: calc(var(--f-size-24) * var(--f-scale));
-    --f-size-54: calc(var(--f-size-36) * var(--f-scale));
-    --f-size-81: calc(var(--f-size-54) * var(--f-scale));
-    --f-size-121: calc(var(--f-size-81) * var(--f-scale));
-    --f-size-182: calc(var(--f-size-121) * var(--f-scale));
-    --f-size-273: calc(var(--f-size-182) * var(--f-scale));
-    --f-size-409: calc(var(--f-size-273) * var(--f-scale));
+    --f-size-xsmall: calc(var(--f-size-base) * 0.75);
+    --f-size-small: calc(var(--f-size-base) * 0.875);
+    --f-size-base: 1rem;
+    --f-size-s1: calc(var(--f-size-base) * var(--f-scale));
+    --f-size-s2: calc(var(--f-size-s1) * var(--f-scale));
+    --f-size-s3: calc(var(--f-size-s2) * var(--f-scale));
+    --f-size-s4: calc(var(--f-size-s3) * var(--f-scale));
+    --f-size-s5: calc(var(--f-size-s4) * var(--f-scale));
+    --f-size-s6: calc(var(--f-size-s5) * var(--f-scale));
+    --f-size-s7: calc(var(--f-size-s6) * var(--f-scale));
+    --f-size-s8: calc(var(--f-size-s7) * var(--f-scale));
 
 
 
@@ -149,7 +149,7 @@ COLOR • 2ND
 
 
 
-    
+
 /* ////////////////////////////////////////////////////////
 TYPOGRAPHY • 2ND
 //////////////////////////////////////////////////////// */
@@ -160,10 +160,10 @@ TYPOGRAPHY • 2ND
     --font-heading: "Inter", sans-serif;
 
     /* Type sizes */
-    --f-size-h0: var(--f-size-121);
-    --f-size-h1: var(--f-size-121);
-    --f-size-h2: var(--f-size-81);
-    --f-size-h3: var(--f-size-36);
+    --f-size-h0: var(--f-size-s8);
+    --f-size-h1: var(--f-size-s5);
+    --f-size-h2: var(--f-size-s4);
+    --f-size-h3: var(--f-size-s2);
 
 
 
