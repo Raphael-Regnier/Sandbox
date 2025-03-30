@@ -44,17 +44,19 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
+    --spacer: calc(var(--f-size-base) / 4);
+    --spacer-8: calc(var(--spacer) * 8);
     --f-scale: 1.618;
-    --f-size-small: calc(var(--f-size-base) * 0.875);
+    --f-size-xsmall: calc(var(--f-size-base) * 0.75);
     --f-size-base: max(1rem, calc(0.66vw + 0.44rem));
-    --f-size-1: calc(var(--f-size-base) * var(--f-scale));
-    --f-size-2: calc(var(--f-size-1) * var(--f-scale));
+    --f-size-2: calc(var(--f-size-base) * var(--f-scale));
     --f-size-3: calc(var(--f-size-2) * var(--f-scale));
     --f-size-4: calc(var(--f-size-3) * var(--f-scale));
     --f-size-5: calc(var(--f-size-4) * var(--f-scale));
     --f-size-6: calc(var(--f-size-5) * var(--f-scale));
     --f-size-7: calc(var(--f-size-6) * var(--f-scale));
     --f-size-8: calc(var(--f-size-7) * var(--f-scale));
+    --f-size-9: calc(var(--f-size-8) * var(--f-scale));
     --color-brand: var(--color-indigo-700);
     --color-default: var(--color-slate-800);
     --color-heading: var(--color-default);
@@ -62,15 +64,16 @@
     --color-knockout: var(--color-background);
     --color-background: var(--color-slate-300);
     --color-background-knockout: var(--color-default);
+    --spacing-gutter: var(--spacer-8);
     --font-heading: "Inter", sans-serif;
-    --text-h0: var(--f-size-8);
-    --text-h1: var(--f-size-5);
-    --text-h2: var(--f-size-4);
-    --text-h3: var(--f-size-2);
+    --text-h0: var(--f-size-9);
+    --text-h1: var(--f-size-6);
+    --text-h2: var(--f-size-5);
+    --text-h3: var(--f-size-3);
     --font-body: "Inter", sans-serif;
     --text-body: var(--f-size-base);
     --font-label: var(--font-body);
-    --text-label: var(--f-size-small);
+    --text-label: var(--f-size-xsmall);
   }
 }
 @layer base {
@@ -441,33 +444,34 @@
   .box-content {
     box-sizing: content-box;
   }
-  .grid-12 {
-    display: grid;
-    row-gap: calc(var(--spacing) * 8);
-    @media (width >= 48rem) {
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-    }
-    @media (width >= 48rem) {
-      column-gap: calc(var(--spacing) * 8);
-    }
-  }
   .grid-8 {
     display: grid;
+    column-gap: var(--spacing-gutter);
     @media (width >= 48rem) {
       grid-template-columns: repeat(8, minmax(0, 1fr));
-    }
-    @media (width >= 48rem) {
-      column-gap: calc(var(--spacing) * 8);
     }
   }
   .grid-9 {
     display: grid;
+    column-gap: var(--spacing-gutter);
     @media (width >= 48rem) {
       grid-template-columns: repeat(9, minmax(0, 1fr));
     }
+  }
+  .grid-12 {
+    display: grid;
+    column-gap: var(--spacing-gutter);
     @media (width >= 48rem) {
-      column-gap: calc(var(--spacing) * 8);
+      grid-template-columns: repeat(12, minmax(0, 1fr));
     }
+  }
+  .layout {
+    display: grid;
+    column-gap: var(--spacing-gutter);
+  }
+  .layout\! {
+    display: grid !important;
+    column-gap: var(--spacing-gutter) !important;
   }
   .line-clamp-none {
     overflow: visible;
@@ -573,9 +577,6 @@
   }
   .max-h-screen {
     max-height: 100vh;
-  }
-  .min-h-80 {
-    min-height: calc(var(--spacing) * 80);
   }
   .min-h-screen {
     min-height: 100vh;
@@ -1098,8 +1099,8 @@
   .gap-6 {
     gap: calc(var(--spacing) * 6);
   }
-  .gap-8 {
-    gap: calc(var(--spacing) * 8);
+  .gap-gutter {
+    gap: var(--spacing-gutter);
   }
   .space-y-reverse {
     :where(& > :not(:last-child)) {
@@ -2477,6 +2478,11 @@
   .md\:col-span-4 {
     @media (width >= 48rem) {
       grid-column: span 4 / span 4;
+    }
+  }
+  .md\:col-span-5 {
+    @media (width >= 48rem) {
+      grid-column: span 5 / span 5;
     }
   }
   .md\:col-span-6 {

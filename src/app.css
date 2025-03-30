@@ -52,7 +52,18 @@ COLOR • 1ST
 /* ////////////////////////////////////////////////////////
 SPACING • 1ST
 //////////////////////////////////////////////////////// */
-
+--spacer: calc(var(--f-size-base) / 4);
+--spacer-2: calc(var(--spacer) * 2);
+--spacer-3: calc(var(--spacer) * 3);
+--spacer-4: calc(var(--spacer) * 4);
+--spacer-5: calc(var(--spacer) * 5);
+--spacer-6: calc(var(--spacer) * 6);
+--spacer-7: calc(var(--spacer) * 7);
+--spacer-8: calc(var(--spacer) * 8);
+--spacer-9: calc(var(--spacer) * 9);
+--spacer-10: calc(var(--spacer) * 10);
+--spacer-11: calc(var(--spacer) * 11);
+--spacer-12: calc(var(--spacer) * 12);
 
 
 
@@ -70,15 +81,14 @@ TYPOGRAPHY • 1ST
     --f-size-xsmall: calc(var(--f-size-base) * 0.75); /* 12px @ 800px vw */
     --f-size-small: calc(var(--f-size-base) * 0.875); /* 14px @ 800px vw */
     --f-size-base: max(1rem, calc(0.66vw + 0.44rem)); /* 16px @ 800px vw */
-    --f-size-1: calc(var(--f-size-base) * var(--f-scale));
-    --f-size-2: calc(var(--f-size-1) * var(--f-scale));
+    --f-size-2: calc(var(--f-size-base) * var(--f-scale));
     --f-size-3: calc(var(--f-size-2) * var(--f-scale));
     --f-size-4: calc(var(--f-size-3) * var(--f-scale));
     --f-size-5: calc(var(--f-size-4) * var(--f-scale));
     --f-size-6: calc(var(--f-size-5) * var(--f-scale));
     --f-size-7: calc(var(--f-size-6) * var(--f-scale));
     --f-size-8: calc(var(--f-size-7) * var(--f-scale));
-
+    --f-size-9: calc(var(--f-size-8) * var(--f-scale));
 
 
 
@@ -157,7 +167,7 @@ SPACING • 2ND
 //////////////////////////////////////////////////////// */
 
     /* LAYOUT //////////////// */
-    --gutter: max(0.25rem, calc(0.15vw + 0.2rem));
+    --spacing-gutter: var(--spacer-8);
 
 
 
@@ -173,10 +183,10 @@ TYPOGRAPHY • 2ND
     --font-heading: "Inter", sans-serif;
 
     /* Type sizes */
-    --text-h0: var(--f-size-8);
-    --text-h1: var(--f-size-5);
-    --text-h2: var(--f-size-4);
-    --text-h3: var(--f-size-2);
+    --text-h0: var(--f-size-9);
+    --text-h1: var(--f-size-6);
+    --text-h2: var(--f-size-5);
+    --text-h3: var(--f-size-3);
 
 
 
@@ -198,7 +208,7 @@ TYPOGRAPHY • 2ND
     --font-label: var(--font-body);
 
     /* Type size */
-    --text-label: var(--f-size-small);
+    --text-label: var(--f-size-xsmall);
 
 
 
@@ -330,20 +340,40 @@ LAYOUT • UTILITY
 
 /* GRIDS //////////////// */
 
+@utility layout {
+    @apply grid gap-x-gutter;
+}
+
 @utility grid-12 {
-    @apply grid gap-y-8 md:grid-cols-12 md:gap-x-8;
+    @apply layout md:grid-cols-12;
+}
+
+@utility grid-10 {
+    @apply layout md:grid-cols-10;
 }
 
 @utility grid-9 {
-    @apply grid md:grid-cols-9 md:gap-x-8;
+    @apply layout md:grid-cols-9;
 }
 
 @utility grid-8 {
-    @apply grid md:grid-cols-8 md:gap-x-8;
+    @apply layout md:grid-cols-8;
 }
 
 @utility grid-6 {
-    @apply grid md:grid-cols-6 md:gap-x-8;
+    @apply layout md:grid-cols-6;
+}
+
+@utility grid-4 {
+    @apply layout md:grid-cols-4;
+}
+
+@utility grid-3 {
+    @apply layout md:grid-cols-3;
+}
+
+@utility grid-2 {
+    @apply layout md:grid-cols-2;
 }
 
 
