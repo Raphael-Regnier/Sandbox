@@ -2591,7 +2591,7 @@
       border-radius: var(--radius-xl);
       background-image: url(//unsplash.it/510);
       background-size: cover;
-      padding-block: calc(var(--spacing) * 24);
+      padding-block: 13vw;
     }
     .group-content {
       padding-top: calc(var(--spacing) * 10);

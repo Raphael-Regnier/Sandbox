@@ -293,6 +293,8 @@ TYPOGRAPHY • UTILITY
 }
 
 
+
+
 /* BODY //////////////// */
 
 @utility paragraph {
@@ -300,11 +302,17 @@ TYPOGRAPHY • UTILITY
 }
 
 
+
+
 /* LABELS //////////////// */
 
 @utility label {
     @apply font-label text-label font-medium leading-normal tracking-normal uppercase text-default;
 }
+
+
+
+
 
 
 
@@ -337,6 +345,10 @@ LAYOUT • UTILITY
 @utility grid-6 {
     @apply grid md:grid-cols-6 md:gap-x-8;
 }
+
+
+
+
 
 
 
@@ -390,7 +402,8 @@ MOLECULES
         }
 
         figure {
-            @apply py-24 bg-[url(//unsplash.it/510)] bg-cover rounded-xl;
+            @apply bg-[url(//unsplash.it/510)] bg-cover rounded-xl;
+            padding-block: 13vw;
         }
 
         .group-content {
