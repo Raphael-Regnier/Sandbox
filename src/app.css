@@ -64,18 +64,20 @@ TYPOGRAPHY • 1ST
 //////////////////////////////////////////////////////// */
 
     /* SCALE //////////////// */
+
     --f-scale: 1.618; /* golden ratio */
+
     --f-size-xsmall: calc(var(--f-size-base) * 0.75); /* 12px @ 800px vw */
     --f-size-small: calc(var(--f-size-base) * 0.875); /* 14px @ 800px vw */
     --f-size-base: max(1rem, calc(0.66vw + 0.44rem)); /* 16px @ 800px vw */
-    --f-size-s1: calc(var(--f-size-base) * var(--f-scale));
-    --f-size-s2: calc(var(--f-size-s1) * var(--f-scale));
-    --f-size-s3: calc(var(--f-size-s2) * var(--f-scale));
-    --f-size-s4: calc(var(--f-size-s3) * var(--f-scale));
-    --f-size-s5: calc(var(--f-size-s4) * var(--f-scale));
-    --f-size-s6: calc(var(--f-size-s5) * var(--f-scale));
-    --f-size-s7: calc(var(--f-size-s6) * var(--f-scale));
-    --f-size-s8: calc(var(--f-size-s7) * var(--f-scale));
+    --f-size-1: calc(var(--f-size-base) * var(--f-scale));
+    --f-size-2: calc(var(--f-size-1) * var(--f-scale));
+    --f-size-3: calc(var(--f-size-2) * var(--f-scale));
+    --f-size-4: calc(var(--f-size-3) * var(--f-scale));
+    --f-size-5: calc(var(--f-size-4) * var(--f-scale));
+    --f-size-6: calc(var(--f-size-5) * var(--f-scale));
+    --f-size-7: calc(var(--f-size-6) * var(--f-scale));
+    --f-size-8: calc(var(--f-size-7) * var(--f-scale));
 
 
 
@@ -151,6 +153,17 @@ COLOR • 2ND
 
 
 /* ////////////////////////////////////////////////////////
+SPACING • 2ND
+//////////////////////////////////////////////////////// */
+
+    /* LAYOUT //////////////// */
+    --gutter: max(0.25rem, calc(0.15vw + 0.2rem));
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
 TYPOGRAPHY • 2ND
 //////////////////////////////////////////////////////// */
 
@@ -160,10 +173,10 @@ TYPOGRAPHY • 2ND
     --font-heading: "Inter", sans-serif;
 
     /* Type sizes */
-    --f-size-h0: var(--f-size-s8);
-    --f-size-h1: var(--f-size-s5);
-    --f-size-h2: var(--f-size-s4);
-    --f-size-h3: var(--f-size-s2);
+    --text-h0: var(--f-size-8);
+    --text-h1: var(--f-size-5);
+    --text-h2: var(--f-size-4);
+    --text-h3: var(--f-size-2);
 
 
 
@@ -174,7 +187,7 @@ TYPOGRAPHY • 2ND
     --font-body: "Inter", sans-serif;
     
     /* Type size */
-    --f-size-body: var(--f-size-base);
+    --text-body: var(--f-size-base);
 
 
 
@@ -185,7 +198,7 @@ TYPOGRAPHY • 2ND
     --font-label: var(--font-body);
 
     /* Type size */
-    --f-size-label: var(--f-size-small);
+    --text-label: var(--f-size-small);
 
 
 
@@ -258,57 +271,46 @@ UTILITIES
 //////////////////////////////////////////////////////// */
 
 /* ////////////////////////////////////////////////////////
-TYPOGRAPHY
+TYPOGRAPHY • UTILITY
 //////////////////////////////////////////////////////// */
 
 /* HEADINGS //////////////// */
 
 @utility h0 {
-    @apply font-heading font-medium leading-none tracking-tighter text-heading;
-    font-size: var(--f-size-h0);
+    @apply font-heading text-h0 font-medium leading-none tracking-tighter text-heading;
 }
 
 @utility h1 {
-    @apply font-heading font-medium leading-none tracking-tighter text-heading;
-    font-size: var(--f-size-h1);
+    @apply font-heading text-h1 font-medium leading-none tracking-tighter text-heading;
 }
 
 @utility h2 {
-    @apply font-heading font-medium leading-none tracking-tight text-heading;
-    font-size: var(--f-size-h2);
+    @apply font-heading text-h2 font-medium leading-none tracking-tight text-heading;
 }
 
 @utility h3 {
-    @apply font-heading font-medium leading-none tracking-tight text-heading;
-    font-size: var(--f-size-h3);
+    @apply font-heading text-h3 font-medium leading-none tracking-tight text-heading;
 }
 
 
 /* BODY //////////////// */
 
 @utility paragraph {
-    @apply font-body font-normal leading-normal tracking-normal text-default;
-    font-size: var(--f-size-body);
-}
-
-@utility paragraph-xs {
-    @apply font-body font-normal leading-normal tracking-normal text-default;
-    font-size: var(--f-size-xs);
+    @apply font-body text-body font-normal leading-normal tracking-normal text-default;
 }
 
 
 /* LABELS //////////////// */
 
 @utility label {
-    @apply font-label font-medium leading-normal tracking-normal uppercase text-default;
-    font-size: var(--f-size-label);
+    @apply font-label text-label font-medium leading-normal tracking-normal uppercase text-default;
 }
 
 
 
 
 /* ////////////////////////////////////////////////////////
-LAYOUT
+LAYOUT • UTILITY
 //////////////////////////////////////////////////////// */
 
 /* SECTION //////////////// */
@@ -340,7 +342,7 @@ LAYOUT
 
 
 /* ////////////////////////////////////////////////////////
-MISCELLANEOUS
+MISCELLANEOUS • UTILITY
 //////////////////////////////////////////////////////// */
 
 /* FOCUS //////////////// */
@@ -381,7 +383,7 @@ MOLECULES
 
     /* CARD //////////////// */
     .card {
-        @apply col-span-3;
+        @apply col-span-6;
 
         a {
            @apply block rounded-xl; 
