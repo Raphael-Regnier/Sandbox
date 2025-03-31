@@ -338,11 +338,14 @@ LAYOUT • UTILITY
 }
 
 
-/* GRIDS //////////////// */
+/* LAYOUT //////////////// */
 
 @utility layout {
     @apply grid gap-x-gutter;
 }
+
+
+/* GRIDS //////////////// */
 
 @utility grid-12 {
     @apply layout md:grid-cols-12;
