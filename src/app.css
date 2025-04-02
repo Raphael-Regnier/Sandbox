@@ -184,8 +184,8 @@ TYPOGRAPHY • 2ND
 
     /* Type sizes */
     --text-h0: var(--f-size-9);
-    --text-h1: var(--f-size-6);
-    --text-h2: var(--f-size-5);
+    --text-h1: var(--f-size-5);
+    --text-h2: var(--f-size-4);
     --text-h3: var(--f-size-3);
 
 
@@ -341,42 +341,69 @@ LAYOUT • UTILITY
 /* LAYOUT //////////////// */
 
 @utility layout {
-    @apply grid gap-x-gutter;
+    @apply grid gap-x-gutter gap-y-gutter;
 }
 
 
-/* GRIDS //////////////// */
 
-@utility grid-12 {
-    @apply layout md:grid-cols-12;
+
+/* GRIDS LG //////////////// */
+
+@utility grid-12-lg {
+    @apply layout lg:grid-cols-12 lg:gap-y-0;
 }
 
-@utility grid-10 {
-    @apply layout md:grid-cols-10;
+@utility grid-10-lg {
+    @apply layout lg:grid-cols-10  lg:gap-y-0;
 }
 
-@utility grid-9 {
-    @apply layout md:grid-cols-9;
+@utility grid-9-lg {
+    @apply layout lg:grid-cols-9  lg:gap-y-0;
 }
 
-@utility grid-8 {
-    @apply layout md:grid-cols-8;
+@utility grid-8-lg {
+    @apply layout lg:grid-cols-8  lg:gap-y-0;
 }
 
-@utility grid-6 {
-    @apply layout md:grid-cols-6;
+@utility grid-6-lg {
+    @apply layout lg:grid-cols-6  lg:gap-y-0;
 }
 
-@utility grid-4 {
-    @apply layout md:grid-cols-4;
+
+
+
+/* GRIDS MD //////////////// */
+
+@utility grid-12-md {
+    @apply layout md:grid-cols-12 md:gap-y-0;
 }
 
-@utility grid-3 {
-    @apply layout md:grid-cols-3;
+@utility grid-10-md {
+    @apply layout md:grid-cols-10  md:gap-y-0;
 }
 
-@utility grid-2 {
-    @apply layout md:grid-cols-2;
+@utility grid-9-md {
+    @apply layout md:grid-cols-9  md:gap-y-0;
+}
+
+@utility grid-8-md {
+    @apply layout md:grid-cols-8  md:gap-y-0;
+}
+
+@utility grid-6-md {
+    @apply layout md:grid-cols-6  md:gap-y-0;
+}
+
+@utility grid-4-md {
+    @apply layout md:grid-cols-4  md:gap-y-0;
+}
+
+@utility grid-3-md {
+    @apply layout md:grid-cols-3  md:gap-y-0;
+}
+
+@utility grid-2-md {
+    @apply layout md:grid-cols-2  md:gap-y-0;
 }
 
 
