@@ -80,8 +80,12 @@ TYPOGRAPHY • 1ST
 
     --f-size-xsmall: calc(var(--f-size-base) * 0.75); /* 12px @ 800px vw */
     --f-size-small: calc(var(--f-size-base) * 0.875); /* 14px @ 800px vw */
+
     --f-size-base: max(1rem, calc(0.66vw + 0.44rem)); /* 16px @ 800px vw */
-    --f-size-2: calc(var(--f-size-base) * var(--f-scale));
+
+    --f-size-heading: clamp(calc(var(--f-size-base) / 2), calc(calc(var(--f-size-base) / 2) + 0.5rem) , var(--f-size-base));
+
+    --f-size-2: calc(var(--f-size-heading) * var(--f-scale));
     --f-size-3: calc(var(--f-size-2) * var(--f-scale));
     --f-size-4: calc(var(--f-size-3) * var(--f-scale));
     --f-size-5: calc(var(--f-size-4) * var(--f-scale));
@@ -455,7 +459,7 @@ MOLECULES
 
     /* CARD //////////////// */
     .card {
-        @apply col-span-6;
+        @apply md:col-span-6 lg:col-span-4;
 
         a {
            @apply block rounded-xl; 
