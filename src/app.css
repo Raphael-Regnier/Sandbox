@@ -77,13 +77,13 @@ TYPOGRAPHY • 1ST
     /* SCALE //////////////// */
 
     --f-scale: 1.618; /* golden ratio */
+    --f-sizing: calc(0.66vw + 0.44rem); /* 16px @ 800px vw */
 
     --f-size-xsmall: calc(var(--f-size-base) * 0.75); /* 12px @ 800px vw */
     --f-size-small: calc(var(--f-size-base) * 0.875); /* 14px @ 800px vw */
 
-    --f-size-base: max(1rem, calc(0.66vw + 0.44rem)); /* 16px @ 800px vw */
-
-    --f-size-heading: clamp(calc(var(--f-size-base) / 2), calc(calc(var(--f-size-base) / 2) + 0.5rem) , var(--f-size-base));
+    --f-size-base: max(1rem, var(--f-sizing));
+    --f-size-heading: var(--f-sizing);
 
     --f-size-2: calc(var(--f-size-heading) * var(--f-scale));
     --f-size-3: calc(var(--f-size-2) * var(--f-scale));

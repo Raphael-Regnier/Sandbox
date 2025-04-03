@@ -47,9 +47,10 @@
     --spacer: calc(var(--f-size-base) / 4);
     --spacer-8: calc(var(--spacer) * 8);
     --f-scale: 1.618;
+    --f-sizing: calc(0.66vw + 0.44rem);
     --f-size-xsmall: calc(var(--f-size-base) * 0.75);
-    --f-size-base: max(1rem, calc(0.66vw + 0.44rem));
-    --f-size-heading: clamp(calc(var(--f-size-base) / 2), calc(calc(var(--f-size-base) / 2) + 0.5rem) , var(--f-size-base));
+    --f-size-base: max(1rem, var(--f-sizing));
+    --f-size-heading: var(--f-sizing);
     --f-size-2: calc(var(--f-size-heading) * var(--f-scale));
     --f-size-3: calc(var(--f-size-2) * var(--f-scale));
     --f-size-4: calc(var(--f-size-3) * var(--f-scale));
