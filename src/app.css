@@ -76,15 +76,19 @@ TYPOGRAPHY • 1ST
 
     /* SCALE //////////////// */
 
+    /* Foundations */
     --f-scale: 1.618; /* golden ratio */
     --f-sizing: calc(0.66vw + 0.44rem); /* 16px @ 1358px vw */
 
-    --f-size-xsmall: calc(var(--f-size-base) * 0.75); /* 12px @ 1358px vw */
-    --f-size-small: calc(var(--f-size-base) * 0.875); /* 14px @ 1358px vw */
-
+    /* Bases */
     --f-size-base: max(1rem, var(--f-sizing));
     --f-size-heading: var(--f-sizing);
 
+    /* Small */
+    --f-size-xsmall: calc(var(--f-size-base) * 0.75); /* 12px @ 1358px vw */
+    --f-size-small: calc(var(--f-size-base) * 0.875); /* 14px @ 1358px vw */
+
+    /* Headings */
     --f-size-2: calc(var(--f-size-heading) * var(--f-scale));
     --f-size-3: calc(var(--f-size-2) * var(--f-scale));
     --f-size-4: calc(var(--f-size-3) * var(--f-scale));
