@@ -61,10 +61,10 @@
 			<!-- SECTION HERO -->
 			<section class="grid-12-lg section mt-0">
 			
-				<!-- Left column: title, paragraph, buttons -->
+				<!-- Left column: Heading, paragraph, buttons -->
 				<div class="grid-8-lg gap-y-0 lg:col-span-8">
 	
-					<!-- Title & paragraphs -->
+					<!-- Heading & paragraphs -->
 					<h2 class="h2 lg:col-span-full mb-12">h2 heading</h2>
 					<p class="lg:col-span-6">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -99,7 +99,7 @@
 			<!-- SECTION FEATURE -->
 			<section class="grid-12-md gap-y-0 section">
 	
-				<!-- Title & paragraphs-->
+				<!-- Heading & paragraph-->
 				<h2 class="h2 md:col-span-full text-center mb-12">h2 heading</h2>
 				<p class="h1 md:col-span-10 md:col-start-2 text-center mb-18">Ut enim ad minim veniam, quis nostrud exercitation.</p>
 				<p class="text-center mb-10 md:col-span-6 md:col-start-4">
@@ -126,14 +126,14 @@
 			<!-- SECTION LISTING -->
 			<section class="grid-12-md section">
 			
-				<!-- Left column: Title, Paragraph, Buttons -->
+				<!-- Heading & paragraph -->
 				<div class="grid-8-md md:col-span-8">
-	
-					<!-- Title & paragraphs -->
+
 					<h2 class="h1 md:col-span-full mb-12">h2 heading</h2>
 					<p class="md:col-span-6">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 					</p>
+
 				</div>
 
 				<!-- Listing -->
@@ -227,10 +227,10 @@
 			<!-- SECTION ABOUT -->
 			<section class="grid-12-lg section mt-0">
 			
-				<!-- Left column: title, paragraph, buttons -->
+				<!-- Left column: heading, paragraph, buttons -->
 				<div class="grid-6-lg gap-y-0 lg:col-span-4 lg:col-start-2 lg:pt-12">
 	
-					<!-- Title & paragraphs -->
+					<!-- Heading & paragraphs -->
 					<h2 class="h2 col-span-full mb-12">h2 heading</h2>
 					<p class="col-span-full">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -249,11 +249,83 @@
 					</div>
 				</div>
 	
-				<!-- Right column : media -->
+				<!-- Right column : headline -->
 				<div class="lg:row-span-2 lg:col-span-6 lg:col-start-7">
-					<p class="h1">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+					<p class="h1">Ut enim ad minim veniam, quis nostrud exercitation.</p>
 				</div>
 			
+			</section>
+
+
+
+
+			<!-- SECTION CONTACT -->
+			<section class="grid-12-md gap-y-0 section">
+	
+				<!-- Headings -->
+				<h2 class="h3 md:col-span-6 md:col-start-4 text-center mb-12">h2 heading</h2>
+				<p class="h2 md:col-span-10 md:col-start-2 text-center mb-18">Ut enim ad minim veniam, quis nostrud exercitation.</p>
+
+				<!-- Form -->
+				<form class=" flex flex-col gap-4 md:col-span-8  md:col-start-3 lg:col-span-4 lg:col-start-5" id="contactForm" action="#" method="post" novalidate>
+						
+						<div class="input-field">
+							<label for="name" class="required-field">Name <span class="ml-4 legend">required</span></label>
+							<input 
+								type="text" 
+								id="name" 
+								name="name" 
+								required 
+								aria-required="true"
+								aria-describedby="nameError"
+							>
+							<div id="nameError" class="error-message" role="alert" aria-live="assertive"></div>
+						</div>
+						
+						<div class="input-field">
+							<label for="email" class="required-field">Email address <span class="ml-4 legend">required</span></label>
+							<input 
+								type="email" 
+								id="email" 
+								name="email" 
+								required 
+								aria-required="true"
+								aria-describedby="emailError"
+								autocomplete="email"
+							>
+							<div id="emailError" class="error-message" role="alert" aria-live="assertive"></div>
+						</div>
+						
+						<div class="input-field">
+							<label for="subject" class="required-field">Subject <span class="ml-4 legend">required</span></label>
+							<input 
+								type="text" 
+								id="subject" 
+								name="subject" 
+								required 
+								aria-required="true"
+								aria-describedby="subjectError"
+							>
+							<div id="subjectError" class="error-message" role="alert" aria-live="assertive"></div>
+						</div>
+						
+						<div class="input-field">
+							<label for="message" class="required-field">Message <span class="ml-4 legend">required</span></label>
+							<textarea 
+								id="message" 
+								name="message" 
+								rows="5" 
+								required 
+								aria-required="true"
+								aria-describedby="messageError"
+							></textarea>
+							<div id="messageError" class="error-message" role="alert" aria-live="assertive"></div>
+						</div>
+						
+						<div class="input-field">
+							<button type="submit" class="button button-prim md:w-fit">Send Message</button>
+						</div>
+					</form>
 			</section>
 
 

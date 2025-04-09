@@ -152,8 +152,8 @@ COLOR • 2ND
     /* FORM //////////////// */
     --color-form: var(--color-default);
     --color-form-hover: var(--color-default);
-    --color-field-form: var(--color-background);
-    --color-field-form-hover: var(--color-background-subtle);
+    --color-field-form: var(--color-background-subtle);
+    --color-field-form-hover: var(--color-background-knockout);
 
 
 
@@ -188,7 +188,7 @@ TYPOGRAPHY • 2ND
     /* HEADING //////////////// */
 
     /* Family */
-    --font-heading: "Inter", sans-serif;
+    --font-heading: var(--font-body);
 
     /* Type sizes */
     --text-h0: var(--f-size-9);
@@ -216,7 +216,7 @@ TYPOGRAPHY • 2ND
     --font-label: var(--font-body);
 
     /* Type size */
-    --text-label: var(--f-size-xsmall);
+    --text-label: var(--f-size-small);
 
 
 
@@ -317,6 +317,10 @@ TYPOGRAPHY • UTILITY
 
 @utility paragraph {
     @apply font-body text-body font-normal leading-normal tracking-normal text-default;
+}
+
+@utility legend {
+    @apply font-body italic text-label font-normal leading-normal tracking-normal text-subtle;
 }
 
 
@@ -484,23 +488,27 @@ MOLECULES
     }
 
 
+    
+    
+    
+    
+    /* ////////////////////////////////////////////////////////
+    ATOMS
+    //////////////////////////////////////////////////////// */
+    
     /* FORM //////////////// */
 
-    /* .input-text {
-        @apply flex flex-col gap-0.5 max-w-72 text-base font-normal text-label-form;
+    .input-field {
+        @apply flex flex-col gap-2;
 
-        input {
-            @apply bg-field-form px-3 py-1 rounded-md font-normal hover:bg-field-form-hover transition;
+        input, textarea {
+            @apply bg-field-form px-3 py-2 rounded-md hover:bg-field-form-hover transition;
         }
-    } */
+    }
 
 
 
-
-/* ////////////////////////////////////////////////////////
-ATOMS
-//////////////////////////////////////////////////////// */
-
+    
     /* BUTTON //////////////// */
 
     .button {
@@ -512,7 +520,7 @@ ATOMS
         }
     
         &.button-sec {
-            @apply border border-2 border-slate-800;
+            @apply border border-2 border-default;
         }
     }
 
