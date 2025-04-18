@@ -42,6 +42,111 @@ Direct values without references to other tokens
 COLOR • 1ST TIER
 //////////////////////////////////////////////////////// */
 
+    /* BRAND //////////////// */
+    
+    /* Primary */
+    --primary-50: var(--color-orange-50);
+    --primary-100: var(--color-orange-100);
+    --primary-200: var(--color-orange-200);
+    --primary-300: var(--color-orange-300);
+    --primary-400: var(--color-orange-400);
+    --primary-500: var(--color-orange-500);
+    --primary-600: var(--color-orange-600);
+    --primary-700: var(--color-orange-700);
+    --primary-800: var(--color-orange-800);
+    --primary-900: var(--color-orange-900);
+    --primary-950: var(--color-orange-950);
+
+    /* Secondary */
+    --secondary-50: var(--color-violet-50);
+    --secondary-100: var(--color-violet-100);
+    --secondary-200: var(--color-violet-200);
+    --secondary-300: var(--color-violet-300);
+    --secondary-400: var(--color-violet-400);
+    --secondary-500: var(--color-violet-500);
+    --secondary-600: var(--color-violet-600);
+    --secondary-700: var(--color-violet-700);
+    --secondary-800: var(--color-violet-800);
+    --secondary-900: var(--color-violet-900);
+    --secondary-950: var(--color-violet-950);
+    
+
+
+    
+    /* NEUTRALS //////////////// */
+    --neutral-white: oklch(1 0 0);
+    --neutral-50: oklch(0.96 0 0);
+    --neutral-100: oklch(0.92 0 0);
+    --neutral-200: oklch(0.85 0 0);
+    --neutral-300: oklch(0.77 0 0);
+    --neutral-400: oklch(0.68 0 0);
+    --neutral-500: oklch(0.6 0 0);
+    --neutral-600: oklch(0.51 0 0);
+    --neutral-700: oklch(0.42 0 0);
+    --neutral-800: oklch(0.32 0 0);
+    --neutral-900: oklch(0.22 0 0);
+    --neutral-950: oklch(0.16 0 0);
+    --neutral-black: oklch(0 0 0);
+
+
+
+
+    /* UTILITIES //////////////// */
+
+    /* Red */
+    --utility-red-50: var(--color-red-50);
+    --utility-red-100: var(--color-red-100);
+    --utility-red-200: var(--color-red-200);
+    --utility-red-300: var(--color-red-300);
+    --utility-red-400: var(--color-red-400);
+    --utility-red-500: var(--color-red-500);
+    --utility-red-600: var(--color-red-600);
+    --utility-red-700: var(--color-red-700);
+    --utility-red-800: var(--color-red-800);
+    --utility-red-900: var(--color-red-900);
+    --utility-red-950: var(--color-red-950);
+
+    /* Orange */
+    --utility-amber-50: var(--color-amber-50);
+    --utility-amber-100: var(--color-amber-100);
+    --utility-amber-200: var(--color-amber-200);
+    --utility-amber-300: var(--color-amber-300);
+    --utility-amber-400: var(--color-amber-400);
+    --utility-amber-500: var(--color-amber-500);
+    --utility-amber-600: var(--color-amber-600);
+    --utility-amber-700: var(--color-amber-700);
+    --utility-amber-800: var(--color-amber-800);
+    --utility-amber-900: var(--color-amber-900);
+    --utility-amber-950: var(--color-amber-950);
+
+    /* Green */
+    --utility-green-50: var(--color-green-50);
+    --utility-green-100: var(--color-green-100);
+    --utility-green-200: var(--color-green-200);
+    --utility-green-300: var(--color-green-300);
+    --utility-green-400: var(--color-green-400);
+    --utility-green-500: var(--color-green-500);
+    --utility-green-600: var(--color-green-600);
+    --utility-green-700: var(--color-green-700);
+    --utility-green-800: var(--color-green-800);
+    --utility-green-900: var(--color-green-900);
+    --utility-green-950: var(--color-green-950);
+
+    /* Blue */
+    --utility-blue-50: var(--color-blue-50);
+    --utility-blue-100: var(--color-blue-100);
+    --utility-blue-200: var(--color-blue-200);
+    --utility-blue-300: var(--color-blue-300);
+    --utility-blue-400: var(--color-blue-400);
+    --utility-blue-500: var(--color-blue-500);
+    --utility-blue-600: var(--color-blue-600);
+    --utility-blue-700: var(--color-blue-700);
+    --utility-blue-800: var(--color-blue-800);
+    --utility-blue-900: var(--color-blue-900);
+    --utility-blue-950: var(--color-blue-950);
+
+
+
 
 
 
@@ -53,18 +158,18 @@ COLOR • 1ST TIER
 SPACING • 1ST TIER
 //////////////////////////////////////////////////////// */
 
---spacer: calc(var(--f-size-base) / 4);
---spacer-2: calc(var(--spacer) * 2);
---spacer-3: calc(var(--spacer) * 3);
---spacer-4: calc(var(--spacer) * 4);
---spacer-5: calc(var(--spacer) * 5);
---spacer-6: calc(var(--spacer) * 6);
---spacer-7: calc(var(--spacer) * 7);
---spacer-8: calc(var(--spacer) * 8);
---spacer-9: calc(var(--spacer) * 9);
---spacer-10: calc(var(--spacer) * 10);
---spacer-11: calc(var(--spacer) * 11);
---spacer-12: calc(var(--spacer) * 12);
+    --spacer: calc(var(--f-size-base) / 4);
+    --spacer-2: calc(var(--spacer) * 2);
+    --spacer-3: calc(var(--spacer) * 3);
+    --spacer-4: calc(var(--spacer) * 4);
+    --spacer-5: calc(var(--spacer) * 5);
+    --spacer-6: calc(var(--spacer) * 6);
+    --spacer-7: calc(var(--spacer) * 7);
+    --spacer-8: calc(var(--spacer) * 8);
+    --spacer-9: calc(var(--spacer) * 9);
+    --spacer-10: calc(var(--spacer) * 10);
+    --spacer-11: calc(var(--spacer) * 11);
+    --spacer-12: calc(var(--spacer) * 12);
 
 
 
@@ -74,6 +179,9 @@ SPACING • 1ST TIER
 /* ////////////////////////////////////////////////////////
 TYPOGRAPHY • 1ST TIER
 //////////////////////////////////////////////////////// */
+
+    /* FONT FAMILIES //////////////// */
+    --f-family-1: "Inter", sans-serif;
 
     /* SCALE //////////////// */
 
@@ -120,7 +228,7 @@ TYPOGRAPHY • 1ST TIER
 
 /* ////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////
-ALIAS TOKENS (2ND TEAR)
+SEMANTIC TOKENS (2ND TEAR)
 Reference primitive tokens to create semantic meaning
 //////////////////////////////////////////////////////// */
 
@@ -130,40 +238,40 @@ COLOR • 2ND TIER
 //////////////////////////////////////////////////////// */
     
     /* BRAND //////////////// */
-    --color-brand: var(--color-indigo-700);
+    --color-brand: var(--primary-500);
 
 
 
 
     /* CONTENT //////////////// */
-    --color-default: var(--color-slate-800);
-    --color-heading: var(--color-slate-800);
-    --color-subtle: var(--color-slate-600);
-    --color-knockout: var(--color-slate-300);
+    --color-default: var(--neutral-800);
+    --color-heading: var(--neutral-800);
+    --color-subtle: var(--neutral-600);
+    --color-knockout: var(--neutral-100);
     
 
 
 
     /* LINK //////////////// */
-    --color-link: var(--color-slate-800);
-    --color-link-hover: var(--color-slate-800);
+    --color-link: var(--neutral-800);
+    --color-link-hover: var(--neutral-800);
 
 
 
 
     /* FORM //////////////// */
-    --color-form: var(--color-slate-800);
-    --color-form-hover: var(--color-slate-800);
-    --color-field-form: var(--color-slate-400);
-    --color-field-form-hover: var(--color-slate-800);
+    --color-form: var(--neutral-800);
+    --color-form-hover: var(--neutral-800);
+    --color-form-field: var(--neutral-400);
+    --color-form-field-hover: var(--neutral-800);
 
 
 
 
     /* BACKGROUND //////////////// */
-    --color-background: var(--color-slate-300);
-    --color-background-subtle: var(--color-slate-400);
-    --color-background-knockout: var(--color-slate-800);
+    --color-background: var(--neutral-100);
+    --color-background-subtle: var(--neutral-400);
+    --color-background-knockout: var(--neutral-800);
 
 
 
@@ -193,7 +301,7 @@ TYPOGRAPHY • 2ND TIER
     /* HEADING //////////////// */
 
     /* Family */
-    --font-heading: var(--font-body);
+    --font-heading: var(--f-family-1);
 
     /* Type sizes */
     --text-h0: var(--f-size-9);
@@ -207,7 +315,7 @@ TYPOGRAPHY • 2ND TIER
     /* BODY //////////////// */
 
     /* Family */
-    --font-body: "Inter", sans-serif;
+    --font-body: var(--f-family-1);
     
     /* Type size */
     --text-body: var(--f-size-base);
@@ -218,11 +326,41 @@ TYPOGRAPHY • 2ND TIER
     /* LABEL //////////////// */
 
     /* Family */
-    --font-label: var(--font-body);
+    --font-label: var(--f-family-1);
 
     /* Type size */
     --text-label: var(--f-size-small);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+COMPONENT TOKENS (3RD TEAR)
+Reference semantic tokens to create component-specific tokens
+//////////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////////////
+COLOR • 3RD TIER
+//////////////////////////////////////////////////////// */
+
+    /* INPUTS AND CONTROLS //////////////// */
 
 
 
@@ -501,7 +639,7 @@ MOLECULES • COMPONENTS
         @apply flex flex-col gap-2;
 
         input, textarea {
-            @apply bg-field-form px-3 py-2 rounded-md hover:bg-field-form-hover hover:text-knockout focus-visible:bg-field-form-hover focus-visible:text-knockout transition;
+            @apply bg-form-field px-3 py-2 rounded-md hover:bg-form-field-hover hover:text-knockout focus-visible:bg-form-field-hover focus-visible:text-knockout transition;
         }
     }
 
