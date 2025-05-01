@@ -21,8 +21,8 @@
     --tracking-tighter: -0.05em;
     --tracking-tight: -0.025em;
     --tracking-normal: 0em;
+    --leading-tight: 1.25;
     --leading-normal: 1.5;
-    --radius-md: 0.375rem;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
@@ -49,7 +49,7 @@
     --neutral-800: oklch(0.32 0 0);
     --spacer: calc(var(--f-size-base) / 4);
     --spacer-8: calc(var(--spacer) * 8);
-    --f-family-1: "Inter", sans-serif;
+    --f-family-sans: "Inter", sans-serif;
     --f-scale: 1.618;
     --f-sizing: calc(0.66vw + 0.44rem);
     --f-size-base: max(1rem, var(--f-sizing));
@@ -73,15 +73,35 @@
     --color-background: var(--neutral-100);
     --color-background-knockout: var(--neutral-800);
     --spacing-gutter: var(--spacer-8);
-    --font-heading: var(--f-family-1);
+    --font-heading: var(--f-family-sans);
     --text-h0: var(--f-size-9);
     --text-h1: var(--f-size-5);
     --text-h2: var(--f-size-4);
     --text-h3: var(--f-size-3);
-    --font-body: var(--f-family-1);
+    --font-weight-headings: var(--font-weight-medium);
+    --leading-h0: var(--leading-tight);
+    --leading-h1: var(--leading-tight);
+    --leading-h2: var(--leading-tight);
+    --leading-h3: var(--leading-tight);
+    --tracking-h0: var(--tracking-tighter);
+    --tracking-h1: var(--tracking-tight);
+    --tracking-h2: var(--tracking-tight);
+    --tracking-h3: var(--tracking-tight);
+    --font-body: var(--f-family-sans);
     --text-body: var(--f-size-base);
-    --font-label: var(--f-family-1);
+    --font-weight-paragraph: var(--font-weight-normal);
+    --leading-body: var(--leading-normal);
+    --tracking-body: var(--tracking-normal);
+    --font-legend: var(--f-family-sans);
+    --text-legend: var(--f-size-base);
+    --font-weight-legends: var(--font-weight-normal);
+    --leading-legend: var(--leading-normal);
+    --tracking-legend: var(--tracking-normal);
+    --font-label: var(--f-family-sans);
     --text-label: var(--f-size-small);
+    --font-weight-labels: var(--font-weight-normal);
+    --leading-label: var(--leading-normal);
+    --tracking-label: var(--tracking-normal);
   }
 }
 @layer base {
@@ -1758,96 +1778,85 @@
   .align-top {
     vertical-align: top;
   }
+  .legend {
+    font-family: var(--font-legend);
+    font-size: var(--text-legend);
+    --tw-leading: var(--leading-legend);
+    line-height: var(--leading-legend);
+    --tw-font-weight: var(--font-weight-legends);
+    font-weight: var(--font-weight-legends);
+    --tw-tracking: var(--tracking-legend);
+    letter-spacing: var(--tracking-legend);
+    color: var(--color-subtle);
+    font-style: italic;
+  }
   .label {
     font-family: var(--font-label);
     font-size: var(--text-label);
-    --tw-leading: var(--leading-normal);
-    line-height: var(--leading-normal);
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
-    --tw-tracking: var(--tracking-normal);
-    letter-spacing: var(--tracking-normal);
+    --tw-leading: var(--leading-label);
+    line-height: var(--leading-label);
+    --tw-font-weight: var(--font-weight-labels);
+    font-weight: var(--font-weight-labels);
+    --tw-tracking: var(--tracking-label);
+    letter-spacing: var(--tracking-label);
     color: var(--color-default);
-    text-transform: uppercase;
   }
   .label\! {
     font-family: var(--font-label) !important;
     font-size: var(--text-label) !important;
-    --tw-leading: var(--leading-normal) !important;
-    line-height: var(--leading-normal) !important;
-    --tw-font-weight: var(--font-weight-medium) !important;
-    font-weight: var(--font-weight-medium) !important;
-    --tw-tracking: var(--tracking-normal) !important;
-    letter-spacing: var(--tracking-normal) !important;
+    --tw-leading: var(--leading-label) !important;
+    line-height: var(--leading-label) !important;
+    --tw-font-weight: var(--font-weight-labels) !important;
+    font-weight: var(--font-weight-labels) !important;
+    --tw-tracking: var(--tracking-label) !important;
+    letter-spacing: var(--tracking-label) !important;
     color: var(--color-default) !important;
-    text-transform: uppercase !important;
-  }
-  .legend {
-    font-family: var(--font-body);
-    font-size: var(--text-label);
-    --tw-leading: var(--leading-normal);
-    line-height: var(--leading-normal);
-    --tw-font-weight: var(--font-weight-normal);
-    font-weight: var(--font-weight-normal);
-    --tw-tracking: var(--tracking-normal);
-    letter-spacing: var(--tracking-normal);
-    color: var(--color-subtle);
-    font-style: italic;
-  }
-  .h0 {
-    font-family: var(--font-heading);
-    font-size: var(--text-h0);
-    --tw-leading: 1;
-    line-height: 1;
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
-    --tw-tracking: var(--tracking-tighter);
-    letter-spacing: var(--tracking-tighter);
-    color: var(--color-heading);
-  }
-  .h1 {
-    font-family: var(--font-heading);
-    font-size: var(--text-h1);
-    --tw-leading: 1;
-    line-height: 1;
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
-    --tw-tracking: var(--tracking-tighter);
-    letter-spacing: var(--tracking-tighter);
-    color: var(--color-heading);
-  }
-  .h2 {
-    font-family: var(--font-heading);
-    font-size: var(--text-h2);
-    --tw-leading: 1;
-    line-height: 1;
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
-    --tw-tracking: var(--tracking-tight);
-    letter-spacing: var(--tracking-tight);
-    color: var(--color-heading);
-  }
-  .h3 {
-    font-family: var(--font-heading);
-    font-size: var(--text-h3);
-    --tw-leading: 1;
-    line-height: 1;
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
-    --tw-tracking: var(--tracking-tight);
-    letter-spacing: var(--tracking-tight);
-    color: var(--color-heading);
   }
   .paragraph {
     font-family: var(--font-body);
     font-size: var(--text-body);
-    --tw-leading: var(--leading-normal);
-    line-height: var(--leading-normal);
-    --tw-font-weight: var(--font-weight-normal);
-    font-weight: var(--font-weight-normal);
-    --tw-tracking: var(--tracking-normal);
-    letter-spacing: var(--tracking-normal);
+    --tw-leading: var(--leading-body);
+    line-height: var(--leading-body);
+    --tw-font-weight: var(--font-weight-paragraph);
+    font-weight: var(--font-weight-paragraph);
+    --tw-tracking: var(--tracking-body);
+    letter-spacing: var(--tracking-body);
     color: var(--color-default);
+  }
+  .heading {
+    font-family: var(--font-heading);
+    --tw-font-weight: var(--font-weight-headings);
+    font-weight: var(--font-weight-headings);
+    color: var(--color-heading);
+  }
+  .h2 {
+    font-size: var(--text-h2);
+    --tw-leading: var(--leading-h2);
+    line-height: var(--leading-h2);
+    --tw-tracking: var(--tracking-h2);
+    letter-spacing: var(--tracking-h2);
+    font-style: italic;
+  }
+  .h0 {
+    font-size: var(--text-h0);
+    --tw-leading: var(--leading-h0);
+    line-height: var(--leading-h0);
+    --tw-tracking: var(--tracking-h0);
+    letter-spacing: var(--tracking-h0);
+  }
+  .h1 {
+    font-size: var(--text-h1);
+    --tw-leading: var(--leading-h1);
+    line-height: var(--leading-h1);
+    --tw-tracking: var(--tracking-h1);
+    letter-spacing: var(--tracking-h1);
+  }
+  .h3 {
+    font-size: var(--text-h3);
+    --tw-leading: var(--leading-h3);
+    line-height: var(--leading-h3);
+    --tw-tracking: var(--tracking-h3);
+    letter-spacing: var(--tracking-h3);
   }
   .text-base {
     font-size: var(--text-base);
@@ -2660,12 +2669,12 @@
     flex-direction: column;
     font-family: var(--font-body);
     font-size: var(--text-body);
-    --tw-leading: var(--leading-normal);
-    line-height: var(--leading-normal);
-    --tw-font-weight: var(--font-weight-normal);
-    font-weight: var(--font-weight-normal);
-    --tw-tracking: var(--tracking-normal);
-    letter-spacing: var(--tracking-normal);
+    --tw-leading: var(--leading-body);
+    line-height: var(--leading-body);
+    --tw-font-weight: var(--font-weight-paragraph);
+    font-weight: var(--font-weight-paragraph);
+    --tw-tracking: var(--tracking-body);
+    letter-spacing: var(--tracking-body);
     color: var(--color-default);
   }
   p {
@@ -2702,10 +2711,19 @@
     flex-direction: column;
     gap: calc(var(--spacing) * 2);
     input, textarea {
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-xl);
       background-color: var(--color-form-field);
       padding-inline: calc(var(--spacing) * 3);
-      padding-block: calc(var(--spacing) * 2);
+      padding-block: calc(var(--spacing) * 3);
+      font-family: var(--font-label);
+      font-size: var(--text-label);
+      --tw-leading: var(--leading-label);
+      line-height: var(--leading-label);
+      --tw-font-weight: var(--font-weight-labels);
+      font-weight: var(--font-weight-labels);
+      --tw-tracking: var(--tracking-label);
+      letter-spacing: var(--tracking-label);
+      color: var(--color-default);
       transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
       transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
       transition-duration: var(--tw-duration, var(--default-transition-duration));
@@ -2736,14 +2754,13 @@
     padding-block: calc(var(--spacing) * 3);
     font-family: var(--font-label);
     font-size: var(--text-label);
-    --tw-leading: var(--leading-normal);
-    line-height: var(--leading-normal);
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
-    --tw-tracking: var(--tracking-normal);
-    letter-spacing: var(--tracking-normal);
+    --tw-leading: var(--leading-label);
+    line-height: var(--leading-label);
+    --tw-font-weight: var(--font-weight-labels);
+    font-weight: var(--font-weight-labels);
+    --tw-tracking: var(--tracking-label);
+    letter-spacing: var(--tracking-label);
     color: var(--color-default);
-    text-transform: uppercase;
     white-space: nowrap;
     &.button-prim {
       background-color: var(--color-background-knockout);
@@ -2771,6 +2788,8 @@
       border-style: var(--tw-border-style);
       border-width: 2px;
       border-color: var(--color-default);
+      --tw-font-weight: var(--font-weight-medium);
+      font-weight: var(--font-weight-medium);
     }
   }
 }

@@ -180,8 +180,10 @@ SPACING • 1ST TIER
 TYPOGRAPHY • 1ST TIER
 //////////////////////////////////////////////////////// */
 
-    /* FONT FAMILIES //////////////// */
-    --f-family-1: "Inter", sans-serif;
+    /* FONT FAMILY //////////////// */
+    --f-family-sans: "Inter", sans-serif;
+    --f-family-serif: "Times New Roman", serif;
+    --f-family-mono: "Inter", sans-serif;
 
     /* SCALE //////////////// */
 
@@ -248,6 +250,7 @@ COLOR • 2ND TIER
     --color-heading: var(--neutral-800);
     --color-subtle: var(--neutral-600);
     --color-knockout: var(--neutral-100);
+    --color-disabled: var(--neutral-400);
     
 
 
@@ -300,14 +303,29 @@ TYPOGRAPHY • 2ND TIER
 
     /* HEADING //////////////// */
 
-    /* Family */
-    --font-heading: var(--f-family-1);
+    /* Font family */
+    --font-heading: var(--f-family-sans);
 
-    /* Type sizes */
+    /* Font sizes */
     --text-h0: var(--f-size-9);
     --text-h1: var(--f-size-5);
     --text-h2: var(--f-size-4);
     --text-h3: var(--f-size-3);
+
+    /* Font weight */
+    --font-weight-headings: var(--font-weight-medium);
+
+    /* Line heights */
+    --leading-h0: var(--leading-tight);
+    --leading-h1: var(--leading-tight);
+    --leading-h2: var(--leading-tight);
+    --leading-h3: var(--leading-tight);
+
+    /* Letter spacings */
+    --tracking-h0: var(--tracking-tighter);
+    --tracking-h1: var(--tracking-tight);
+    --tracking-h2: var(--tracking-tight);
+    --tracking-h3: var(--tracking-tight);
 
 
 
@@ -315,10 +333,39 @@ TYPOGRAPHY • 2ND TIER
     /* BODY //////////////// */
 
     /* Family */
-    --font-body: var(--f-family-1);
+    --font-body: var(--f-family-sans);
     
-    /* Type size */
+    /* Font size */
     --text-body: var(--f-size-base);
+
+    /* Font weight */
+    --font-weight-paragraph: var(--font-weight-normal);
+
+    /* Line height */
+    --leading-body: var(--leading-normal);
+
+    /* Letter spacings */
+    --tracking-body: var(--tracking-normal);
+
+
+
+
+    /* LEGEND //////////////// */
+
+    /* Family */
+    --font-legend: var(--f-family-sans);
+    
+    /* Font size */
+    --text-legend: var(--f-size-base);
+
+    /* Font weight */
+    --font-weight-legends: var(--font-weight-normal);
+
+    /* Line height */
+    --leading-legend: var(--leading-normal);
+
+    /* Letter spacings */
+    --tracking-legend: var(--tracking-normal);
 
 
 
@@ -326,10 +373,19 @@ TYPOGRAPHY • 2ND TIER
     /* LABEL //////////////// */
 
     /* Family */
-    --font-label: var(--f-family-1);
+    --font-label: var(--f-family-sans);
 
-    /* Type size */
+    /* Font size */
     --text-label: var(--f-size-small);
+
+    /* Font weight */
+    --font-weight-labels: var(--font-weight-normal);
+
+    /* Line height */
+    --leading-label: var(--leading-normal);
+
+    /* Letter spacings */
+    --tracking-label: var(--tracking-normal);
 
 
 
@@ -437,20 +493,24 @@ TYPOGRAPHY • UTILITIES
 //////////////////////////////////////////////////////// */
 
 /* HEADINGS //////////////// */
+@utility heading {
+    @apply font-heading font-headings text-heading;
+}
+
 @utility h0 {
-    @apply font-heading text-h0 font-medium leading-none tracking-tighter text-heading;
+    @apply text-h0 leading-h0 tracking-h0;
 }
 
 @utility h1 {
-    @apply font-heading text-h1 font-medium leading-none tracking-tighter text-heading;
+    @apply text-h1 leading-h1 tracking-h1;
 }
 
 @utility h2 {
-    @apply font-heading text-h2 font-medium leading-none tracking-tight text-heading;
+    @apply text-h2 italic leading-h2 tracking-h2;
 }
 
 @utility h3 {
-    @apply font-heading text-h3 font-medium leading-none tracking-tight text-heading;
+    @apply text-h3 leading-h3 tracking-h3;
 }
 
 
@@ -458,11 +518,11 @@ TYPOGRAPHY • UTILITIES
 
 /* BODY //////////////// */
 @utility paragraph {
-    @apply font-body text-body font-normal leading-normal tracking-normal text-default;
+    @apply font-body text-body font-paragraph leading-body tracking-body text-default;
 }
 
 @utility legend {
-    @apply font-body italic text-label font-normal leading-normal tracking-normal text-subtle;
+    @apply font-legend italic text-legend font-legends leading-legend tracking-legend text-subtle;
 }
 
 
@@ -470,7 +530,7 @@ TYPOGRAPHY • UTILITIES
 
 /* LABELS //////////////// */
 @utility label {
-    @apply font-label text-label font-medium leading-normal tracking-normal uppercase text-default;
+    @apply font-label text-label font-labels leading-label tracking-label text-default;
 }
 
 
@@ -639,7 +699,7 @@ MOLECULES • COMPONENTS
         @apply flex flex-col gap-2;
 
         input, textarea {
-            @apply bg-form-field px-3 py-2 rounded-md hover:bg-form-field-hover hover:text-knockout focus-visible:bg-form-field-hover focus-visible:text-knockout transition;
+            @apply bg-form-field px-3 py-3 rounded-xl label hover:bg-form-field-hover hover:text-knockout focus-visible:bg-form-field-hover focus-visible:text-knockout transition;
         }
     }
 
@@ -656,7 +716,7 @@ MOLECULES • COMPONENTS
         }
     
         &.button-sec {
-            @apply border border-2 border-default;
+            @apply border border-2 font-medium border-default;
         }
     }
 
