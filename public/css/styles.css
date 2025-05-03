@@ -563,6 +563,9 @@
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
+  .mt-line-height {
+    margin-top: var(--spacing-line-height);
+  }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
@@ -577,6 +580,12 @@
   }
   .mb-double-line {
     margin-bottom: var(--spacing-double-line);
+  }
+  .mb-line-height {
+    margin-bottom: var(--spacing-line-height);
+  }
+  .mb-row {
+    margin-bottom: var(--spacing-row);
   }
   .ml-4 {
     margin-left: calc(var(--spacing) * 4);
@@ -1038,9 +1047,6 @@
   }
   .grid-flow-row-dense {
     grid-auto-flow: row dense;
-  }
-  .auto-rows-\(--spacing-row\) {
-    grid-auto-rows: var(--spacing-row);
   }
   .auto-rows-auto {
     grid-auto-rows: auto;
@@ -2711,16 +2717,6 @@
   .lg\:auto-rows-\(--spacing-row\) {
     @media (width >= 64rem) {
       grid-auto-rows: var(--spacing-row);
-    }
-  }
-  .lg\:gap-y-line-height {
-    @media (width >= 64rem) {
-      row-gap: var(--spacing-line-height);
-    }
-  }
-  .lg\:pt-12 {
-    @media (width >= 64rem) {
-      padding-top: calc(var(--spacing) * 12);
     }
   }
   .lg\:pt-row {
