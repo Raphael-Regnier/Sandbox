@@ -22,7 +22,7 @@
 	<body class="bg-background text-default">
 
 
-		<header class="fixed w-full top-0 left-0 right-0">
+		<header class="fixed w-full top-0 left-0 right-0 z-10">
 			<nav class="section my-0 py-4 flex items-center justify-between">
 
 				<!-- Logo -->
@@ -54,7 +54,7 @@
 
 		<main class="grow">
 			
-			<h1 class="heading h1 section mb-18 mt-12">h1 heading</h1>
+			<h1 class="h1 section mb-18 mt-12">h1 heading</h1>
 			
 
 
@@ -62,19 +62,22 @@
 			<section class="grid-12-lg section mt-0">
 			
 				<!-- Left column: Heading, paragraph, buttons -->
-				<div class="grid-8-lg gap-y-0 lg:col-span-8">
+				<div class="grid-8-lg gap-y-line-height lg:auto-rows-(--spacing-row) lg:col-span-8">
 	
 					<!-- Heading & paragraphs -->
-					<h2 class="heading h2 lg:col-span-full mb-12">h2 heading</h2>
-					<p class="lg:col-span-6">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</p>
-					<p class="lg:col-span-6 mb-10">
-						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-					</p>
+					<h2 class="h2 lg:col-span-full">h2 heading</h2>
+					<div class="lg:col-span-4 row-span-2">
+						<p class="lg:col-span-4">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+							do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						</p>
+						<p class="lg:col-span-4 lg:col-start-1">
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+					</div>
 
 					<!-- CTA buttons -->
-					<div class="col-span-full flex flex-col sm:flex-row gap-6 ">
+					<div class="col-span-full h-fit flex flex-col sm:flex-row gap-x-gutter gap-y-line-height">
 
 						<a href="/#featured-articles" class="button button-prim">Primary action</a>
 
@@ -84,8 +87,10 @@
 				</div>
 	
 				<!-- Right column : media -->
-				<div class="lg:col-start-9 lg:col-span-4 bg-[url(//unsplash.it/510)] bg-cover rounded-xl min-h-80">
+				<div class="lg:col-start-9 lg:col-span-4 bg-[url(//unsplash.it/510)] bg-cover rounded-xl min-h-80 shadow-tall">
 				</div>
+
+				<p class="h0 absolute -z-10 top-[-32vw] right-[0vw]">01</p>
 			
 			</section>
 
@@ -100,8 +105,8 @@
 			<section class="grid-12-md gap-y-0 section">
 	
 				<!-- Heading & paragraph-->
-				<h2 class="heading h2 md:col-span-full text-center mb-12">h2 heading</h2>
-				<p class="heading h1 md:col-span-10 md:col-start-2 text-center mb-18">Ut enim ad minim veniam, quis nostrud exercitation.</p>
+				<h2 class="h2 md:col-span-full text-center mb-12">h2 heading</h2>
+				<p class="h1 md:col-span-10 md:col-start-2 text-center mb-18">Ut enim ad minim veniam, quis nostrud exercitation.</p>
 				<p class="text-center mb-10 md:col-span-6 md:col-start-4">
 					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				</p>
@@ -114,6 +119,8 @@
 					<a href="./blog" class="button button-sec">Secondary action</a>
 
 				</div>
+
+				<p class="h0 absolute -z-10 top-[-4vw] right-[18vw]">02</p>
 			
 			</section>
 
@@ -129,7 +136,7 @@
 				<!-- Heading & paragraph -->
 				<div class="grid-8-md md:col-span-8">
 
-					<h2 class="heading h1 md:col-span-full mb-12">h2 heading</h2>
+					<h2 class="h1 md:col-span-full mb-12">h2 heading</h2>
 					<p class="md:col-span-6">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 					</p>
@@ -137,14 +144,14 @@
 				</div>
 
 				<!-- Listing -->
-				<ul class="col-span-full grid-12-md md:gap-y-gutter">
+				<ul class="col-span-full grid-12-md md:gap-y-y-gutter">
 
 					<li class="card">
 						<a href="#">
 							<article>
 								<figure class="bg-[url(//unsplash.it/511)]"></figure>
 								<div class="group-content">
-									<h3 class="heading h3 mb-3">h3 heading</h3>
+									<h3 class="h3 mb-3">h3 heading</h3>
 									<p>Excepteur sint occaecat cupidatat non proident</p>
 									<span class="button button-prim">Primary action</span>
 								</div>
@@ -157,7 +164,7 @@
 							<article>
 								<figure class="bg-[url(//unsplash.it/512)]"></figure>
 								<div class="group-content">
-									<h3 class="heading h3 mb-3">h3 heading</h3>
+									<h3 class="h3 mb-3">h3 heading</h3>
 									<p>Excepteur sint occaecat cupidatat non proident</p>
 									<span class="button button-prim">Primary action</span>
 								</div>
@@ -170,7 +177,7 @@
 							<article>
 								<figure class="bg-[url(//unsplash.it/513)]"></figure>
 								<div class="group-content">
-									<h3 class="heading h3 mb-3">h3 heading</h3>
+									<h3 class="h3 mb-3">h3 heading</h3>
 									<p>Excepteur sint occaecat cupidatat non proident</p>
 									<span class="button button-prim">Primary action</span>
 								</div>
@@ -183,7 +190,7 @@
 							<article>
 								<figure class="bg-[url(//unsplash.it/514)]"></figure>
 								<div class="group-content">
-									<h3 class="heading h3 mb-3">h3 heading</h3>
+									<h3 class="h3 mb-3">h3 heading</h3>
 									<p>Excepteur sint occaecat cupidatat non proident</p>
 									<span class="button button-prim">Primary action</span>
 								</div>
@@ -196,7 +203,7 @@
 							<article>
 								<figure class="bg-[url(//unsplash.it/515)]"></figure>
 								<div class="group-content">
-									<h3 class="heading h3 mb-3">h3 heading</h3>
+									<h3 class="h3 mb-3">h3 heading</h3>
 									<p>Excepteur sint occaecat cupidatat non proident</p>
 									<span class="button button-prim">Primary action</span>
 								</div>
@@ -209,7 +216,7 @@
 							<article>
 								<figure class="bg-[url(//unsplash.it/516)]"></figure>
 								<div class="group-content">
-									<h3 class="heading h3 mb-3">h3 heading</h3>
+									<h3 class="h3 mb-3">h3 heading</h3>
 									<p>Excepteur sint occaecat cupidatat non proident</p>
 									<span class="button button-prim">Primary action</span>
 								</div>
@@ -228,14 +235,14 @@
 			<section class="grid-12-lg section mt-0">
 			
 				<!-- Left column: heading, paragraph, buttons -->
-				<div class="grid-6-lg gap-y-0 lg:col-span-4 lg:col-start-2 lg:pt-12">
+				<div class="grid-4-lg gap-y-0 lg:col-span-4 lg:col-start-2 lg:pt-row">
 	
 					<!-- Heading & paragraphs -->
-					<h2 class="heading h2 col-span-full mb-12">h2 heading</h2>
+					<h2 class="h2 col-span-full mb-double-line">h2 heading</h2>
 					<p class="col-span-full">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 					</p>
-					<p class="col-span-full mb-10">
+					<p class="col-span-full mb-double-line">
 						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 					</p>
 
@@ -251,7 +258,7 @@
 	
 				<!-- Right column : headline -->
 				<div class="lg:row-span-2 lg:col-span-6 lg:col-start-7">
-					<p class="heading h1">Ut enim ad minim veniam, quis nostrud exercitation.</p>
+					<p class="h1">Ut enim ad minim veniam, quis nostrud exercitation.</p>
 				</div>
 			
 			</section>
@@ -263,8 +270,8 @@
 			<section class="grid-12-md gap-y-0 section">
 	
 				<!-- Headings -->
-				<h2 class="heading h3 md:col-span-6 md:col-start-4 text-center mb-12">h2 heading</h2>
-				<p class="heading h2 md:col-span-10 md:col-start-2 text-center mb-18">Ut enim ad minim veniam, quis nostrud exercitation.</p>
+				<h2 class="h3 md:col-span-6 md:col-start-4 text-center mb-12">h2 heading</h2>
+				<p class="h2 md:col-span-10 md:col-start-2 text-center mb-18">Ut enim ad minim veniam, quis nostrud exercitation.</p>
 
 				<!-- Form -->
 				<form class=" flex flex-col gap-4 md:col-span-8  md:col-start-3 lg:col-span-4 lg:col-start-5" id="contactForm" action="#" method="post" novalidate>

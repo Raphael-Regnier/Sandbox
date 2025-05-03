@@ -155,21 +155,36 @@ COLOR • 1ST TIER
 
 
 /* ////////////////////////////////////////////////////////
-SPACING • 1ST TIER
+DIMENSIONS • 1ST TIER
 //////////////////////////////////////////////////////// */
 
-    --spacer: calc(var(--f-size-base) / 4);
+    /* SPACINGS //////////////// */
+    --spacer: calc(var(--f-size-body) / 4);
     --spacer-2: calc(var(--spacer) * 2);
     --spacer-3: calc(var(--spacer) * 3);
-    --spacer-4: calc(var(--spacer) * 4);
+    --spacer-4: calc(var(--spacer) * 4); /* body font-size */
     --spacer-5: calc(var(--spacer) * 5);
-    --spacer-6: calc(var(--spacer) * 6);
+    --spacer-6: calc(var(--spacer) * 6); /* body line-height */
     --spacer-7: calc(var(--spacer) * 7);
     --spacer-8: calc(var(--spacer) * 8);
     --spacer-9: calc(var(--spacer) * 9);
     --spacer-10: calc(var(--spacer) * 10);
     --spacer-11: calc(var(--spacer) * 11);
     --spacer-12: calc(var(--spacer) * 12);
+    --spacer-13: calc(var(--spacer) * 13);
+    --spacer-14: calc(var(--spacer) * 14);
+    --spacer-15: calc(var(--spacer) * 15);
+    --spacer-16: calc(var(--spacer) * 16);
+    --spacer-17: calc(var(--spacer) * 17);
+    --spacer-18: calc(var(--spacer) * 18);
+    --spacer-19: calc(var(--spacer) * 19);
+    --spacer-20: calc(var(--spacer) * 20);
+    --spacer-21: calc(var(--spacer) * 21);
+    --spacer-22: calc(var(--spacer) * 22);
+    --spacer-23: calc(var(--spacer) * 23);
+    --spacer-24: calc(var(--spacer) * 24); /* grid row */
+    --spacer-51: calc(var(--spacer) * 51); /* grid double row */
+    --spacer-76: calc(var(--spacer) * 76); /* grid triple row */
 
 
 
@@ -189,18 +204,18 @@ TYPOGRAPHY • 1ST TIER
 
     /* Foundations */
     --f-scale: 1.618; /* golden ratio */
-    --f-sizing: calc(0.66vw + 0.44rem); /* 16px @ 1358px vw */
+    --f-size-fluid: calc(0.66vw + 0.44rem); /* 16px @ 1358px vw */
 
-    /* Bases */
-    --f-size-base: max(1rem, var(--f-sizing));
-    --f-size-heading: var(--f-sizing);
-
+    /* Body */
+    --f-size-body: max(1rem, var(--f-size-fluid));
+    
     /* Small */
-    --f-size-xsmall: calc(var(--f-size-base) * 0.75); /* 12px @ 1358px vw */
-    --f-size-small: calc(var(--f-size-base) * 0.875); /* 14px @ 1358px vw */
-
+    --f-size-xsmall: calc(var(--f-size-body) * 0.75); /* 12px @ 1358px vw */
+    --f-size-small: calc(var(--f-size-body) * 0.875); /* 14px @ 1358px vw */
+    
     /* Headings */
-    --f-size-2: calc(var(--f-size-heading) * var(--f-scale));
+    --f-size-1: var(--f-size-fluid);
+    --f-size-2: calc(var(--f-size-1) * var(--f-scale));
     --f-size-3: calc(var(--f-size-2) * var(--f-scale));
     --f-size-4: calc(var(--f-size-3) * var(--f-scale));
     --f-size-5: calc(var(--f-size-4) * var(--f-scale));
@@ -208,6 +223,7 @@ TYPOGRAPHY • 1ST TIER
     --f-size-7: calc(var(--f-size-6) * var(--f-scale));
     --f-size-8: calc(var(--f-size-7) * var(--f-scale));
     --f-size-9: calc(var(--f-size-8) * var(--f-scale));
+    --f-size-10: calc(var(--f-size-9) * var(--f-scale));
 
 
 
@@ -249,6 +265,7 @@ COLOR • 2ND TIER
     --color-default: var(--neutral-800);
     --color-heading: var(--neutral-800);
     --color-subtle: var(--neutral-600);
+    --color-light: var(--neutral-200);
     --color-knockout: var(--neutral-100);
     --color-disabled: var(--neutral-400);
     
@@ -273,7 +290,7 @@ COLOR • 2ND TIER
 
     /* BACKGROUND //////////////// */
     --color-background: var(--neutral-100);
-    --color-background-subtle: var(--neutral-400);
+    --color-background-subtle: var(--neutral-300);
     --color-background-knockout: var(--neutral-800);
 
 
@@ -284,11 +301,20 @@ COLOR • 2ND TIER
 
 
 /* ////////////////////////////////////////////////////////
-SPACING • 2ND TIER
+DIMENSIONS • 2ND TIER
 //////////////////////////////////////////////////////// */
 
-    /* LAYOUT //////////////// */
+    /* SPACING SCALE //////////////// */
+    --spacing-base: var(--spacer);
+    --spacing-half-line: var(--spacer-3);
+    --spacing-font-size: var(--spacer-4);
+    --spacing-line-height: var(--spacer-6);
     --spacing-gutter: var(--spacer-8);
+    --spacing-double-line: var(--spacer-12);
+    --spacing-row: var(--spacer-24);
+    --spacing-double-row: var(--spacer-51);
+    --spacing-triple-row: var(--spacer-76);
+    
 
 
 
@@ -305,18 +331,20 @@ TYPOGRAPHY • 2ND TIER
 
     /* Font family */
     --font-heading: var(--f-family-sans);
+    --font-display: var(--f-family-serif);
 
     /* Font sizes */
-    --text-h0: var(--f-size-9);
+    --text-h0: var(--f-size-10);
     --text-h1: var(--f-size-5);
     --text-h2: var(--f-size-4);
     --text-h3: var(--f-size-3);
 
     /* Font weight */
     --font-weight-headings: var(--font-weight-medium);
+    --font-weight-displays: var(--font-weight-normal);
 
     /* Line heights */
-    --leading-h0: var(--leading-tight);
+    --leading-h0: 1;
     --leading-h1: var(--leading-tight);
     --leading-h2: var(--leading-tight);
     --leading-h3: var(--leading-tight);
@@ -339,7 +367,7 @@ TYPOGRAPHY • 2ND TIER
     --text-body: var(--f-size-base);
 
     /* Font weight */
-    --font-weight-paragraph: var(--font-weight-normal);
+    --font-weight-text: var(--font-weight-normal);
 
     /* Line height */
     --leading-body: var(--leading-normal);
@@ -356,7 +384,7 @@ TYPOGRAPHY • 2ND TIER
     --font-legend: var(--f-family-sans);
     
     /* Font size */
-    --text-legend: var(--f-size-base);
+    --text-legend: var(--f-size-small);
 
     /* Font weight */
     --font-weight-legends: var(--font-weight-normal);
@@ -376,7 +404,7 @@ TYPOGRAPHY • 2ND TIER
     --font-label: var(--f-family-sans);
 
     /* Font size */
-    --text-label: var(--f-size-small);
+    --text-label: var(--f-size-base);
 
     /* Font weight */
     --font-weight-labels: var(--font-weight-normal);
@@ -386,6 +414,20 @@ TYPOGRAPHY • 2ND TIER
 
     /* Letter spacings */
     --tracking-label: var(--tracking-normal);
+        
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+SHADOWS • 2ND TIER
+//////////////////////////////////////////////////////// */
+
+--shadow-tall: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
 
 
@@ -460,10 +502,10 @@ GLOBAL
         @apply flex flex-col min-h-screen paragraph;
     }
 
+    
     p {
-        @apply mb-6;
+        @apply mb-line-height;
     }
-   
 }
 
 
@@ -493,24 +535,20 @@ TYPOGRAPHY • UTILITIES
 //////////////////////////////////////////////////////// */
 
 /* HEADINGS //////////////// */
-@utility heading {
-    @apply font-heading font-headings text-heading;
-}
-
 @utility h0 {
-    @apply text-h0 leading-h0 tracking-h0;
+    @apply text-h0 leading-h0 tracking-h0 font-display font-displays italic text-light;
 }
 
 @utility h1 {
-    @apply text-h1 leading-h1 tracking-h1;
+    @apply text-h1 leading-h1 tracking-h1 font-heading font-headings text-heading;
 }
 
 @utility h2 {
-    @apply text-h2 italic leading-h2 tracking-h2;
+    @apply text-h2 leading-h2 tracking-h2 font-heading font-headings text-heading;
 }
 
 @utility h3 {
-    @apply text-h3 leading-h3 tracking-h3;
+    @apply text-h3 leading-h3 tracking-h3 font-heading font-headings text-heading;
 }
 
 
@@ -518,7 +556,7 @@ TYPOGRAPHY • UTILITIES
 
 /* BODY //////////////// */
 @utility paragraph {
-    @apply font-body text-body font-paragraph leading-body tracking-body text-default;
+    @apply font-body text-body font-text leading-body tracking-body text-default;
 }
 
 @utility legend {
@@ -546,7 +584,7 @@ LAYOUT • UTILITIES
 
 /* SECTION //////////////// */
 @utility section {
-    @apply mx-4 my-32 md:mx-12 md:my-56;
+    @apply mx-4 my-32 md:mx-12 md:my-triple-row;
 }
 
 
@@ -554,7 +592,7 @@ LAYOUT • UTILITIES
 
 /* LAYOUT //////////////// */
 @utility layout {
-    @apply grid gap-x-gutter gap-y-gutter;
+    @apply grid relative gap-x-gutter gap-y-line-height;
 }
 
 
@@ -672,7 +710,7 @@ MOLECULES • COMPONENTS
         }
 
         figure {
-            @apply bg-[url(//unsplash.it/510)] bg-cover rounded-xl;
+            @apply bg-[url(//unsplash.it/510)] bg-cover rounded-xl shadow-tall;
             padding-block: 13vw;
         }
 
@@ -708,8 +746,7 @@ MOLECULES • COMPONENTS
     
     /* BUTTON //////////////// */
     .button {
-        @apply flex justify-center items-center px-6 py-3 rounded-xl whitespace-nowrap
-        flex justify-center items-center px-6 py-3 rounded-xl label whitespace-nowrap;
+        @apply flex justify-center items-center px-line-height py-half-line rounded-xl label whitespace-nowrap;
         
         &.button-prim {
             @apply bg-background-knockout  text-knockout hover:bg-transparent hover:text-default focus-visible:bg-transparent focus-visible:text-default;
