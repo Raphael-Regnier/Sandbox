@@ -233,7 +233,7 @@ TYPOGRAPHY • 1ST TIER
 
 
 
-    
+
     /* FLUID SCALE //////////////// */
 
     /* Foundations */
@@ -743,19 +743,19 @@ LAYOUT • UTILITIES
 }
 
 @utility grid-10-lg {
-    @apply layout lg:grid-cols-10 ;
+    @apply layout lg:grid-cols-10;
 }
 
 @utility grid-9-lg {
-    @apply layout lg:grid-cols-9 ;
+    @apply layout lg:grid-cols-9;
 }
 
 @utility grid-8-lg {
-    @apply layout lg:grid-cols-8 ;
+    @apply layout lg:grid-cols-8;
 }
 
 @utility grid-6-lg {
-    @apply layout lg:grid-cols-6 ;
+    @apply layout lg:grid-cols-6;
 }
 
 
