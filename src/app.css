@@ -107,17 +107,17 @@ COLOR • 1ST TIER
     --utility-red-950: var(--color-red-950);
 
     /* Orange */
-    --utility-amber-50: var(--color-amber-50);
-    --utility-amber-100: var(--color-amber-100);
-    --utility-amber-200: var(--color-amber-200);
-    --utility-amber-300: var(--color-amber-300);
-    --utility-amber-400: var(--color-amber-400);
-    --utility-amber-500: var(--color-amber-500);
-    --utility-amber-600: var(--color-amber-600);
-    --utility-amber-700: var(--color-amber-700);
-    --utility-amber-800: var(--color-amber-800);
-    --utility-amber-900: var(--color-amber-900);
-    --utility-amber-950: var(--color-amber-950);
+    --utility-orange-50: var(--color-amber-50);
+    --utility-orange-100: var(--color-amber-100);
+    --utility-orange-200: var(--color-amber-200);
+    --utility-orange-300: var(--color-amber-300);
+    --utility-orange-400: var(--color-amber-400);
+    --utility-orange-500: var(--color-amber-500);
+    --utility-orange-600: var(--color-amber-600);
+    --utility-orange-700: var(--color-amber-700);
+    --utility-orange-800: var(--color-amber-800);
+    --utility-orange-900: var(--color-amber-900);
+    --utility-orange-950: var(--color-amber-950);
 
     /* Green */
     --utility-green-50: var(--color-green-50);
@@ -158,8 +158,9 @@ COLOR • 1ST TIER
 DIMENSIONS • 1ST TIER
 //////////////////////////////////////////////////////// */
 
-    /* SPACINGS //////////////// */
-    --spacer: calc(var(--f-size-body) / 4);
+    /* FLUID SPACINGS //////////////// */
+    --spacer-05: calc(var(--spacer) / 2);
+    --spacer: calc(var(--f-size-body) / 4); /* base */
     --spacer-2: calc(var(--spacer) * 2);
     --spacer-3: calc(var(--spacer) * 3);
     --spacer-4: calc(var(--spacer) * 4); /* body font-size */
@@ -182,9 +183,39 @@ DIMENSIONS • 1ST TIER
     --spacer-21: calc(var(--spacer) * 21);
     --spacer-22: calc(var(--spacer) * 22);
     --spacer-23: calc(var(--spacer) * 23);
-    --spacer-24: calc(var(--spacer) * 24); /* grid row */
-    --spacer-51: calc(var(--spacer) * 51); /* grid double row */
-    --spacer-76: calc(var(--spacer) * 76); /* grid triple row */
+    --spacer-24: calc(var(--spacer) * 24);
+    --spacer-48: calc(var(--spacer) * 48);
+    --spacer-96: calc(var(--spacer) * 96);
+
+
+
+
+    /* FLUID RADIUS //////////////// */
+    --rad-0: 0;
+    --rad-1: 0.0625em;
+    --rad-2: 0.125em;
+    --rad-3: 0.1875em;
+    --rad-4: 0.25em;
+    --rad-5: 0.3125em;
+    --rad-6: 0.375em;
+    --rad-7: 0.4375em;
+    --rad-8: 0.5em;
+    --rad-9: 0.5625em;
+    --rad-10: 0.625em;
+    --rad-11: 0.6875em;
+    --rad-12: 0.75em;
+    --rad-13: 0.8125em;
+    --rad-14: 0.875em;
+    --rad-15: 0.9375em;
+    --rad-16: 1em;
+    --rad-17: 1.0625em;
+    --rad-18: 1.125em;
+    --rad-19: 1.1875em;
+    --rad-20: 1.25em;
+    --rad-22: 1.375em;
+    --rad-24: 1.5em;
+    --rad-32: 2em;
+    --rad-48: 3em;
 
 
 
@@ -200,7 +231,10 @@ TYPOGRAPHY • 1ST TIER
     --f-family-serif: "Times New Roman", serif;
     --f-family-mono: "Inter", sans-serif;
 
-    /* SCALE //////////////// */
+
+
+    
+    /* FLUID SCALE //////////////// */
 
     /* Foundations */
     --f-scale: 1.618; /* golden ratio */
@@ -253,46 +287,132 @@ Reference primitive tokens to create semantic meaning
 
 /* ////////////////////////////////////////////////////////
 COLOR • 2ND TIER
-//////////////////////////////////////////////////////// */
+//////////////////////////////////////////////////////// */    
     
-    /* BRAND //////////////// */
-    --color-brand: var(--primary-500);
-
-
-
-
     /* CONTENT //////////////// */
+
+    /* Neutrals */
     --color-default: var(--neutral-800);
     --color-heading: var(--neutral-800);
     --color-subtle: var(--neutral-600);
     --color-light: var(--neutral-200);
     --color-knockout: var(--neutral-100);
     --color-disabled: var(--neutral-400);
-    
+
+    /* Brand */
+    --color-brand: var(--primary-500);
+    --color-brand-knockout: var(--primary-100);
+
+    /* Utilities */
+    --color-info: var(--utility-blue-600);
+    --color-success: var(--utility-green-600);
+    --color-warning: var(--utility-orange-600);
+    --color-critical: var(--utility-red-600);
+
+
+
+
+    /* BACKGROUND //////////////// */
+
+    /* Neutrals */
+    --color-background: var(--neutral-100);
+    --color-background-subtle: var(--neutral-300);
+    --color-background-knockout: var(--neutral-800);
+
+    /* Brand */
+    --color-background-brand: var(--primary-700);
+    --color-background-brand-knockout: var(--primary-200);
+
+    /* Utilities */
+    --color-background-info: var(--utility-blue-100);
+    --color-background-success: var(--utility-green-100);
+    --color-background-warning: var(--utility-orange-100);
+    --color-background-critical: var(--utility-red-100);
+
+
+
+
+    /* BORDER //////////////// */
+
+    /* Neutrals */
+    --color-border: var(--neutral-100);
+    --color-border-subtle: var(--neutral-300);
+    --color-border-knockout: var(--neutral-800);
+
+    /* Brand */
+    --color-border-brand: var(--primary-700);
+    --color-border-brand-knockout: var(--primary-200);
+
+    /* Utilities */
+    --color-border-info: var(--utility-blue-500);
+    --color-border-success: var(--utility-green-500);
+    --color-border-warning: var(--utility-orange-500);
+    --color-border-critical: var(--utility-red-500);
+        
 
 
 
     /* LINK //////////////// */
     --color-link: var(--neutral-800);
     --color-link-hover: var(--neutral-800);
+    --color-link-knockout: var(--neutral-100);
+    --color-link-hover-knockout: var(--neutral-100);
+
+
+
+
+    /* BUTTON PRIMARY //////////////// */
+
+    /* Content */
+    --color-button-primary: var(--neutral-800);
+    --color-button-primary-hover: var(--neutral-800);
+    --color-button-primary-active: var(--neutral-800);
+
+    /* Background */
+    --color-button-primary-background: var(--neutral-400);
+    --color-button-primary-background-hover: var(--neutral-800);
+    --color-button-primary-background-active: var(--neutral-800);
+
+
+
+
+    /* BUTTON SECONDARY //////////////// */
+
+    /* Content */
+    --color-button-secondary: var(--neutral-800);
+    --color-button-secondary-hover: var(--neutral-800);
+    --color-button-secondary-active: var(--neutral-800);
+
+    /* Background */
+    --color-button-secondary-background: var(--neutral-100);
+    --color-button-secondary-background-hover: var(--neutral-200);
+    --color-button-secondary-background-active: var(--neutral-800);
+
+    /* Border */
+    --color-button-secondary-border: var(--neutral-400);
+    --color-button-secondary-border-hover: var(--neutral-800);
+    --color-button-secondary-border-active: var(--neutral-800);
 
 
 
 
     /* FORM //////////////// */
+
+    /* Content */
     --color-form: var(--neutral-800);
     --color-form-hover: var(--neutral-800);
-    --color-form-field: var(--neutral-400);
-    --color-form-field-hover: var(--neutral-800);
+    --color-form-active: var(--neutral-800);
+    --color-form-checked: var(--utility-blue-500);
 
+    /* Background */
+    --color-form-background: var(--neutral-400);
+    --color-form-background-hover: var(--neutral-800);
+    --color-form-background-active: var(--neutral-800);
 
-
-
-    /* BACKGROUND //////////////// */
-    --color-background: var(--neutral-100);
-    --color-background-subtle: var(--neutral-300);
-    --color-background-knockout: var(--neutral-800);
-
+    /* Border */
+    --color-form-border: var(--neutral-400);
+    --color-form-border-hover: var(--neutral-800);
+    --color-form-border-active: var(--neutral-800);
 
 
 
@@ -305,15 +425,30 @@ DIMENSIONS • 2ND TIER
 //////////////////////////////////////////////////////// */
 
     /* SPACING SCALE //////////////// */
-    --spacing-base: var(--spacer);
-    --spacing-half-line: var(--spacer-3);
-    --spacing-font-size: var(--spacer-4);
-    --spacing-line-height: var(--spacer-6);
-    --spacing-gutter: var(--spacer-8);
-    --spacing-double-line: var(--spacer-12);
-    --spacing-row: var(--spacer-24);
-    --spacing-double-row: var(--spacer-51);
-    --spacing-triple-row: var(--spacer-76);
+    --spacing-1f: var(--spacer); /* base */
+    --spacing-2f: var(--spacer-2);  /* font-size/2 */
+    --spacing-3f: var(--spacer-3); /* line-height/2 */
+    --spacing-4f: var(--spacer-4); /* font-size */
+    --spacing-6f: var(--spacer-6); /* line-height */
+    --spacing-8f: var(--spacer-8); /* font-size*2 - gutter */
+    --spacing-12f: var(--spacer-12); /* line-height*2 font-size*3 */
+    --spacing-24f: var(--spacer-24); /* line-height*4 */
+    --spacing-48f: var(--spacer-48); /* line-height*8 */
+    --spacing-96f: var(--spacer-96); /* line-height*16 */
+
+
+
+
+    /* RADIUS SCALE //////////////// */
+    --radius-xs: var(--rad-2);
+    --radius-sm: var(--rad-4);
+    --radius-md: var(--rad-6);
+    --radius-lg: var(--rad-8);
+    --radius-xl: var(--rad-12);
+    --radius-2xl: var(--rad-16);
+    --radius-3xl: var(--rad-24);
+    --radius-4xl: var(--rad-32);
+
     
 
 
@@ -364,7 +499,7 @@ TYPOGRAPHY • 2ND TIER
     --font-body: var(--f-family-sans);
     
     /* Font size */
-    --text-body: var(--f-size-base);
+    --text-body: var(--f-size-body);
 
     /* Font weight */
     --font-weight-text: var(--font-weight-normal);
@@ -404,7 +539,7 @@ TYPOGRAPHY • 2ND TIER
     --font-label: var(--f-family-sans);
 
     /* Font size */
-    --text-label: var(--f-size-base);
+    --text-label: var(--f-size-body);
 
     /* Font weight */
     --font-weight-labels: var(--font-weight-normal);
@@ -455,7 +590,7 @@ Reference semantic tokens to create component-specific tokens
 //////////////////////////////////////////////////////// */
 
 /* ////////////////////////////////////////////////////////
-COLOR • 3RD TIER
+DIMENSIONS • 3RD TIER
 //////////////////////////////////////////////////////// */
 
     /* INPUTS AND CONTROLS //////////////// */
@@ -504,7 +639,7 @@ GLOBAL
 
     
     p {
-        @apply mb-line-height;
+        @apply mb-6f;
     }
 }
 
@@ -583,8 +718,12 @@ LAYOUT • UTILITIES
 //////////////////////////////////////////////////////// */
 
 /* SECTION //////////////// */
-@utility section {
-    @apply mx-4 my-32 md:mx-12 md:my-triple-row;
+@utility section-mx {
+    @apply mx-4 md:mx-12;
+}
+
+@utility section-my {
+    @apply my-24f md:my-48f;
 }
 
 
@@ -592,7 +731,7 @@ LAYOUT • UTILITIES
 
 /* LAYOUT //////////////// */
 @utility layout {
-    @apply grid relative gap-x-gutter gap-y-line-height;
+    @apply grid relative gap-x-8f;
 }
 
 
@@ -600,23 +739,23 @@ LAYOUT • UTILITIES
 
 /* GRIDS LG //////////////// */
 @utility grid-12-lg {
-    @apply layout lg:grid-cols-12 lg:gap-y-0;
+    @apply layout lg:grid-cols-12;
 }
 
 @utility grid-10-lg {
-    @apply layout lg:grid-cols-10  lg:gap-y-0;
+    @apply layout lg:grid-cols-10 ;
 }
 
 @utility grid-9-lg {
-    @apply layout lg:grid-cols-9  lg:gap-y-0;
+    @apply layout lg:grid-cols-9 ;
 }
 
 @utility grid-8-lg {
-    @apply layout lg:grid-cols-8  lg:gap-y-0;
+    @apply layout lg:grid-cols-8 ;
 }
 
 @utility grid-6-lg {
-    @apply layout lg:grid-cols-6  lg:gap-y-0;
+    @apply layout lg:grid-cols-6 ;
 }
 
 
@@ -624,35 +763,35 @@ LAYOUT • UTILITIES
 
 /* GRIDS MD //////////////// */
 @utility grid-12-md {
-    @apply layout md:grid-cols-12 md:gap-y-0;
+    @apply layout md:grid-cols-12;
 }
 
 @utility grid-10-md {
-    @apply layout md:grid-cols-10  md:gap-y-0;
+    @apply layout md:grid-cols-10;
 }
 
 @utility grid-9-md {
-    @apply layout md:grid-cols-9  md:gap-y-0;
+    @apply layout md:grid-cols-9;
 }
 
 @utility grid-8-md {
-    @apply layout md:grid-cols-8  md:gap-y-0;
+    @apply layout md:grid-cols-8;
 }
 
 @utility grid-6-md {
-    @apply layout md:grid-cols-6  md:gap-y-0;
+    @apply layout md:grid-cols-6;
 }
 
 @utility grid-4-md {
-    @apply layout md:grid-cols-4  md:gap-y-0;
+    @apply layout md:grid-cols-4;
 }
 
 @utility grid-3-md {
-    @apply layout md:grid-cols-3  md:gap-y-0;
+    @apply layout md:grid-cols-3;
 }
 
 @utility grid-2-md {
-    @apply layout md:grid-cols-2  md:gap-y-0;
+    @apply layout md:grid-cols-2;
 }
 
 
@@ -737,7 +876,7 @@ MOLECULES • COMPONENTS
         @apply flex flex-col gap-2;
 
         input, textarea {
-            @apply bg-form-field px-3 py-3 rounded-xl label hover:bg-form-field-hover hover:text-knockout focus-visible:bg-form-field-hover focus-visible:text-knockout transition;
+            @apply bg-form-background px-3 py-3 rounded-xl label hover:bg-form-background-hover hover:text-knockout focus-visible:bg-form-background-hover focus-visible:text-knockout transition;
         }
     }
 
@@ -746,7 +885,7 @@ MOLECULES • COMPONENTS
     
     /* BUTTON //////////////// */
     .button {
-        @apply flex justify-center items-center px-line-height py-half-line rounded-xl label whitespace-nowrap;
+        @apply flex justify-center items-center px-6f py-3f rounded-xl label whitespace-nowrap;
         
         &.button-prim {
             @apply bg-background-knockout  text-knockout hover:bg-transparent hover:text-default focus-visible:bg-transparent focus-visible:text-default;
