@@ -361,37 +361,44 @@ COLOR • 2ND TIER
 
 
 
+    /* DISABLED */
+    --color-disabled: var(--neutral-400);
+    --color-disabled-knockout: var(--neutral-500);
+
+
+
+
     /* BUTTON PRIMARY //////////////// */
 
     /* Content */
-    --color-button-primary: var(--neutral-800);
+    --color-button-primary: var(--neutral-100);
     --color-button-primary-hover: var(--neutral-800);
     --color-button-primary-active: var(--neutral-800);
 
     /* Background */
-    --color-button-primary-background: var(--neutral-400);
-    --color-button-primary-background-hover: var(--neutral-800);
+    --color-button-primary-background: var(--neutral-800);
+    --color-button-primary-background-hover: var(--neutral-100);
     --color-button-primary-background-active: var(--neutral-800);
 
 
 
 
-    /* BUTTON SECONDARY //////////////// */
+    /* BUTTON //////////////// */
 
     /* Content */
-    --color-button-secondary: var(--neutral-800);
-    --color-button-secondary-hover: var(--neutral-800);
-    --color-button-secondary-active: var(--neutral-800);
+    --color-button: var(--neutral-800);
+    --color-button-hover: var(--neutral-800);
+    --color-button-active: var(--neutral-800);
 
     /* Background */
-    --color-button-secondary-background: var(--neutral-100);
-    --color-button-secondary-background-hover: var(--neutral-200);
-    --color-button-secondary-background-active: var(--neutral-800);
+    --color-button-background: var(--neutral-100);
+    --color-button-background-hover: var(--neutral-200);
+    --color-button-background-active: var(--neutral-800);
 
     /* Border */
-    --color-button-secondary-border: var(--neutral-400);
-    --color-button-secondary-border-hover: var(--neutral-800);
-    --color-button-secondary-border-active: var(--neutral-800);
+    --color-button-border: var(--neutral-800);
+    --color-button-border-hover: var(--neutral-800);
+    --color-button-border-active: var(--neutral-800);
 
 
 
@@ -885,14 +892,15 @@ MOLECULES • COMPONENTS
     
     /* BUTTON //////////////// */
     .button {
-        @apply flex justify-center items-center px-6f py-3f rounded-xl label whitespace-nowrap;
+        @apply flex justify-center items-center px-6f py-3f rounded-xl label whitespace-nowrap transition-colors ease-in-out duration-400;
         
         &.button-prim {
-            @apply bg-background-knockout  text-knockout hover:bg-transparent hover:text-default focus-visible:bg-transparent focus-visible:text-default;
+            @apply bg-button-primary-background  text-button-primary hover:bg-button-primary-background-hover hover:text-button-primary-hover focus-visible:bg-button-primary-background-hover focus-visible:text-button-primary-hover active:bg-button-primary-background-active active:text-button-primary-active;
         }
     
         &.button-sec {
-            @apply border border-2 font-medium border-default;
+            @apply border-2 font-medium bg-button-background border-button-border text-button hover:bg-button-background-hover hover:border-button-hover hover:text-button-hover focus-visible:hover:bg-button-background-hover focus-visible:border-button-hover focus-visible:text-button-hover active:bg-button-background-active active:border-button-active active:text-button-active;
+            
         }
     }
 
