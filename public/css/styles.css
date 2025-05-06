@@ -83,19 +83,6 @@
     --color-brand: var(--primary-500);
     --color-background: var(--neutral-100);
     --color-disabled-knockout: var(--neutral-500);
-    --color-button-primary: var(--neutral-100);
-    --color-button-primary-hover: var(--neutral-800);
-    --color-button-primary-active: var(--neutral-800);
-    --color-button-primary-background: var(--neutral-800);
-    --color-button-primary-background-hover: var(--neutral-100);
-    --color-button-primary-background-active: var(--neutral-800);
-    --color-button: var(--neutral-800);
-    --color-button-hover: var(--neutral-800);
-    --color-button-active: var(--neutral-800);
-    --color-button-background: var(--neutral-100);
-    --color-button-background-hover: var(--neutral-200);
-    --color-button-background-active: var(--neutral-800);
-    --color-button-border: var(--neutral-800);
     --color-form-background: var(--neutral-400);
     --color-form-background-hover: var(--neutral-800);
     --spacing-3f: var(--spacer-3);
@@ -140,6 +127,19 @@
     --spacing-padding-button-y: var(--spacing-3f);
     --radius-button: var(--radius-xl);
     --border-button-width: var(--width-sm);
+    --color-button-primary: var(--neutral-100);
+    --color-button-primary-hover: var(--neutral-800);
+    --color-button-primary-active: var(--neutral-800);
+    --color-button-primary-background: var(--neutral-800);
+    --color-button-primary-background-hover: var(--neutral-100);
+    --color-button-primary-background-active: var(--neutral-800);
+    --color-button: var(--neutral-800);
+    --color-button-hover: var(--neutral-800);
+    --color-button-active: var(--neutral-800);
+    --color-button-background: var(--neutral-100);
+    --color-button-background-hover: var(--neutral-200);
+    --color-button-background-active: var(--neutral-800);
+    --color-button-border: var(--neutral-800);
     --ease-button: var(--ease-in-out);
     --ease-button-hover: var(--ease-in-out);
   }
@@ -2806,9 +2806,6 @@
     }
   }
   .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border-radius: var(--radius-button);
     padding-inline: var(--spacing-padding-button-x);
     padding-block: var(--spacing-padding-button-y);
@@ -2821,6 +2818,9 @@
     --tw-tracking: var(--tracking-label);
     letter-spacing: var(--tracking-label);
     color: var(--color-default);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     white-space: nowrap;
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));

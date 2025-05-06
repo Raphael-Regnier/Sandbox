@@ -348,40 +348,6 @@ COLOR • 2ND TIER
 
 
 
-    /* BUTTON PRIMARY //////////////// */
-
-    /* Content */
-    --color-button-primary: var(--neutral-100);
-    --color-button-primary-hover: var(--neutral-800);
-    --color-button-primary-active: var(--neutral-800);
-
-    /* Background */
-    --color-button-primary-background: var(--neutral-800);
-    --color-button-primary-background-hover: var(--neutral-100);
-    --color-button-primary-background-active: var(--neutral-800);
-
-
-
-
-    /* BUTTON //////////////// */
-
-    /* Content */
-    --color-button: var(--neutral-800);
-    --color-button-hover: var(--neutral-800);
-    --color-button-active: var(--neutral-800);
-
-    /* Background */
-    --color-button-background: var(--neutral-100);
-    --color-button-background-hover: var(--neutral-200);
-    --color-button-background-active: var(--neutral-800);
-
-    /* Border */
-    --color-button-border: var(--neutral-800);
-    --color-button-border-hover: var(--neutral-800);
-    --color-button-border-active: var(--neutral-800);
-
-
-
 
     /* FORM //////////////// */
 
@@ -427,6 +393,7 @@ DIMENSIONS • 2ND TIER
 
 
     /* RADIUS SCALE //////////////// */
+    --radius-nul: 0;
     --radius-xs: var(--spacer-0-5);
     --radius-sm: var(--spacer);
     --radius-md: var(--spacer-1-5);
@@ -589,14 +556,62 @@ Reference semantic tokens to create component-specific tokens
 //////////////////////////////////////////////////////// */
 
 /* ////////////////////////////////////////////////////////
-DIMENSIONS • 3RD TIER
+BUTTON • 3RD TIER
 //////////////////////////////////////////////////////// */
 
-    /* BUTTON //////////////// */
+    /* DIMENSIONS //////////////// */
+
+    /* Paddings */
     --spacing-padding-button-x: var(--spacing-6f);
     --spacing-padding-button-y: var(--spacing-3f);
+
+    /* Radius */
     --radius-button: var(--radius-xl);
+
+    /* Border width */
     --border-button-width: var(--width-sm);
+
+
+
+
+    /* COLORS BUTTON PRIMARY //////////////// */
+
+    /* Content */
+    --color-button-primary: var(--neutral-100);
+    --color-button-primary-hover: var(--neutral-800);
+    --color-button-primary-active: var(--neutral-800);
+
+    /* Background */
+    --color-button-primary-background: var(--neutral-800);
+    --color-button-primary-background-hover: var(--neutral-100);
+    --color-button-primary-background-active: var(--neutral-800);
+
+
+
+
+    /* COLORS BUTTON //////////////// */
+
+    /* Content */
+    --color-button: var(--neutral-800);
+    --color-button-hover: var(--neutral-800);
+    --color-button-active: var(--neutral-800);
+
+    /* Background */
+    --color-button-background: var(--neutral-100);
+    --color-button-background-hover: var(--neutral-200);
+    --color-button-background-active: var(--neutral-800);
+
+    /* Border */
+    --color-button-border: var(--neutral-800);
+    --color-button-border-hover: var(--neutral-800);
+    --color-button-border-active: var(--neutral-800);
+
+
+
+
+    /* ANIMATION //////////////// */
+
+    /* Easing */
     --ease-button: var(--ease-in-out);
     --ease-button-hover: var(--ease-in-out);
 
@@ -807,6 +822,22 @@ LAYOUT • UTILITIES
 
 
 /* ////////////////////////////////////////////////////////
+ANIMATION • UTILITIES
+//////////////////////////////////////////////////////// */
+
+/* BUTTON //////////////// */
+@utility animation-button {
+    @apply ease-button hover:ease-button-hover focus-visible:ease-button-hover transition-colors  duration-400;
+}
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
 MISCELLANEOUS • UTILITIES
 //////////////////////////////////////////////////////// */
 
@@ -897,8 +928,9 @@ MOLECULES • COMPONENTS
         @apply flex justify-center items-center whitespace-nowrap;
         
         /* Animation */
-        @apply ease-button hover:ease-button-hover focus-visible:ease-button-hover transition-colors  duration-400;
+        @apply animation-button;
         
+
         &.button-prim {
             /* Default */
             @apply bg-button-primary-background  text-button-primary;
@@ -914,9 +946,9 @@ MOLECULES • COMPONENTS
 
             /* Disabled */
             @apply disabled:bg-disabled disabled:text-disabled-knockout;
-            ;
         }
     
+
         &.button-sec {
             /* Default */
             @apply border-(length:--border-button-width) font-medium bg-button-background border-button-border text-button;
