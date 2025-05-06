@@ -9,10 +9,10 @@
 |                                               |
 +---+---+---+---+---+---+---+---+---+---+---+---+
 
-HAT AND THE GANG
+HAT & THE GANG
 PLANET MARS
 
-LAST UPDATE  00/ARP/2025
+LAST UPDATE  06/MAY/2025
 V 00.01
 
 //////////////////////////////////////////////////////// */
@@ -26,8 +26,12 @@ V 00.01
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////
-THEME
+DESIGN TOKENS • THEME
 //////////////////////////////////////////////////////// */
 
 @theme {
@@ -331,41 +335,11 @@ COLOR • 2ND TIER
         
 
 
-
-    /* LINK //////////////// */
-    --color-link: var(--neutral-800);
-    --color-link-hover: var(--neutral-800);
-    --color-link-knockout: var(--neutral-100);
-    --color-link-hover-knockout: var(--neutral-100);
-
-
-
-
-    /* DISABLED */
+    
+    /* DISABLED //////////////// */
     --color-disabled: var(--neutral-400);
     --color-disabled-knockout: var(--neutral-500);
 
-
-
-
-
-    /* FORM //////////////// */
-
-    /* Content */
-    --color-form: var(--neutral-800);
-    --color-form-hover: var(--neutral-800);
-    --color-form-active: var(--neutral-800);
-    --color-form-checked: var(--utility-blue-500);
-
-    /* Background */
-    --color-form-background: var(--neutral-400);
-    --color-form-background-hover: var(--neutral-800);
-    --color-form-background-active: var(--neutral-800);
-
-    /* Border */
-    --color-form-border: var(--neutral-400);
-    --color-form-border-hover: var(--neutral-800);
-    --color-form-border-active: var(--neutral-800);
 
 
 
@@ -556,6 +530,28 @@ Reference semantic tokens to create component-specific tokens
 //////////////////////////////////////////////////////// */
 
 /* ////////////////////////////////////////////////////////
+LINK • 3RD TIER
+//////////////////////////////////////////////////////// */
+
+/* DIMENSIONS //////////////// */
+
+
+
+
+/* COLOR LINK //////////////// */
+--color-link: var(--neutral-800);
+--color-link-hover: var(--neutral-800);
+--color-link-knockout: var(--neutral-100);
+--color-link-hover-knockout: var(--neutral-100);
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
 BUTTON • 3RD TIER
 //////////////////////////////////////////////////////// */
 
@@ -614,6 +610,43 @@ BUTTON • 3RD TIER
     /* Easing */
     --ease-button: var(--ease-in-out);
     --ease-button-hover: var(--ease-in-out);
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+FORM INPUTS • 3RD TIER
+//////////////////////////////////////////////////////// */
+
+    /* DIMENSIONS //////////////// */
+    
+    /* Gap */
+    --spacing-gap-input-field: var(--spacing-2f);
+
+
+
+
+    /* COLOR //////////////// */
+
+    /* Content */
+    --color-form: var(--neutral-800);
+    --color-form-hover: var(--neutral-800);
+    --color-form-active: var(--neutral-800);
+    --color-form-checked: var(--utility-blue-500);
+
+    /* Background */
+    --color-form-background: var(--neutral-400);
+    --color-form-background-hover: var(--neutral-800);
+    --color-form-background-active: var(--neutral-800);
+
+    /* Border */
+    --color-form-border: var(--neutral-400);
+    --color-form-border-hover: var(--neutral-800);
+    --color-form-border-active: var(--neutral-800);
 
 
 
@@ -873,6 +906,79 @@ COMPONENTS
 
 @layer components {
 /* ////////////////////////////////////////////////////////
+ATOMS • COMPONENTS
+//////////////////////////////////////////////////////// */
+    
+    /* LINK //////////////// */    
+
+
+
+    
+    /* BUTTON //////////////// */
+    .button {
+        /* Dimensions */
+        @apply px-padding-button-x py-padding-button-y rounded-button label;
+        
+        /* Properties */
+        @apply flex justify-center items-center whitespace-nowrap;
+        
+        /* Animation */
+        @apply animation-button;
+        
+    
+        &.button-prim {
+            /* Default */
+            @apply bg-button-primary-background  text-button-primary;
+    
+            /* Hover */
+            @apply hover:bg-button-primary-background-hover hover:text-button-primary-hover;
+    
+            /* Focus */
+            @apply focus-visible:bg-button-primary-background-hover focus-visible:text-button-primary-hover;
+    
+            /* Active */
+            @apply active:bg-button-primary-background-active active:text-button-primary-active;
+    
+            /* Disabled */
+            @apply disabled:bg-disabled disabled:text-disabled-knockout;
+        }
+    
+    
+        &.button-sec {
+            /* Default */
+            @apply border-(length:--border-button-width) font-medium bg-button-background border-button-border text-button;
+            
+            /* Hover */
+            @apply hover:bg-button-background-hover hover:border-button-hover hover:text-button-hover;
+            
+            /* Focus */
+            @apply focus-visible:hover:bg-button-background-hover focus-visible:border-button-hover focus-visible:text-button-hover;
+            
+            /* Active */
+            @apply active:bg-button-background-active active:border-button-active active:text-button-active;
+            
+            /* Disabled */
+            @apply disabled:border-disabled disabled:text-disabled;
+        }
+    }
+
+
+
+
+    /* FORM //////////////// */
+    .input-field {
+        @apply flex flex-col gap-gap-input-field;
+    
+        input, textarea {
+            @apply bg-form-background px-3 py-3 rounded-xl label hover:bg-form-background-hover hover:text-knockout focus-visible:bg-form-background-hover focus-visible:text-knockout transition;
+        }
+    }
+    
+    
+    
+    
+    
+/* ////////////////////////////////////////////////////////
 MOLECULES • COMPONENTS
 //////////////////////////////////////////////////////// */
 
@@ -903,69 +1009,6 @@ MOLECULES • COMPONENTS
     
     
     
-    /* ////////////////////////////////////////////////////////
-    ATOMS • COMPONENTS
-    //////////////////////////////////////////////////////// */
-    
-    /* FORM //////////////// */
-    .input-field {
-        @apply flex flex-col gap-2;
-
-        input, textarea {
-            @apply bg-form-background px-3 py-3 rounded-xl label hover:bg-form-background-hover hover:text-knockout focus-visible:bg-form-background-hover focus-visible:text-knockout transition;
-        }
-    }
-
-
-
-    
-    /* BUTTON //////////////// */
-    .button {
-        /* Dimensions */
-        @apply px-padding-button-x py-padding-button-y rounded-button label;
-        
-        /* Properties */
-        @apply flex justify-center items-center whitespace-nowrap;
-        
-        /* Animation */
-        @apply animation-button;
-        
-
-        &.button-prim {
-            /* Default */
-            @apply bg-button-primary-background  text-button-primary;
-
-            /* Hover */
-            @apply hover:bg-button-primary-background-hover hover:text-button-primary-hover;
-
-            /* Focus */
-            @apply focus-visible:bg-button-primary-background-hover focus-visible:text-button-primary-hover;
-
-            /* Active */
-            @apply active:bg-button-primary-background-active active:text-button-primary-active;
-
-            /* Disabled */
-            @apply disabled:bg-disabled disabled:text-disabled-knockout;
-        }
-    
-
-        &.button-sec {
-            /* Default */
-            @apply border-(length:--border-button-width) font-medium bg-button-background border-button-border text-button;
-            
-            /* Hover */
-            @apply hover:bg-button-background-hover hover:border-button-hover hover:text-button-hover;
-            
-            /* Focus */
-            @apply focus-visible:hover:bg-button-background-hover focus-visible:border-button-hover focus-visible:text-button-hover;
-            
-            /* Active */
-            @apply active:bg-button-background-active active:border-button-active active:text-button-active;
-            
-            /* Disabled */
-            @apply disabled:border-disabled disabled:text-disabled;
-        }
-    }
 
 
 
