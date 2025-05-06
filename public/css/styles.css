@@ -23,8 +23,9 @@
     --tracking-normal: 0em;
     --leading-tight: 1.25;
     --leading-normal: 1.5;
-    --radius-xl: var(--spacer-3);
-    --radius-2xl: var(--spacer-4);
+    --radius-md: var(--radius-12);
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -53,7 +54,6 @@
     --spacer: calc(var(--f-size-body) / 4);
     --spacer-2: calc(var(--spacer) * 2);
     --spacer-3: calc(var(--spacer) * 3);
-    --spacer-4: calc(var(--spacer) * 4);
     --spacer-6: calc(var(--spacer) * 6);
     --spacer-8: calc(var(--spacer) * 8);
     --spacer-12: calc(var(--spacer) * 12);
@@ -79,7 +79,6 @@
     --color-heading: var(--neutral-800);
     --color-subtle: var(--neutral-600);
     --color-light: var(--neutral-200);
-    --color-knockout: var(--neutral-100);
     --color-disabled: var(--neutral-400);
     --color-brand: var(--primary-500);
     --color-background: var(--neutral-100);
@@ -91,6 +90,7 @@
     --spacing-12f: var(--spacer-12);
     --spacing-24f: var(--spacer-24);
     --spacing-48f: var(--spacer-48);
+    --radius-12: var(--spacer-3);
     --width-sm: var(--spacer-0-5);
     --font-heading: var(--f-family-sans);
     --font-display: var(--f-family-serif);
@@ -123,9 +123,10 @@
     --font-weight-labels: var(--font-weight-normal);
     --leading-label: var(--leading-normal);
     --tracking-label: var(--tracking-normal);
+    --spacing-padding-md-y: var(--spacing-3f);
     --spacing-padding-button-x: var(--spacing-6f);
-    --spacing-padding-button-y: var(--spacing-3f);
-    --radius-button: var(--radius-xl);
+    --spacing-padding-button-y: var(--spacing-padding-md-y);
+    --radius-button: var(--radius-md);
     --border-button-width: var(--width-sm);
     --color-button-primary: var(--neutral-100);
     --color-button-primary-hover: var(--neutral-800);
@@ -143,8 +144,15 @@
     --ease-button: var(--ease-in-out);
     --ease-button-hover: var(--ease-in-out);
     --spacing-gap-input-field: var(--spacing-2f);
+    --spacing-padding-form-x: var(--spacing-3f);
+    --spacing-padding-form-y: var(--spacing-padding-md-y);
+    --radius-form: var(--radius-md);
+    --color-form-hover: var(--neutral-100);
+    --color-form-active: var(--neutral-100);
     --color-form-background: var(--neutral-400);
     --color-form-background-hover: var(--neutral-800);
+    --color-form-background-active: var(--neutral-800);
+    --ease-form: var(--ease-in-out);
   }
 }
 @layer base {
@@ -2867,10 +2875,9 @@
     flex-direction: column;
     gap: var(--spacing-gap-input-field);
     input, textarea {
-      border-radius: var(--radius-xl);
-      background-color: var(--color-form-background);
-      padding-inline: calc(var(--spacing) * 3);
-      padding-block: calc(var(--spacing) * 3);
+      border-radius: var(--radius-form);
+      padding-inline: var(--spacing-padding-form-x);
+      padding-block: var(--spacing-padding-form-y);
       font-family: var(--font-label);
       font-size: var(--text-label);
       --tw-leading: var(--leading-label);
@@ -2880,9 +2887,14 @@
       --tw-tracking: var(--tracking-label);
       letter-spacing: var(--tracking-label);
       color: var(--color-default);
-      transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+      transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
       transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
       transition-duration: var(--tw-duration, var(--default-transition-duration));
+      --tw-duration: 300ms;
+      transition-duration: 300ms;
+      --tw-ease: var(--ease-form);
+      transition-timing-function: var(--ease-form);
+      background-color: var(--color-form-background);
       &:hover {
         @media (hover: hover) {
           background-color: var(--color-form-background-hover);
@@ -2890,14 +2902,20 @@
       }
       &:hover {
         @media (hover: hover) {
-          color: var(--color-knockout);
+          color: var(--color-form-hover);
         }
       }
       &:focus-visible {
-        background-color: var(--color-form-background-hover);
+        background-color: var(--color-form-background-active);
       }
       &:focus-visible {
-        color: var(--color-knockout);
+        color: var(--color-form-active);
+      }
+      &:active {
+        background-color: var(--color-form-background-active);
+      }
+      &:active {
+        color: var(--color-form-active);
       }
     }
   }

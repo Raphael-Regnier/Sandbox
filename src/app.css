@@ -368,14 +368,14 @@ DIMENSIONS • 2ND TIER
 
     /* RADIUS SCALE //////////////// */
     --radius-nul: 0;
-    --radius-xs: var(--spacer-0-5);
-    --radius-sm: var(--spacer);
-    --radius-md: var(--spacer-1-5);
-    --radius-lg: var(--spacer-2);
-    --radius-xl: var(--spacer-3);
-    --radius-2xl: var(--spacer-4);
-    --radius-3xl: var(--spacer-6);
-    --radius-4xl: var(--spacer-8);
+    --radius-2: var(--spacer-0-5);
+    --radius-4: var(--spacer);
+    --radius-6: var(--spacer-1-5);
+    --radius-8: var(--spacer-2);
+    --radius-12: var(--spacer-3);
+    --radius-16: var(--spacer-4);
+    --radius-24: var(--spacer-6);
+    --radius-32: var(--spacer-8);
 
 
 
@@ -530,19 +530,46 @@ Reference semantic tokens to create component-specific tokens
 //////////////////////////////////////////////////////// */
 
 /* ////////////////////////////////////////////////////////
+SHARED PROPERTIES • 3RD TIER
+//////////////////////////////////////////////////////// */
+
+    /* DIMENSIONS //////////////// */
+
+    /* Paddings */
+    --spacing-padding-md-y: var(--spacing-3f); /* guarantees button and input fields have the same height */
+
+    /* Radius */
+    --radius-md: var(--radius-12);
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
 LINK • 3RD TIER
 //////////////////////////////////////////////////////// */
 
-/* DIMENSIONS //////////////// */
+    /* DIMENSIONS //////////////// */
 
 
 
 
-/* COLOR LINK //////////////// */
---color-link: var(--neutral-800);
---color-link-hover: var(--neutral-800);
---color-link-knockout: var(--neutral-100);
---color-link-hover-knockout: var(--neutral-100);
+    /* COLOR LINK //////////////// */
+    --color-link: var(--neutral-800);
+    --color-link-hover: var(--neutral-800);
+    --color-link-knockout: var(--neutral-100);
+    --color-link-hover-knockout: var(--neutral-100);
+
+
+
+
+    /* ANIMATION //////////////// */
+
+    /* Easing */
+    --ease-link: var(--ease-in-out);
 
 
 
@@ -559,10 +586,10 @@ BUTTON • 3RD TIER
 
     /* Paddings */
     --spacing-padding-button-x: var(--spacing-6f);
-    --spacing-padding-button-y: var(--spacing-3f);
+    --spacing-padding-button-y: var(--spacing-padding-md-y);
 
     /* Radius */
-    --radius-button: var(--radius-xl);
+    --radius-button: var(--radius-md);
 
     /* Border width */
     --border-button-width: var(--width-sm);
@@ -627,6 +654,16 @@ FORM INPUTS • 3RD TIER
     /* Gap */
     --spacing-gap-input-field: var(--spacing-2f);
 
+    /* Field paddings */
+    --spacing-padding-form-x: var(--spacing-3f);
+    --spacing-padding-form-y: var(--spacing-padding-md-y);
+
+    /* Radius */
+    --radius-form: var(--radius-md);
+
+    /* Border width */
+    --border-form-width: var(--width-sm);
+
 
 
 
@@ -634,8 +671,8 @@ FORM INPUTS • 3RD TIER
 
     /* Content */
     --color-form: var(--neutral-800);
-    --color-form-hover: var(--neutral-800);
-    --color-form-active: var(--neutral-800);
+    --color-form-hover: var(--neutral-100);
+    --color-form-active: var(--neutral-100);
     --color-form-checked: var(--utility-blue-500);
 
     /* Background */
@@ -647,6 +684,14 @@ FORM INPUTS • 3RD TIER
     --color-form-border: var(--neutral-400);
     --color-form-border-hover: var(--neutral-800);
     --color-form-border-active: var(--neutral-800);
+
+
+
+
+    /* ANIMATION //////////////// */
+
+    /* Easing */
+    --ease-form: var(--ease-in-out);
 
 
 
@@ -866,6 +911,14 @@ ANIMATION • UTILITIES
 
 
 
+/* FORM //////////////// */
+@utility animation-form {
+    @apply ease-form transition-colors  duration-300;
+}
+
+
+
+
 
 
 
@@ -970,7 +1023,20 @@ ATOMS • COMPONENTS
         @apply flex flex-col gap-gap-input-field;
     
         input, textarea {
-            @apply bg-form-background px-3 py-3 rounded-xl label hover:bg-form-background-hover hover:text-knockout focus-visible:bg-form-background-hover focus-visible:text-knockout transition;
+            /* Dimensions */
+            @apply px-padding-form-x py-padding-form-y rounded-form label;
+
+            /* Animation */
+            @apply animation-form;
+
+            /* Default */
+            @apply bg-form-background;
+            
+            /* Hover */
+            @apply hover:bg-form-background-hover hover:text-form-hover;
+            
+            /* Focus and active */
+            @apply focus-visible:bg-form-background-active focus-visible:text-form-active active:bg-form-background-active active:text-form-active;
         }
     }
     
