@@ -154,14 +154,18 @@ COLOR • 1ST TIER
 
 
 
+
+
 /* ////////////////////////////////////////////////////////
 DIMENSIONS • 1ST TIER
 //////////////////////////////////////////////////////// */
 
     /* FLUID SPACINGS //////////////// */
-    --spacer-05: calc(var(--spacer) / 2);
+    --spacer-0-2-5: calc(var(--spacer) / 4);
+    --spacer-0-5: calc(var(--spacer) / 2);
     --spacer: calc(var(--f-size-body) / 4); /* base */
     --spacer-2: calc(var(--spacer) * 2);
+    --spacer-1-5: calc(var(--spacer) * 1.5);
     --spacer-3: calc(var(--spacer) * 3);
     --spacer-4: calc(var(--spacer) * 4); /* body font-size */
     --spacer-5: calc(var(--spacer) * 5);
@@ -190,32 +194,8 @@ DIMENSIONS • 1ST TIER
 
 
 
-    /* FLUID RADIUS //////////////// */
-    --rad-0: 0;
-    --rad-1: 0.0625em;
-    --rad-2: 0.125em;
-    --rad-3: 0.1875em;
-    --rad-4: 0.25em;
-    --rad-5: 0.3125em;
-    --rad-6: 0.375em;
-    --rad-7: 0.4375em;
-    --rad-8: 0.5em;
-    --rad-9: 0.5625em;
-    --rad-10: 0.625em;
-    --rad-11: 0.6875em;
-    --rad-12: 0.75em;
-    --rad-13: 0.8125em;
-    --rad-14: 0.875em;
-    --rad-15: 0.9375em;
-    --rad-16: 1em;
-    --rad-17: 1.0625em;
-    --rad-18: 1.125em;
-    --rad-19: 1.1875em;
-    --rad-20: 1.25em;
-    --rad-22: 1.375em;
-    --rad-24: 1.5em;
-    --rad-32: 2em;
-    --rad-48: 3em;
+
+
 
 
 
@@ -447,16 +427,28 @@ DIMENSIONS • 2ND TIER
 
 
     /* RADIUS SCALE //////////////// */
-    --radius-xs: var(--rad-2);
-    --radius-sm: var(--rad-4);
-    --radius-md: var(--rad-6);
-    --radius-lg: var(--rad-8);
-    --radius-xl: var(--rad-12);
-    --radius-2xl: var(--rad-16);
-    --radius-3xl: var(--rad-24);
-    --radius-4xl: var(--rad-32);
+    --radius-xs: var(--spacer-0-5);
+    --radius-sm: var(--spacer);
+    --radius-md: var(--spacer-1-5);
+    --radius-lg: var(--spacer-2);
+    --radius-xl: var(--spacer-3);
+    --radius-2xl: var(--spacer-4);
+    --radius-3xl: var(--spacer-6);
+    --radius-4xl: var(--spacer-8);
+
+
+
+
+    /* BORDER WIDTHS //////////////// */
+    --width-xs: var(--spacer-0-2-5);
+    --width-sm: var(--spacer-0-5);
+    --width-md: var(--spacer);
+    --width-lg: var(--spacer-1-5);
+    --width-xl: var(--spacer-2);
 
     
+
+
 
 
 
@@ -600,7 +592,13 @@ Reference semantic tokens to create component-specific tokens
 DIMENSIONS • 3RD TIER
 //////////////////////////////////////////////////////// */
 
-    /* INPUTS AND CONTROLS //////////////// */
+    /* BUTTON //////////////// */
+    --spacing-padding-button-x: var(--spacing-6f);
+    --spacing-padding-button-y: var(--spacing-3f);
+    --radius-button: var(--radius-xl);
+    --border-button-width: var(--width-sm);
+    --ease-button: var(--ease-in-out);
+    --ease-button-hover: var(--ease-in-out);
 
 
 
@@ -892,15 +890,48 @@ MOLECULES • COMPONENTS
     
     /* BUTTON //////////////// */
     .button {
-        @apply flex justify-center items-center px-6f py-3f rounded-xl label whitespace-nowrap transition-colors ease-in-out duration-400;
+        /* Dimensions */
+        @apply px-padding-button-x py-padding-button-y rounded-button label;
+        
+        /* Properties */
+        @apply flex justify-center items-center whitespace-nowrap;
+        
+        /* Animation */
+        @apply ease-button hover:ease-button-hover focus-visible:ease-button-hover transition-colors  duration-400;
         
         &.button-prim {
-            @apply bg-button-primary-background  text-button-primary hover:bg-button-primary-background-hover hover:text-button-primary-hover focus-visible:bg-button-primary-background-hover focus-visible:text-button-primary-hover active:bg-button-primary-background-active active:text-button-primary-active;
+            /* Default */
+            @apply bg-button-primary-background  text-button-primary;
+
+            /* Hover */
+            @apply hover:bg-button-primary-background-hover hover:text-button-primary-hover;
+
+            /* Focus */
+            @apply focus-visible:bg-button-primary-background-hover focus-visible:text-button-primary-hover;
+
+            /* Active */
+            @apply active:bg-button-primary-background-active active:text-button-primary-active;
+
+            /* Disabled */
+            @apply disabled:bg-disabled disabled:text-disabled-knockout;
+            ;
         }
     
         &.button-sec {
-            @apply border-2 font-medium bg-button-background border-button-border text-button hover:bg-button-background-hover hover:border-button-hover hover:text-button-hover focus-visible:hover:bg-button-background-hover focus-visible:border-button-hover focus-visible:text-button-hover active:bg-button-background-active active:border-button-active active:text-button-active;
+            /* Default */
+            @apply border-(length:--border-button-width) font-medium bg-button-background border-button-border text-button;
             
+            /* Hover */
+            @apply hover:bg-button-background-hover hover:border-button-hover hover:text-button-hover;
+            
+            /* Focus */
+            @apply focus-visible:hover:bg-button-background-hover focus-visible:border-button-hover focus-visible:text-button-hover;
+            
+            /* Active */
+            @apply active:bg-button-background-active active:border-button-active active:text-button-active;
+            
+            /* Disabled */
+            @apply disabled:border-disabled disabled:text-disabled;
         }
     }
 
