@@ -539,7 +539,7 @@ SHARED PROPERTIES • 3RD TIER
     --spacing-padding-md-y: var(--spacing-3f); /* guarantees button and input fields have the same height */
 
     /* Radius */
-    --radius-md: var(--radius-12);
+    --radius-md: var(--radius-12); /* guarantees button and input fields have the same border radius */
 
 
 
@@ -1018,6 +1018,11 @@ ATOMS • COMPONENTS
 
 
 
+    /* CONTROLS //////////////// */
+
+
+
+
     /* FORM //////////////// */
     .input-field {
         @apply flex flex-col gap-gap-input-field;
@@ -1043,6 +1048,9 @@ ATOMS • COMPONENTS
     
     
     
+    
+
+
     
 /* ////////////////////////////////////////////////////////
 MOLECULES • COMPONENTS
