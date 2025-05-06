@@ -8,6 +8,7 @@
       "Courier New", monospace;
     --color-red-500: oklch(0.637 0.237 25.331);
     --color-orange-500: oklch(0.705 0.213 47.604);
+    --color-green-500: oklch(0.723 0.219 149.579);
     --color-blue-500: oklch(0.623 0.214 259.815);
     --color-blue-700: oklch(0.488 0.243 264.376);
     --color-gray-100: oklch(0.967 0.003 264.542);
@@ -50,6 +51,7 @@
     --neutral-500: oklch(0.6 0 0);
     --neutral-600: oklch(0.51 0 0);
     --neutral-800: oklch(0.32 0 0);
+    --utility-green-500: var(--color-green-500);
     --spacer-0-5: calc(var(--spacer) / 2);
     --spacer: calc(var(--f-size-body) / 4);
     --spacer-2: calc(var(--spacer) * 2);
@@ -82,6 +84,7 @@
     --color-disabled: var(--neutral-400);
     --color-brand: var(--primary-500);
     --color-background: var(--neutral-100);
+    --color-border-success: var(--utility-green-500);
     --color-disabled-knockout: var(--neutral-500);
     --spacing-2f: var(--spacer-2);
     --spacing-3f: var(--spacer-3);
@@ -91,7 +94,8 @@
     --spacing-24f: var(--spacer-24);
     --spacing-48f: var(--spacer-48);
     --radius-12: var(--spacer-3);
-    --width-sm: var(--spacer-0-5);
+    --width-2: var(--spacer-0-5);
+    --width-4: var(--spacer);
     --font-heading: var(--f-family-sans);
     --font-display: var(--f-family-serif);
     --text-h0: var(--f-size-10);
@@ -124,10 +128,11 @@
     --leading-label: var(--leading-normal);
     --tracking-label: var(--tracking-normal);
     --spacing-padding-md-y: var(--spacing-3f);
+    --border-md-width: var(--width-2);
     --spacing-padding-button-x: var(--spacing-6f);
     --spacing-padding-button-y: var(--spacing-padding-md-y);
     --radius-button: var(--radius-md);
-    --border-button-width: var(--width-sm);
+    --border-button-width: var(--border-md-width);
     --color-button-primary: var(--neutral-100);
     --color-button-primary-hover: var(--neutral-800);
     --color-button-primary-active: var(--neutral-800);
@@ -147,11 +152,13 @@
     --spacing-padding-form-x: var(--spacing-3f);
     --spacing-padding-form-y: var(--spacing-padding-md-y);
     --radius-form: var(--radius-md);
+    --border-form-width: var(--border-md-width);
     --color-form-hover: var(--neutral-100);
     --color-form-active: var(--neutral-100);
     --color-form-background: var(--neutral-400);
     --color-form-background-hover: var(--neutral-800);
     --color-form-background-active: var(--neutral-800);
+    --color-form-border: var(--neutral-800);
     --ease-form: var(--ease-in-out);
   }
 }
@@ -681,8 +688,8 @@
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
-  .h-8 {
-    height: calc(var(--spacing) * 8);
+  .h-8f {
+    height: var(--spacing-8f);
   }
   .h-auto {
     height: auto;
@@ -709,10 +716,10 @@
     width: calc(1/2 * 100%);
   }
   .w-4 {
-    width: calc(var(--spacing) * 4);
+    width: var(--width-4);
   }
-  .w-8 {
-    width: calc(var(--spacing) * 8);
+  .w-8f {
+    width: var(--spacing-8f);
   }
   .w-32 {
     width: calc(var(--spacing) * 32);
@@ -2894,6 +2901,9 @@
       transition-duration: 300ms;
       --tw-ease: var(--ease-form);
       transition-timing-function: var(--ease-form);
+      border-style: var(--tw-border-style);
+      border-width: var(--border-form-width);
+      border-color: var(--color-form-border);
       background-color: var(--color-form-background);
       &:hover {
         @media (hover: hover) {
@@ -2916,6 +2926,13 @@
       }
       &:active {
         color: var(--color-form-active);
+      }
+      &:valid {
+        border-style: var(--tw-border-style);
+        border-width: var(--border-form-width);
+      }
+      &:valid {
+        border-color: var(--color-border-success);
       }
     }
   }

@@ -352,6 +352,7 @@ DIMENSIONS • 2ND TIER
 //////////////////////////////////////////////////////// */
 
     /* SPACING SCALE //////////////// */
+    --spacing-0-5f: var(--spacer-0-5); /* base/2 */
     --spacing-1f: var(--spacer); /* base */
     --spacing-2f: var(--spacer-2);  /* font-size/2 */
     --spacing-3f: var(--spacer-3); /* line-height/2 */
@@ -381,11 +382,11 @@ DIMENSIONS • 2ND TIER
 
 
     /* BORDER WIDTHS //////////////// */
-    --width-xs: var(--spacer-0-2-5);
-    --width-sm: var(--spacer-0-5);
-    --width-md: var(--spacer);
-    --width-lg: var(--spacer-1-5);
-    --width-xl: var(--spacer-2);
+    --width-1: var(--spacer-0-2-5);
+    --width-2: var(--spacer-0-5);
+    --width-4: var(--spacer);
+    --width-6: var(--spacer-1-5);
+    --width-8: var(--spacer-2);
 
     
 
@@ -541,6 +542,9 @@ SHARED PROPERTIES • 3RD TIER
     /* Radius */
     --radius-md: var(--radius-12); /* guarantees button and input fields have the same border radius */
 
+    /* Border width */
+    --border-md-width: var(--width-2);
+
 
 
 
@@ -592,7 +596,7 @@ BUTTON • 3RD TIER
     --radius-button: var(--radius-md);
 
     /* Border width */
-    --border-button-width: var(--width-sm);
+    --border-button-width: var(--border-md-width);
 
 
 
@@ -662,7 +666,7 @@ FORM INPUTS • 3RD TIER
     --radius-form: var(--radius-md);
 
     /* Border width */
-    --border-form-width: var(--width-sm);
+    --border-form-width: var(--border-md-width);
 
 
 
@@ -675,13 +679,14 @@ FORM INPUTS • 3RD TIER
     --color-form-active: var(--neutral-100);
     --color-form-checked: var(--utility-blue-500);
 
+
     /* Background */
     --color-form-background: var(--neutral-400);
     --color-form-background-hover: var(--neutral-800);
     --color-form-background-active: var(--neutral-800);
 
     /* Border */
-    --color-form-border: var(--neutral-400);
+    --color-form-border: var(--neutral-800);
     --color-form-border-hover: var(--neutral-800);
     --color-form-border-active: var(--neutral-800);
 
@@ -1035,13 +1040,16 @@ ATOMS • COMPONENTS
             @apply animation-form;
 
             /* Default */
-            @apply bg-form-background;
+            @apply bg-form-background border-(length:--border-form-width) border-form-border;
             
             /* Hover */
             @apply hover:bg-form-background-hover hover:text-form-hover;
             
             /* Focus and active */
             @apply focus-visible:bg-form-background-active focus-visible:text-form-active active:bg-form-background-active active:text-form-active;
+
+            /* Valid */
+            @apply valid:border-(length:--border-form-width) valid:border-border-success;
         }
     }
     
