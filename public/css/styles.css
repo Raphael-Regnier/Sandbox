@@ -2947,7 +2947,6 @@
     .input-legend {
       margin-left: var(--spacing-6f);
       display: none;
-      display: inline-block;
       font-family: var(--font-legend);
       font-size: var(--text-legend);
       --tw-leading: var(--leading-legend);
@@ -2958,7 +2957,9 @@
       letter-spacing: var(--tracking-legend);
       color: var(--color-subtle);
       font-style: italic;
-      &:required {
+    }
+    &:required {
+      .input-legend {
         display: block;
       }
     }

@@ -1054,13 +1054,17 @@ ATOMS • COMPONENTS
             /* Invalid */
             @apply invalid:border-(length:--border-form-width) invalid:border-border-critical;
         }
-
+        
         .input-legend {
             /* Default */
-            @apply  hidden ml-6f legend inline-block;
-
-            /* Required */
-            @apply required:block;
+            @apply hidden ml-6f legend;   
+        }
+        
+        &:required {
+            .input-legend {
+                /* Required */
+                @apply block;
+            }
         }
 
         .error-message {
