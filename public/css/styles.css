@@ -51,6 +51,7 @@
     --neutral-500: oklch(0.6 0 0);
     --neutral-600: oklch(0.51 0 0);
     --neutral-800: oklch(0.32 0 0);
+    --utility-red-500: var(--color-red-500);
     --utility-green-500: var(--color-green-500);
     --spacer-0-5: calc(var(--spacer) / 2);
     --spacer: calc(var(--f-size-body) / 4);
@@ -66,7 +67,6 @@
     --f-scale: 1.618;
     --f-size-fluid: calc(0.66vw + 0.44rem);
     --f-size-body: max(1rem, var(--f-size-fluid));
-    --f-size-small: calc(var(--f-size-body) * 0.875);
     --f-size-1: var(--f-size-fluid);
     --f-size-2: calc(var(--f-size-1) * var(--f-scale));
     --f-size-3: calc(var(--f-size-2) * var(--f-scale));
@@ -85,6 +85,7 @@
     --color-brand: var(--primary-500);
     --color-background: var(--neutral-100);
     --color-border-success: var(--utility-green-500);
+    --color-border-critical: var(--utility-red-500);
     --color-disabled-knockout: var(--neutral-500);
     --spacing-2f: var(--spacer-2);
     --spacing-3f: var(--spacer-3);
@@ -118,7 +119,7 @@
     --leading-body: var(--leading-normal);
     --tracking-body: var(--tracking-normal);
     --font-legend: var(--f-family-sans);
-    --text-legend: var(--f-size-small);
+    --text-legend: var(--f-size-body);
     --font-weight-legends: var(--font-weight-normal);
     --leading-legend: var(--leading-normal);
     --tracking-legend: var(--tracking-normal);
@@ -588,9 +589,6 @@
   }
   .mb-18 {
     margin-bottom: calc(var(--spacing) * 18);
-  }
-  .ml-4 {
-    margin-left: calc(var(--spacing) * 4);
   }
   .box-border {
     box-sizing: border-box;
@@ -1229,6 +1227,9 @@
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
+  }
+  .gap-12f {
+    gap: var(--spacing-12f);
   }
   .space-y-reverse {
     :where(& > :not(:last-child)) {
@@ -2878,6 +2879,7 @@
     }
   }
   .input-field {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-gap-input-field);
@@ -2934,6 +2936,37 @@
       &:valid {
         border-color: var(--color-border-success);
       }
+      &:invalid {
+        border-style: var(--tw-border-style);
+        border-width: var(--border-form-width);
+      }
+      &:invalid {
+        border-color: var(--color-border-critical);
+      }
+    }
+    .input-legend {
+      margin-left: var(--spacing-6f);
+      display: none;
+      display: inline-block;
+      font-family: var(--font-legend);
+      font-size: var(--text-legend);
+      --tw-leading: var(--leading-legend);
+      line-height: var(--leading-legend);
+      --tw-font-weight: var(--font-weight-legends);
+      font-weight: var(--font-weight-legends);
+      --tw-tracking: var(--tracking-legend);
+      letter-spacing: var(--tracking-legend);
+      color: var(--color-subtle);
+      font-style: italic;
+      &:required {
+        display: block;
+      }
+    }
+    .error-message {
+      position: absolute;
+      bottom: calc(var(--spacing-8f) * -1);
+      display: none;
+      display: block;
     }
   }
   .card {

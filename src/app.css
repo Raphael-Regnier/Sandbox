@@ -460,7 +460,7 @@ TYPOGRAPHY • 2ND TIER
     --font-legend: var(--f-family-sans);
     
     /* Font size */
-    --text-legend: var(--f-size-small);
+    --text-legend: var(--f-size-body);
 
     /* Font weight */
     --font-weight-legends: var(--font-weight-normal);
@@ -1030,7 +1030,7 @@ ATOMS • COMPONENTS
 
     /* FORM //////////////// */
     .input-field {
-        @apply flex flex-col gap-gap-input-field;
+        @apply relative flex flex-col gap-gap-input-field;
     
         input, textarea {
             /* Dimensions */
@@ -1050,6 +1050,30 @@ ATOMS • COMPONENTS
 
             /* Valid */
             @apply valid:border-(length:--border-form-width) valid:border-border-success;
+
+            /* Invalid */
+            @apply invalid:border-(length:--border-form-width) invalid:border-border-critical;
+        }
+
+        .input-legend {
+            /* Default */
+            @apply  hidden ml-6f legend inline-block;
+
+            /* Required */
+            @apply required:block;
+        }
+
+        .error-message {
+            /* Default */
+            @apply absolute;
+            bottom: calc(var(--spacing-8f) * -1);
+
+            /* Valid */
+            @apply hidden;
+
+            /* Invalid */
+            @apply block;
+            
         }
     }
     
