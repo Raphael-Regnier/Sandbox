@@ -460,7 +460,7 @@ TYPOGRAPHY • 2ND TIER
     --font-legend: var(--f-family-sans);
     
     /* Font size */
-    --text-legend: var(--f-size-body);
+    --text-legend: var(--f-size-small);
 
     /* Font weight */
     --font-weight-legends: var(--font-weight-normal);
@@ -736,6 +736,7 @@ GLOBAL
     * {
         @apply box-border focus;
     }
+    
     body {
         @apply flex flex-col min-h-screen paragraph;
     }
@@ -798,7 +799,7 @@ TYPOGRAPHY • UTILITIES
 }
 
 @utility legend {
-    @apply font-legend italic text-legend font-legends leading-legend tracking-legend text-subtle;
+    @apply font-legend text-legend font-legends leading-legend tracking-legend text-subtle;
 }
 
 
@@ -936,7 +937,7 @@ MISCELLANEOUS • UTILITIES
 @utility focus {
     @apply focus-visible:outline-none rounded;
     &:focus-visible {
-        box-shadow: 0 0 0 4px var(--color-default), 0 0 0 6px var(--color-subtle);
+        box-shadow: 0 0 0 4px var(--color-default), 0 0 0 6px var(--color-subtle), rgba(100, 100, 111, 0.8) 0px 7px 29px 0px;
     }
 }
 
@@ -963,27 +964,48 @@ COMPONENTS
 //////////////////////////////////////////////////////// */
 
 @layer components {
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////
 ATOMS • COMPONENTS
 //////////////////////////////////////////////////////// */
     
-    /* LINK //////////////// */    
+/* ////////////////////////////////////////////////////////
+LINK • ATOM
+//////////////////////////////////////////////////////// */
+    /* .link {
+        @apply font-link text-link font-links leading-link text-default;
+    } */
+
+
+
+
 
 
 
     
-    /* BUTTON //////////////// */
+/* ////////////////////////////////////////////////////////
+BUTTON • ATOM
+//////////////////////////////////////////////////////// */
+
+    /* BUTTON CORE //////////////// */
+
     .button {
         /* Dimensions */
-        @apply px-padding-button-x py-padding-button-y rounded-button label;
+        @apply px-padding-button-x py-padding-button-y rounded-button label h-(--spacing-12f);
         
         /* Properties */
         @apply flex justify-center items-center whitespace-nowrap;
         
         /* Animation */
         @apply animation-button;
-        
+
     
+    
+
+        /* BUTTON PRIMARY //////////////// */
+
         &.button-prim {
             /* Default */
             @apply bg-button-primary-background  text-button-primary;
@@ -1002,6 +1024,10 @@ ATOMS • COMPONENTS
         }
     
     
+
+
+        /* BUTTON SECONDARY //////////////// */
+
         &.button-sec {
             /* Default */
             @apply border-(length:--border-button-width) font-medium bg-button-background border-button-border text-button;
@@ -1023,15 +1049,93 @@ ATOMS • COMPONENTS
 
 
 
-    /* CONTROLS //////////////// */
 
 
 
 
-    /* FORM //////////////// */
+/* ////////////////////////////////////////////////////////
+CONTROLS • ATOM
+//////////////////////////////////////////////////////// */
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+INPUT FIELD • ATOM
+//////////////////////////////////////////////////////// */
+
+    /* INPUT FIELD //////////////// */
+
     .input-field {
         @apply relative flex flex-col gap-gap-input-field;
+
+        input, select {
+            @apply h-(--spacing-12f);
+        }
+
+
+
+
+        /* GROUP LABEL //////////////// */
+
+        .group-label {
+            /* Layout */
+            @apply grid grid-cols-4 gap-x-8f items-baseline;    
+        }
+
+
+
+
+        /* LABEL //////////////// */
+
+        label {
+            @apply col-span-2
+        }
+
+        
+        
+        
+        /* INPUT LEGEND //////////////// */
     
+        /* Default */
+        .input-legend {
+            @apply hidden col-start-3 legend;   
+        }
+        
+        /* Required */
+        &:has(input[required]), &:has(textarea[required]) {
+            .input-legend {
+                @apply inline-block;
+            }
+        }
+
+
+
+
+        /* CHARACTER COUNT //////////////// */
+
+        /* Default */
+        .character-count {
+            @apply hidden col-start-4 text-right legend;
+        }
+
+        /* Visible */
+        &:has(input[maxlength]), &:has(textarea[maxlength]) {
+            .character-count {
+                @apply inline-block;
+            }
+        }
+
+    
+
+
+
+        /* INPUT //////////////// */
+
         input, textarea {
             /* Dimensions */
             @apply px-padding-form-x py-padding-form-y rounded-form label;
@@ -1040,7 +1144,7 @@ ATOMS • COMPONENTS
             @apply animation-form;
 
             /* Default */
-            @apply bg-form-background border-(length:--border-form-width) border-form-border;
+            @apply bg-form-background;
             
             /* Hover */
             @apply hover:bg-form-background-hover hover:text-form-hover;
@@ -1048,51 +1152,81 @@ ATOMS • COMPONENTS
             /* Focus and active */
             @apply focus-visible:bg-form-background-active focus-visible:text-form-active active:bg-form-background-active active:text-form-active;
 
-            /* Valid */
-            @apply valid:border-(length:--border-form-width) valid:border-border-success;
+            /* Valid - after touch */
+            &.touched:valid {
+                @apply border-(length:--border-form-width) border-border-success;
+            }
 
-            /* Invalid */
-            @apply invalid:border-(length:--border-form-width) invalid:border-border-critical;
+            /* Invalid - after touch */
+            &.touched:invalid {
+                @apply border-(length:--border-form-width) border-border-critical;
+            }
         }
         
-        .input-legend {
-            /* Default */
-            @apply hidden ml-6f legend;   
-        }
+
+
+
+        /* INPUT ERROR MESSAGE //////////////// */
         
-        &:required {
-            .input-legend {
-                /* Required */
-                @apply block;
+        /* Default */
+        .input-error-message {
+            @apply absolute hidden legend text-critical;
+            bottom: calc(var(--spacing-8f) * -1);
+            
+            /* Icon */
+            .input-error-message-icon {
+                @apply absolute right-1;
             }
         }
 
-        .error-message {
-            /* Default */
-            @apply absolute;
-            bottom: calc(var(--spacing-8f) * -1);
-
-            /* Valid */
-            @apply hidden;
-
-            /* Invalid */
-            @apply block;
-            
+        /* Invalid */
+        &:has(input.touched:invalid), &:has(textarea.touched:invalid) {
+            .input-error-message {
+                @apply block;
+            }
         }
+            
     }
-    
-    
-    
-    
-    
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////
 MOLECULES • COMPONENTS
 //////////////////////////////////////////////////////// */
 
-    /* CARD //////////////// */
+/* ////////////////////////////////////////////////////////
+FORM • MOLECULE
+//////////////////////////////////////////////////////// */
+    .form {
+        @apply flex flex-col gap-12f;
+    }
+    
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////
+CARD • MOLECULE
+//////////////////////////////////////////////////////// */
     .card {
         @apply md:col-span-6 lg:col-span-4;
 
@@ -1124,11 +1258,3 @@ MOLECULES • COMPONENTS
 
  
 }
-
-
-
-
-
-
-
-
