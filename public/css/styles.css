@@ -2998,13 +2998,15 @@
       color: var(--color-subtle);
       color: var(--color-critical);
       bottom: calc(var(--spacing-8f) * -1);
-      .input-error-message-icon {
-        position: absolute;
-        right: calc(var(--spacing) * 1);
-      }
+    }
+    .input-error-message-icon {
+      position: absolute;
+      right: var(--spacing-2f);
+      bottom: var(--spacing-padding-form-y);
+      display: none;
     }
     &:has(input.touched:invalid), &:has(textarea.touched:invalid) {
-      .input-error-message {
+      .input-error-message, .input-error-message-icon {
         display: block;
       }
     }

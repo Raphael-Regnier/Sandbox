@@ -1173,15 +1173,16 @@ INPUT FIELD • ATOM
             @apply absolute hidden legend text-critical;
             bottom: calc(var(--spacing-8f) * -1);
             
-            /* Icon */
-            .input-error-message-icon {
-                @apply absolute right-1;
-            }
+        }
+        
+        /* Icon */
+        .input-error-message-icon {
+            @apply hidden absolute right-2f bottom-padding-form-y;
         }
 
         /* Invalid */
         &:has(input.touched:invalid), &:has(textarea.touched:invalid) {
-            .input-error-message {
+            .input-error-message, .input-error-message-icon {
                 @apply block;
             }
         }
