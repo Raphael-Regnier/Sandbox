@@ -2890,12 +2890,9 @@
       align-items: baseline;
       column-gap: var(--spacing-8f);
     }
-    label {
+    .input-format {
       grid-column: span 2 / span 2;
-    }
-    .input-legend {
-      grid-column-start: 3;
-      display: none;
+      grid-column-start: 2;
       font-family: var(--font-legend);
       font-size: var(--text-legend);
       --tw-leading: var(--leading-legend);
@@ -2906,12 +2903,7 @@
       letter-spacing: var(--tracking-legend);
       color: var(--color-subtle);
     }
-    &:has(input[required]), &:has(textarea[required]) {
-      .input-legend {
-        display: inline-block;
-      }
-    }
-    .character-count {
+    .input-legend {
       grid-column-start: 4;
       display: none;
       text-align: right;
@@ -2925,12 +2917,31 @@
       letter-spacing: var(--tracking-legend);
       color: var(--color-subtle);
     }
-    &:has(input[maxlength]), &:has(textarea[maxlength]) {
+    &:has(input[required]), &:has(select[required]), &:has(textarea[required]) {
+      .input-legend {
+        display: inline-block;
+      }
+    }
+    .character-count {
+      grid-column-start: 2;
+      grid-row-start: 1;
+      display: none;
+      font-family: var(--font-legend);
+      font-size: var(--text-legend);
+      --tw-leading: var(--leading-legend);
+      line-height: var(--leading-legend);
+      --tw-font-weight: var(--font-weight-legends);
+      font-weight: var(--font-weight-legends);
+      --tw-tracking: var(--tracking-legend);
+      letter-spacing: var(--tracking-legend);
+      color: var(--color-subtle);
+    }
+    &:has(textarea[maxlength]) {
       .character-count {
         display: inline-block;
       }
     }
-    input, textarea {
+    input, select, textarea {
       border-radius: var(--radius-form);
       padding-inline: var(--spacing-padding-form-x);
       padding-block: var(--spacing-padding-form-y);
@@ -3005,7 +3016,7 @@
       bottom: var(--spacing-padding-form-y);
       display: none;
     }
-    &:has(input.touched:invalid), &:has(textarea.touched:invalid) {
+    &:has(input.touched:invalid), &:has(select.touched:invalid), &:has(textarea.touched:invalid) {
       .input-error-message, .input-error-message-icon {
         display: block;
       }

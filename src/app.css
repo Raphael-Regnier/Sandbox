@@ -1092,9 +1092,23 @@ INPUT FIELD • ATOM
 
         /* LABEL //////////////// */
 
-        label {
-            @apply col-span-2
+        /* label {
+            @apply col-span-2;
+        } */
+
+
+
+        /* INPUT FORMAT //////////////// */
+
+        .input-format {
+            @apply col-start-2 col-span-2 legend;
         }
+
+        /* &:has(textarea) {
+            .input-format {
+                @apply hidden;
+            }
+        } */
 
         
         
@@ -1103,11 +1117,11 @@ INPUT FIELD • ATOM
     
         /* Default */
         .input-legend {
-            @apply hidden col-start-3 legend;   
+            @apply hidden col-start-4 legend text-right;   
         }
         
         /* Required */
-        &:has(input[required]), &:has(textarea[required]) {
+        &:has(input[required]), &:has(select[required]), &:has(textarea[required]) {
             .input-legend {
                 @apply inline-block;
             }
@@ -1120,11 +1134,11 @@ INPUT FIELD • ATOM
 
         /* Default */
         .character-count {
-            @apply hidden col-start-4 text-right legend;
+            @apply hidden col-start-2 row-start-1 legend;
         }
 
         /* Visible */
-        &:has(input[maxlength]), &:has(textarea[maxlength]) {
+        &:has(textarea[maxlength]) {
             .character-count {
                 @apply inline-block;
             }
@@ -1136,7 +1150,7 @@ INPUT FIELD • ATOM
 
         /* INPUT //////////////// */
 
-        input, textarea {
+        input, select, textarea {
             /* Dimensions */
             @apply px-padding-form-x py-padding-form-y rounded-form label;
 
@@ -1181,7 +1195,7 @@ INPUT FIELD • ATOM
         }
 
         /* Invalid */
-        &:has(input.touched:invalid), &:has(textarea.touched:invalid) {
+        &:has(input.touched:invalid), &:has(select.touched:invalid), &:has(textarea.touched:invalid) {
             .input-error-message, .input-error-message-icon {
                 @apply block;
             }
