@@ -354,6 +354,7 @@ DIMENSIONS • 2ND TIER
     /* SPACING SCALE //////////////// */
     --spacing-0-5f: var(--spacer-0-5); /* base/2 */
     --spacing-1f: var(--spacer); /* base */
+    --spacing-1-5f: var(--spacer-1-5); /* line-height/4 */
     --spacing-2f: var(--spacer-2);  /* font-size/2 */
     --spacing-3f: var(--spacer-3); /* line-height/2 */
     --spacing-4f: var(--spacer-4); /* font-size */
@@ -466,7 +467,7 @@ TYPOGRAPHY • 2ND TIER
     --font-weight-legends: var(--font-weight-normal);
 
     /* Line height */
-    --leading-legend: var(--leading-normal);
+    --leading-legend: var(--spacing-6f);
 
     /* Letter spacings */
     --tracking-legend: var(--tracking-normal);
@@ -656,10 +657,10 @@ FORM INPUTS • 3RD TIER
     /* DIMENSIONS //////////////// */
     
     /* Gap */
-    --spacing-gap-input-field: var(--spacing-2f);
+    --spacing-gap-input-field: var(--spacing-1-5f);
 
     /* Field paddings */
-    --spacing-padding-form-x: var(--spacing-3f);
+    --spacing-padding-form-x: var(--spacing-4f);
     --spacing-padding-form-y: var(--spacing-padding-md-y);
 
     /* Radius */
@@ -1176,6 +1177,15 @@ INPUT FIELD • ATOM
                 @apply border-(length:--border-form-width) border-border-critical;
             }
         }
+
+
+
+
+        /* SELECT //////////////// */
+        
+        /* select {
+            
+        } */
         
 
 
@@ -1185,13 +1195,13 @@ INPUT FIELD • ATOM
         /* Default */
         .input-error-message {
             @apply absolute hidden legend text-critical;
-            bottom: calc(var(--spacing-8f) * -1);
-            
+            bottom: calc(var(--spacing-1f) * -7.5);
         }
         
         /* Icon */
         .input-error-message-icon {
-            @apply hidden absolute right-2f bottom-padding-form-y;
+            @apply hidden absolute bottom-4f h-4f w-4f text-critical;
+            left: calc(100% + var(--spacing-4f));
         }
 
         /* Invalid */

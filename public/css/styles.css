@@ -57,7 +57,7 @@
     --utility-green-500: var(--color-green-500);
     --spacer-0-5: calc(var(--spacer) / 2);
     --spacer: calc(var(--f-size-body) / 4);
-    --spacer-2: calc(var(--spacer) * 2);
+    --spacer-1-5: calc(var(--spacer) * 1.5);
     --spacer-3: calc(var(--spacer) * 3);
     --spacer-4: calc(var(--spacer) * 4);
     --spacer-6: calc(var(--spacer) * 6);
@@ -92,7 +92,8 @@
     --color-border-success: var(--utility-green-500);
     --color-border-critical: var(--utility-red-500);
     --color-disabled-knockout: var(--neutral-500);
-    --spacing-2f: var(--spacer-2);
+    --spacing-1f: var(--spacer);
+    --spacing-1-5f: var(--spacer-1-5);
     --spacing-3f: var(--spacer-3);
     --spacing-4f: var(--spacer-4);
     --spacing-6f: var(--spacer-6);
@@ -126,7 +127,7 @@
     --font-legend: var(--f-family-sans);
     --text-legend: var(--f-size-small);
     --font-weight-legends: var(--font-weight-normal);
-    --leading-legend: var(--leading-normal);
+    --leading-legend: var(--spacing-6f);
     --tracking-legend: var(--tracking-normal);
     --font-label: var(--f-family-sans);
     --text-label: var(--f-size-body);
@@ -154,8 +155,8 @@
     --color-button-border: var(--neutral-800);
     --ease-button: var(--ease-in-out);
     --ease-button-hover: var(--ease-in-out);
-    --spacing-gap-input-field: var(--spacing-2f);
-    --spacing-padding-form-x: var(--spacing-3f);
+    --spacing-gap-input-field: var(--spacing-1-5f);
+    --spacing-padding-form-x: var(--spacing-4f);
     --spacing-padding-form-y: var(--spacing-padding-md-y);
     --radius-form: var(--radius-md);
     --border-form-width: var(--border-md-width);
@@ -850,6 +851,9 @@
   .animate-none {
     animation: none;
   }
+  .cursor-pointer {
+    cursor: pointer;
+  }
   .touch-pan-left {
     --tw-pan-x: pan-left;
     touch-action: var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,);
@@ -958,6 +962,15 @@
   }
   .appearance-none {
     appearance: none;
+  }
+  .columns-2 {
+    columns: 2;
+  }
+  .columns-3 {
+    columns: 3;
+  }
+  .columns-4 {
+    columns: 4;
   }
   .columns-auto {
     columns: auto;
@@ -3008,13 +3021,16 @@
       letter-spacing: var(--tracking-legend);
       color: var(--color-subtle);
       color: var(--color-critical);
-      bottom: calc(var(--spacing-8f) * -1);
+      bottom: calc(var(--spacing-1f) * -7.5);
     }
     .input-error-message-icon {
       position: absolute;
-      right: var(--spacing-2f);
-      bottom: var(--spacing-padding-form-y);
+      bottom: var(--spacing-4f);
       display: none;
+      height: var(--spacing-4f);
+      width: var(--spacing-4f);
+      color: var(--color-critical);
+      left: calc(100% + var(--spacing-4f));
     }
     &:has(input.touched:invalid), &:has(select.touched:invalid), &:has(textarea.touched:invalid) {
       .input-error-message, .input-error-message-icon {

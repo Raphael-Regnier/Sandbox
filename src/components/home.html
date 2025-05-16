@@ -296,7 +296,7 @@
 							<div id="nameError" class="input-error-message" role="alert" aria-live="assertive">
 								This field is required
 							</div>
-							<div class="input-error-message-icon">critical</div>
+							<i data-lucide="circle-x" class="input-error-message-icon"></i>
 						</div>
 						
 						<div class="input-field">
@@ -359,10 +359,27 @@
 							></textarea>
 							<div id="messageError" class="input-error-message" role="alert" aria-live="assertive"></div>
 						</div>
-						
-						<div class="input-field">
-							<button type="submit" class="button button-prim md:w-fit">Send message</button>
+
+						<div class="control checkbox">
+							<div class="group-label">
+								<input 
+									type="checkbox" 
+									id="conditions" 
+									name="conditions" 
+									required 
+									aria-required="true"
+									aria-describedby="conditionsError"
+								>
+								<label for="conditions" class="cursor-pointer select-none">
+									Accept <a href="#" class="underline">terms and conditions</a>
+								</label>
+							</div>
+							<div id="conditionsError" class="input-error-message" role="alert" aria-live="assertive">
+								You must accept the terms and conditions
+							</div>
 						</div>
+
+						<button type="submit" class="button button-prim md:w-fit">Send message</button>
 					</form>
 			</section>
 
@@ -379,13 +396,15 @@
 			<!-- <img src="/assets/logo/HatLogo02.svg" alt="Logo" class="w-32 h-auto"> -->
 
 			<!-- Footer text -->
-			<p class="m-0">©2025 hat company • all rights reserved</p>
+			<p class="m-0">2025 hat company • all rights reserved</p>
 
 		</footer>
 
 		<!-- JavaScript  -->
 		<script src="../js/input-counter.js" defer></script>
 		<script src="../js/input-touch.js" defer></script>
+		<script src="../../node_modules/lucide/dist/umd/lucide.min.js" defer></script>
+		<script src="../js/icons.js" defer></script>
 	
 	</body>
 </html>
