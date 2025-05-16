@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Character encoding -->
+		<meta charset="UTF-8" />
+
+		<!-- Viewport settings for responsive design -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- SEO meta tags -->
+		<title>Sandbox</title>
+
+		<!-- CSS  -->
+		<link rel="stylesheet" href="../../public/css/styles.css" />
+	</head>
+
+	<body>
+		<header>Sandbox</header>
+
+		<main id="main-content">
+			<h1>Input</h1>
+
+			<article class="main-container">
+				<section class="sandbox">
+					<h2>Input text</h2>
+					<form action="/action_page.php">
+						<label for="fname" class="input-text">
+							First name
+							<input
+								type="text"
+								id="fname"
+								name="fname"
+								maxlength="80"
+								aria-describedby="character-count"
+							/>
+							<legend id="character-count" aria-live="polite">
+								0/80 characters
+							</legend>
+						</label>
+					</form>
+				</section>
+			</article>
+		</main>
+
+		<footer>RRR</footer>
+
+		<!-- JavaScript  -->
+		<script src="../js/counter-input.js" defer></script>
+	</body>
+</html>

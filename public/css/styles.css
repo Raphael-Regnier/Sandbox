@@ -1803,6 +1803,9 @@
   .object-top {
     object-position: top;
   }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
@@ -3029,7 +3032,7 @@
       display: none;
       height: var(--spacing-4f);
       width: var(--spacing-4f);
-      color: var(--color-critical);
+      color: var(--color-border-critical);
       left: calc(100% + var(--spacing-4f));
     }
     &:has(input.touched:invalid), &:has(select.touched:invalid), &:has(textarea.touched:invalid) {

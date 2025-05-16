@@ -1200,7 +1200,7 @@ INPUT FIELD • ATOM
         
         /* Icon */
         .input-error-message-icon {
-            @apply hidden absolute bottom-4f h-4f w-4f text-critical;
+            @apply hidden absolute bottom-4f h-4f w-4f text-border-critical;
             left: calc(100% + var(--spacing-4f));
         }
 
